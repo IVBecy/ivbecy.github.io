@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Bootstrap, css, and font links-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Montserrat|Monoton|Sacramento&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=VT323|Bungee' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bungee Inline' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel = "icon" href = "favicon.ico">
+    <title>NERDS</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div class="topnav" id = "myTopnav">
+      <a href="index.html"><b>Home</b></a>
+      <a href="news.html"><b>News</b></a>
+      <a href="about.html"><b>About me</b></a>
+      <a class="active" href="projects.html"><b>Projects</b></a>
+      <a href="games.html"><b>Games</b></a>
+      <div id="ham">
+        <a href="javascript:void(0);" class="icon" onclick="dropdown()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div>
+        <div id="cont_git">
+          <a href="https://github.com/IVBecy"><img src="Pictures/git.png" id="contact_ico"></a>
+        </div>
+        <div id="cont_mail">
+          <a href="mailto:kristofhracza@gmail.com"><img src="Pictures/mail.png" id="contact_ico"></a>
+        </div>
+        <div id="cont_dis">
+          <a href="https://discord.gg/S9xCQM5"><img src="Pictures/discord.png" id="contact_ico"></a>
+        </div>
+      </div>
+    </div>
+    <h1 class = "glow" id="h1_all"><b>NERDS -- PROGRAMMING</b></h1>
+    <h2>Projects</h2>
+    <p style = "margin-left: 25px;">Click on the project title, to read more about it.</p>
+    <div class="top-container" id="p_div">
+    <!--Projects headers and descriptions-->
+    <div>
+    <ul>
+      <!--Space Invaders-->
+      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="space()">Space Invaders</h2>
+      <div id="p_space" style="display: none">
+      <p> Back in 2019 I have made a Space Invaders "game", but it was a catastrophy.
+          So now, that I have more experience in programming, I have remade it.
+          I have used Python, and mostly the turtle module. The programm itself was pretty easy to
+          implement, as I was able to use some mechanics from my Flappy Bird game, such as gravity.
+          With all the code, and the design, it took about 2-3 days to finish it.
+          The game is available both in PY and EXE format.
+        </p>
+        <a href="https://github.com/IVBecy/spaceinvaders" ><img src = "Pictures/space_invaders.png" id = "responsive"></a>
+      </div>
+      <!--Insta bruter-->
+      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="insta()">Instagram attack</h2>
+      <div id="p_insta" style="display: none">
+      <p> After making Slow Loris, I felt like its the path I want to work more on.
+        So I made an Instagram dictionary attack, which uses TOR.
+        I implemented this in Python, using the selenium module for generating the webpage and handling the
+        attack, plus the requests. I also used stem, to change IP whenever it was needed.
+        This project was done, roughly in two days.
+        </p>
+        <a href="https://github.com/IVBecy/instagram_attack" ><img src = "Pictures/insta.png" id = "responsive"></a>
+      </div>
+      <!--Slow Loris-->
+      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="slow()">Slow Loris (DoS)</h2>
+      <div id="p_slow" style="display: none">
+      <p>
+        Slow Loris is a DoS method, which anyone can use even with a low bandwith.
+        It is making numerous connections to a webserver, then sending data every 10 / 15 seconds,
+        just when the webserver would close the connection, so that it would not close.
+        I made 2 versions of this script. One you can use with your own IP, but that is not,
+        recommended. The second script, is using TOR Proxies, so your IP won't be visible.
+        Both of the scripts are written using Python.</p>
+        <a href="https://github.com/IVBecy/slow_loris_python" ><img src = "Pictures/sl.png" id = "responsive"></a>
+      </div>
+      <!--Password Manager-->
+      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="pass()">Password Manager</h2>
+      <div id="p_pass" style="display: none">
+      <p>
+        The inspiration to make this app came from one of my friends. He asked me if I use password managers.
+        I said, no. But than something clicked.
+        People pay for these services, so instead of paying for a password manager, why not make my own?!
+        I had to learn Tkinter, for this project, but it went overall pretty well.
+        In about a week, I made a usable Password Manager, that can store passwords,
+        and encrypt (only the login password) in Sha1.</p>
+      <a href="https://github.com/IVBecy/password_manager" ><img src = "Pictures/pass.png" id = "responsive"></a>
+      </div>
+      <!--Flappy Bird-->
+      <h2 style = "margin-right: 40px;" id="cyan_h_p" onclick="flappy()" >Flappy Bird </h2>
+      <div id = "p_flappy" style="display: none">
+      <p>I made this game both in Python and javascript, but I will only talk about the Javascript
+         version, as I feel like the Python one, was a bit of a fail. I will probably remake it in the
+         future, as I got much better since.
+         So, as I mentioned the Python version was a big fail, and since I shifted to JS, I wanted
+          to give it another try. In a few days, I learnt the basics of JS so I got going and
+          it was much easier to write, than the Python implementation. After a few days of
+          programming I finished the game, so that it worked both on PCs and Phones.
+          I made some designs (background, buttons, score board) and published the game here
+          on my website. You can find it in the <a href="games.html">GAMES</a> section. </p>
+        <a href="https://github.com/IVBecy/flappy_js"><img src="Pictures/flappy_prev.png" id = "responsive"></a>
+        <a href="https://github.com/IVBecy/flappy_js"><img src="Pictures/flappy_go.png" id = "responsive"></a>
+      </div>
+      <!--Website-->
+      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="website()">Website</h2>
+      <div id="p_web" style="display: none">
+      <p>Obviously my biggest project is, this website.<br>
+        I started making my website so that I will be able to write in HTML, CSS and JS.
+        I also wanted a place where I would be able to, document my projects throughout my programming,
+        "carrer". I believe that this website was needed for me, to be really proud of what I do.
+        Also this is not just a one timer project. It will last years, as I will always update it.
+        </p>
+      <a href="https://ivbecy.github.io" ><img src = "Pictures/prev.png" id = "responsive"></a>
+      </div>
+      <!--Snake-->
+      <h2 style = "margin-right: 40px;" id="cyan_h_p" onclick="snake()">Snake Game</h2>
+      <div id = "p_snake" style="display: none">
+      <p>Being a self described nerd, I was interested in programming, and I was desperate to make my own game
+        This was my very first game, written in Python, by using the Turtle Module. Roughly it took 2 weeks
+        to finsih it. After that I knew all the basic syntaxes of Turtle and I was ready for a new challenge.
+        <br>You can play Snake at the <a href="games.html">GAMES</a> section</p>
+        <a href="https://github.com/IVBecy/snakegame"><img src="Pictures/snake.jpg" id = "responsive"></a>
+      </div>
+    </ul>
+    </div>
+    </div>
+    <!--Copyright text-->
+    <!---->
+    <h3 id="cr">© 2020 Kristof Hracza</h3>
+    <!--Javascript for responsiveness, paragraphs, hamburger menu and headers (ONLY for Projects)-->
+    <script src="Javascript/p_funcs.js"></script>
+  </body>
+</html>
