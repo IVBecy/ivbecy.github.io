@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--Bootstrap, css, and font links-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxanium|Montserrat|Monoton|Sacramento&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=VT323|Bungee' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Bungee Inline' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <!--Site Description-->
+    <meta property="og:site_name" content="NERDS -- PROGRAMMING"/>
+    <meta property="og:title" content="NERDS -- PROGRAMMING"/>
+    <meta property="og:description" content="NERDS is a website where, I would like to share my programming experiences with other people, and document my projects."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image:secure_url" content="https://ivbecy.github.io/prev.png"/>
+    <meta property="og:image" content="https://ivbecy.github.io/prev.png"/>
+    <meta property="og:url" content="https://ivbecy.github.io"/>
+    <link rel = "icon" href = "favicon.ico">
+    <title>NERDS</title>
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <div class="topnav" id = "myTopnav">
+      <a href="index.html"><b>Home</b></a>
+      <a class="active" href="news.html"><b>News</b></a>
+      <a href="about.html"><b>About me</b></a>
+      <a href="projects.html"><b>Projects</b></a>
+      <a href="games.html"><b>Games</b></a>
+      <div id="ham">
+        <a href="javascript:void(0);" class="icon" onclick="dropdown()">
+          <i class="fa fa-bars"></i>
+        </a>
+      </div>
+      <div>
+        <div id="cont_git">
+          <a href="https://github.com/IVBecy"><img src="Pictures/git.png" id="contact_ico"></a>
+        </div>
+        <div id="cont_mail">
+          <a href="mailto:kristofhracza@gmail.com"><img src="Pictures/mail.png" id="contact_ico"></a>
+        </div>
+        <div id="cont_dis">
+          <a href="https://discord.gg/S9xCQM5"><img src="Pictures/discord.png" id="contact_ico"></a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 class = "glow" id="h1_all"><b>NERDS -- PROGRAMMING</b></h1>
+      <h2>News</h2>
+    </div>
+    <div class="top-container" id="p_div">
+      <ul>
+        <p>Page 2</p>
+        <br>
+      <li><h2 id="cyan_h">Slow Loris</h2></li>
+      <p id="date">2 May 2020</p>
+      <p>My first DoS tool written in Python, using Tor proxies.
+        Read more at the <a href="projects.html">projects</a> section.</p>
+        <br>
+        <br>
+      <li><h2 id="cyan_h">Flappy Bird</h2></li>
+      <p id="date">4 April 2020</p>
+      <p>My first game written in Javascript, is a Flappy Bird remake.
+        Read more at the <a href="projects.html">projects</a> section.</p>
+        <br>
+        <br>
+      <li><h2 id="cyan_h">Website re-design</h2></li>
+      <p id="date">13 March 2020</p>
+      <p>Since the website didn't look the best, I took 3 whole days, to pump up
+        the original version, and threw in some, animations and JS.
+        Also I have, released, the news section, and got rid of the contact
+        section, and I have replaced it with icons on the navigation bar.
+        At that point, the website was fully responisve.
+      </p>
+        <br>
+        <br>
+      <li><h2 id="cyan_h">Password Manager</h2></li>
+      <p id="date">25 February 2020</p>
+      <p>I made a Password manager app, using Python. Read more at the
+        <a href="projects.html">projects</a> section.</p>
+        <br>
+        <br>
+      <li><h2 id="cyan_h">Website</h2></li>
+      <p id="date">2 February 2020</p>
+      <p>I published my website...</p>
+        <br>
+        <br>
+      </ul>
+    </div>
+    <!--Pages-->
+    <div class="pagination">
+      <a href="news.html">1</a>
+      <a href="news_page_2.html" class="active">2</a>
+    </div>
+    <br>
+    <br>
+    <!--Javascript for responsiveness, canvas and hamburger menu-->
+    <script src="Javascript/funcs.js"></script>
+    <!--Copyright text-->
+    <h3 id="cr">© 2020 Kristof Hracza</h3>
+  </body>
+</html>
