@@ -151,3 +151,13 @@ function space(){
     s.style.display = "none";
   }
 }
+
+//If header clicked make text appear -- Web Scraper
+function amazon(){
+  s = document.getElementById('p_amazon')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
