@@ -59,27 +59,16 @@ img{
 
 /***************ID Selectors**********************/
 
-/*NERDS--PROGRAMMING banner on the HOME screen*/
+/*Kristof Hracza banner on the HOME screen*/
 #h1 {
   top: 0;
   bottom: 0;
   position: absolute;
   left: 0;
   right: 0;
-  color :#B305B3 ;
-  font-family: 'Monoton', sans-serif;
+  color :dark-pink ;
+  font-family: 'Bungee', sans-serif;
   margin: 100px auto 0 auto;
-}
-
-/*All other Nerds banner except Home*/
-#h1_all {
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  color :#B305B3 ;
-  font-family: 'Monoton', sans-serif;
-  margin: 50px auto 0 auto;
 }
 
 /*ID for images to fit the screen*/
@@ -314,19 +303,18 @@ img{
   font-size:10vw
   color: #fff;
   text-align: center;
-  -webkit-animation: glow 1s ease-in-out infinite alternate;
-  -moz-animation: glow 1s ease-in-out infinite alternate;
-  animation: glow 1s ease-in-out infinite alternate;
+  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
+  -moz-animation: glow 1.5s ease-in-out infinite alternate;
+  animation: glow 1.5s ease-in-out infinite alternate;
 }
 
 /*Glowing animations for banner*/
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
   }
-
   to {
-    text-shadow: 0 0 20px #fff, 0 0 30px #FC3BCF, 0 0 40px #FC3BCF, 0 0 50px #FC3BCF, 0 0 60px #FC3BCF, 0 0 70px #FC3BCF, 0 0 80px #FC3BCF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
   }
 }
 /*End of glowing text*/
