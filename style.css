@@ -319,51 +319,6 @@ img{
 }
 /*End of glowing text*/
 
-/***************Media Queries**********************/
-
-@media screen and (max-width: 600px)
-{
-
-    h2
-    {
-        font-size: 5vw;
-    }
-
-    li{
-      font-size: 3.5vw;
-    }
-
-    p{
-      font-size: 3.5vw;
-    }
-
-    h1{
-      font-size:6vw;
-    }
-
-    img{
-      width: 50px;
-      height: 50px;
-    }
-
-    iframe{
-      visibility: hidden;
-      width:0px;
-      height:0px;
-    }
-
-    #error{
-      visibility: visible;
-    }
-
-    #snake_inst{
-      visibility: hidden;
-      font-size: 0px;
-    }
-
-
-}
-
 @media screen and (max-width: 700px)
 {
 
@@ -452,7 +407,7 @@ img{
 
     h2
     {
-        font-size: 6.5vw;
+        font-size: 7.5vw;
     }
 
     li{
@@ -460,33 +415,7 @@ img{
     }
 
     p{
-      font-size: 4vw;
-    }
-
-    h1{
-      font-size:8vw;
-    }
-
-    canvas{
-      font-size:8vw;
-    }
-
-}
-
-@media screen and (max-width: 1024px)
-{
-
-    h2
-    {
-        font-size: 5vw;
-    }
-
-    li{
-      font-size: 3.5vw;
-    }
-
-    p{
-      font-size: 3.5vw;
+      font-size: 6vw;
     }
 
     h1{
