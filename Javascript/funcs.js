@@ -1,4 +1,9 @@
-//Javascript for the NEWS, ABOUT and GAMES section
+//Javascript for the NEWS, ABOUT, PROJETCS and GAMES section
+
+////////////////////////////////
+////// FUNCTIONS FOR ALL //////
+//////////////////////////////
+
 // Function to control the contact images according to the display size
 function display_contact(screen_size) {
   if (screen_size.matches) {
@@ -15,8 +20,7 @@ screen_size.addListener(display_contact)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Responsive navigation bar + sliding the banner down if needed and contolling contact
-//images
+//Responsive navigation bar + sliding the banner down if needed and controlling contact images
 function dropdown() {
   var navbar = document.getElementById("myTopnav");
   //If the navigation bar is being dropped down, change the Class name to - "topnav responsive"
@@ -42,7 +46,7 @@ function dropdown() {
   }
 }
 
-///////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Function for showing the contact images next to each other, in the navigation bar
 //on phones and hide them next to the "HOME" section, as they would appear otherwise
@@ -67,8 +71,8 @@ var screen_size_2 = window.matchMedia("(max-width: 600px)")
 contact_order(screen_size_2)
 screen_size_2.addListener(contact_order)
 
-////////////////////////////////////////////////////////////////////////////////////////
-//Detecting if there is an elemnt with the given id
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Detecting if there is an element with the given id
 var detect = document.getElementById("p_div");
     //if yes
     if(detect){
@@ -85,3 +89,93 @@ var detect = document.getElementById("p_div");
     else{
 
     }
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////
+/////////// PROJECTS SECTION//////////////////////
+//////////////////////////////////////////////////
+
+// IF clicking headers in "Projects" section, text will be displayed
+
+//If header clicked make text appear -- Snake
+function snake(){
+  s = document.getElementById('p_snake')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Flappy Bird
+function flappy(){
+  s = document.getElementById('p_flappy')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Password Manager
+function pass(){
+  s = document.getElementById('p_pass')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Slow Loris DoS
+function slow(){
+  s = document.getElementById('p_slow')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Website
+function website(){
+  s = document.getElementById('p_web')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Instagram Attack
+function insta(){
+  s = document.getElementById('p_insta')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Space Invaders
+function space(){
+  s = document.getElementById('p_space')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+
+//If header clicked make text appear -- Web Scraper
+function amazon(){
+  s = document.getElementById('p_amazon')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
+//////////////////////////////////////////
+////////// END OF PROJECTS///////////////
+////////////////////////////////////////
