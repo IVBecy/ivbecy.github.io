@@ -27,7 +27,6 @@ function dropdown() {
   //and show all the contact images + Drop down the "NERDS--PROGRAMMING" text
   if (navbar.className === "topnav") {
     navbar.className += " responsive";
-    document.getElementById("h1_all").style.margin = "100px auto 0 auto";
     document.getElementById("contact_ico").style.display = "block";
     document.getElementById("cont_git").style.display = "block";
     document.getElementById("cont_mail").style.display = "block";
@@ -35,7 +34,6 @@ function dropdown() {
   } else {
     //Once the menu is back to normal, reset the margin size of the Title
     //and hide the contact images
-    document.getElementById("h1_all").style.margin = "50px auto 0 auto";
     document.getElementById("contact_ico").style.display = "none";
     document.getElementById("contact_ico").style.display = "none";
     document.getElementById("cont_git").style.display = "none";
