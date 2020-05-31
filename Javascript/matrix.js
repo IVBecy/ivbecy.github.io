@@ -14,7 +14,7 @@ const y = screen.height / 2.5;
 var result = bowser.getParser(window.navigator.userAgent);
 // If the user agent is microst edge, the matrix animation won't work, so we only output "Hello World!"
 //  and disable the animation
-if (result.parsedResult.browser.name == "h"){
+if (result.parsedResult.browser.name == "Microsoft Edge"){
   ctx.fillStyle = '#000020';
   ctx.fillStyle = '#B305B3';
   ctx.font = '5vw Bungee';
@@ -27,7 +27,7 @@ else{
     ctx.fillStyle = '#0021';
     ctx.fillRect(0, 0, w, h);
     ctx.fillStyle = '#B305B3';
-    ctx.font = '5.2vw Bungee';
+    ctx.font = '5vw Bungee';
     ctx.textAlign = 'center';
     ctx.fillText('Hello World!', x, y);
     ctx.textAlign = 'end';
@@ -42,6 +42,6 @@ else{
       else ypos[ind] = y + 20;
     });
   }
-  //every 0.4 second a new line appears
-  setInterval(matrix, 40);
+  //every 0.3 seconds a new line appears
+  setInterval(matrix, 30);
 }
