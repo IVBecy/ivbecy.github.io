@@ -14,7 +14,7 @@ const y = screen.height / 2.5;
 var result = bowser.getParser(window.navigator.userAgent);
 // If the user agent is microst edge, the matrix animation won't work, so we only output "Hello World!"
 //  and disable the animation
-if (result.parsedResult.browser.name == "Chrome"){
+if (result.parsedResult.browser.name == "h"){
   ctx.fillStyle = '#000020';
   ctx.fillStyle = '#B305B3';
   ctx.font = '5vw Bungee';
