@@ -174,6 +174,16 @@ function amazon(){
     s.style.display = "none";
   }
 }
+
+//If header clicked make text appear -- Web Scraper
+function showcase(){
+  s = document.getElementById('p_showcase')
+  if (s.style.display === "none") {
+    s.style.display = "block";
+  } else {
+    s.style.display = "none";
+  }
+}
 //////////////////////////////////////////
 ////////// END OF PROJECTS///////////////
 ////////////////////////////////////////
