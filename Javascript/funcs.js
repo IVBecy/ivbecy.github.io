@@ -175,7 +175,7 @@ function amazon(){
   }
 }
 
-//If header clicked make text appear -- Web Scraper
+//If header clicked make text appear -- Showcase
 function showcase(){
   s = document.getElementById('p_showcase')
   if (s.style.display === "none") {
