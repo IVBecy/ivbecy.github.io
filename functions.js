@@ -128,9 +128,9 @@ function amazon(){
   }
 }
 
-//If header clicked make text appear -- Showcase
+//If header clicked make text appear -- Old website
 function old_website(){
-  s = document.getElementById('p_old-website')
+  s = document.getElementById('p_old_website')
   if (s.style.display === "none") {
     s.style.display = "block";
   } else {
