@@ -1,237 +1,132 @@
-/***************HTML Elements**********************/
-body {
-  background-color: #000020;
-  color: #0000FF;
-  background-size: "auto";
-  margin: 0;
+/*************************  HTML Elements  ************************/
+body, html {
+  height: 100%;
+  background-color: #E0E0E0;
 }
 
-h1 {
+h1{
   text-align: center;
-  color :#B305B3 ;
-  font-family: 'Monoton', sans-serif;
-  font-size: 6rem;
-  margin: 50px auto 0 auto;
+  font-family: 'Kumar One', sans-serif;
+  padding-top: 20px;
 }
 
-h2 {
+h2{
+  font-family: "Squada One", sans-serif;
   text-align: center;
-  font-family: 'Bungee Inline', sans-serif;
-  font-size:4rem;
-  color:#CD00D4;
-  padding-bottom: 5px;
-  margin: 50px auto 0 auto;
+  font-size:3rem;
 }
 
-div{
-  text-align: center;
-  list-style-type:none;
-  font-size:2rem;
-}
-li{
-  text-align: center;
-  list-style-type:none;
-  font-size:2.5rem;
-  font-family:'VT323', sans-serif;
-  margin-right: 40px;
-}
-
-hr {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-  margin-left: 28em;
-  margin-right: 28em;
-  border: 1px solid grey;
-  border-width: 2px;
-  color: grey;
-}
 p{
-  font-size:2rem;
-  list-style-type:none;
+  font-size:1.1rem;
   text-align: center;
-  font-family:'VT323', sans-serif;
-  margin-right: 40px;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
 }
 
-img{
-  margin-right: 40px;
+li{
+  font-size:1.1rem;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 3px;
+  list-style-type:none;
+  margin-left: -30px;
 }
 
-/***************ID Selectors**********************/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #202020;
+  color:white;
+}
 
-/*Kristof Hracza banner on the HOME screen*/
-#h1 {
-  top: 0;
-  bottom: 0;
+i{
+  padding: 15px;
+}
+
+
+/********************  ID Selectors  *****************************/
+
+/*Big section starters*/
+#big-text{
+  font-size: 10rem;
+  font-family: "Squada One", sans-serif;
+  letter-spacing: 5px
+}
+
+/*Writing text over an image */
+#text_over_image{
   position: absolute;
-  left: 0;
-  right: 0;
-  color :dark-pink ;
-  font-family: 'Bungee', sans-serif;
-  margin: 100px auto 0 auto;
+  color:white;
+  top:10%;
+  left: 40%;
+  letter-spacing: 6px;
+  font-size: 6rem;
+  text-align: center;
 }
 
 /*ID for images to fit the screen*/
 #responsive {
   width: 60%;
-  max-width: 250px;
-  height: auto;
-
+  max-width: 800px;
+  height:20%;
 }
 
-/*Snake instructions ID*/
-#snake_inst{
-  visibility: visible;
-}
-
-/*Snake error message (Phones)*/
-#error{
+#highlight_text{
+  font-family: "Squada One", sans-serif;
   font-size:2rem;
-  list-style-type:none;
-  text-align: center;
-  font-family:'VT323', sans-serif;
-  margin-right: 100px;
-  margin-left: 100px;
-  color:#F30F6A;
-  visibility: hidden;
-}
-
-/*Contact icons*/
-#contact_ico {
-  vertical-align: middle;
-  width: 25px;
-  height: 25px;
-  margin: auto
 }
 
 
-/*Contact icon DIV*/
-#cont_git{
-  float:right;
-}
+/************************  Class Selectors  **********************/
 
-#cont_mail{
-  float:right;
-}
-
-#cont_dis{
-  float:right;
-}
-
-/*For keeping the paragraphs close to the middle*/
-#p_div{
-  margin-left:200px;
-  margin-right:200px;
-}
-
-/*Making the yt logo smaller*/
-#yt_logo{
-  width:40px;
-  height:40px;
-}
-
-/*Setting a cyan color for headings*/
-#cyan_h{
-  color: #04F5FD;
-}
-
-/*Setting a cyan color for paragraphs (If used as a  header)*/
-#cyan_h_p{
-  color: #04F5FD;
-}
-
-#cyan_h_p:hover{
-  color:#FF0693;
-}
-
-/*Copyright logo*/
-#cr{
-  color:grey;
-  font-size:0.8rem;
-}
-
-/*Setting up click reveal on Projects*/
-#p_snake{
-  display: none;
-}
-
-#p_flappy{
-  display: none;
-}
-
-#p_pass{
-  display: none;
-}
-
-#p_slow{
-  display: none;
-}
-/*End of click reveal*/
-
-/*Coloring dates on the NEWS section*/
-#date{
-  color:#FF0693;
-}
-
-
-/***************Class Selectors**********************/
-
-.top-container {
+/*Every section (div)*/
+.container{
   text-align: center;
   position: relative;
-  padding: 10px;
+  padding-left:50px;
+  padding-right: 50px;
 }
 
+/*Text on the left side*/
+.side-text{
+  text-align: left;
+  padding-left: 150px;
+}
 
-.bot-container {
+/*Profile Cards*/
+.card {
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 1);
+  max-width: 300px;
+  margin: 20px;
   text-align: center;
-  position: relative;
-  padding: 20px;
+  font-family: arial;
+  display:inline-block;
 }
 
-.pagination {
+/*Parallax scrolling effect*/
+.para {
+  position: relative;
+  background-image: url('Pictures/intro.jpg');
+  height: 70%;
   display: block;
-}
 
-/*Page system on the news section*/
-.pagination a {
-  color: #FF0080;
-  left: 100;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-size:1.5rem;
-}
 
-.pagination a.active {
-  background-color: #00CDFF;
-  color: #FF0080;
-  border-radius: 5px;
-}
-
-.pagination a:hover:not(.active) {
-  background-color: #00CDFF;
-  border-radius: 5px;
-}
-
-/*END of page*/
-
-/*No scrollbar on the sides*/
-::-webkit-scrollbar
-{
-  width:0;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /*Navigation Bar*/
 .topnav {
   overflow: hidden;
-  background-color: #1E5BD5;
-  font-family: Bungee;
+  background-color: #202020;
 }
 
 .topnav a {
   float: left;
   display: block;
-  color: black;
+  color: white;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -243,13 +138,11 @@ img{
 }
 
 .topnav a:hover {
-  background-color: #1C56CA;
-  border-bottom: 3px solid #ED04FD;
+  background-color: #505050;;
 }
 
 .topnav a.active {
-  background-color: #1C56CA;
-  border-bottom: 3px solid #ED04FD;
+  background-color: #505050;
 }
 
 @media screen and (max-width: 600px) {
@@ -260,24 +153,9 @@ img{
   .topnav a.icon {
     float: right;
     display: block;
-    background-color: #1E5BD5;
-    border-bottom: 3px solid #1E5BD5;
-  }
-
-  #contact_ico{
-    width: 25px;
-    height: 25px;
-    margin: 0px;
-  }
-
-  #cont_git{
-    float:left;
-  }
-  #cont_mail{
-    float:left;
-  }
-  #cont_dis{
-    float:left;
+    background-color: #202020;
+    border-bottom: 7px solid #202020;
+    padding:0;
   }
 
   .topnav.responsive .icon {
@@ -298,177 +176,290 @@ img{
 /*End of navigation bar*/
 
 
-/*Glowing text "NERDS -- PROGRAMMING"*/
-.glow {
-  font-size:10vw
-  color: #fff;
-  text-align: center;
-  -webkit-animation: glow 1.5s ease-in-out infinite alternate;
-  -moz-animation: glow 1.5s ease-in-out infinite alternate;
-  animation: glow 1.5s ease-in-out infinite alternate;
-}
-
-/*Glowing animations for banner*/
-@-webkit-keyframes glow {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
-  }
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
-  }
-}
-/*End of glowing text*/
-
 /***************Media Queries**********************/
 
-@media screen and (max-width: 600px)
+@media screen and (max-width: 1700px){
+  #text_over_image{
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+
+@media screen and (max-width: 1600px){
+  #text_over_image{
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1500px)
 {
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
-    h2
-    {
-        font-size: 5vw;
-    }
+  p{
+    font-size: 1.8vw;
+  }
 
-    li{
-      font-size: 3.5vw;
-    }
+  li{
+    font-size: 1.8vw;
+  }
 
-    p{
-      font-size: 3.5vw;
-    }
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+}
 
-    h1{
-      font-size:6vw;
-    }
+@media screen and (max-width: 1400px)
+{
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  p{
+    font-size: 1.5vw;
+  }
 
-    img{
-      width: 50px;
-      height: 50px;
-    }
+  li{
+    font-size: 1.5vw;
+  }
 
-    iframe{
-      visibility: hidden;
-      width:0px;
-      height:0px;
-    }
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
 
-    #error{
-      visibility: visible;
-    }
-
-    #snake_inst{
-      visibility: hidden;
-      font-size: 0px;
-    }
-
+  #big-text{
+    font-size: 8vw;
+  }
 
 }
 
-@media screen and (max-width: 700px)
+@media screen and (max-width: 1300px)
 {
-
-    h2
-    {
-        font-size: 5.5vw;
-    }
-
-    li{
-      font-size: 4vw;
-    }
-
-    p{
-      font-size: 4vw;
-    }
-
-    h1{
-      font-size:7vw;
-    }
-
-    canvas{
-      font-size:6vw;
-    }
-
-    iframe{
-      visibility: hidden;
-      width:0px;
-      height:0px;
-    }
-
-    #error{
-      visibility: visible;
-    }
-
-    #snake_inst{
-      visibility: hidden;
-      font-size: 0px;
-    }
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
-@media screen and (max-width: 800px)
+
+@media screen and (max-width: 1200px)
 {
-
-    h2
-    {
-        font-size: 6.5vw;
-    }
-
-    li{
-      font-size: 5vw;
-    }
-
-    p{
-      font-size: 5vw;
-    }
-
-    h1{
-      font-size:7.5vw;
-    }
-
-    canvas{
-      font-size:7vw;
-    }
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
 
 
-    iframe{
-      visibility: hidden;
-      width:0px;
-      height:0px;
-    }
+@media screen and (max-width: 1100px)
+{
+  #big-text{
+    font-size: 7vw;
+  }
 
-    #error{
-      visibility: visible;
-    }
-
-    #snake_inst{
-      visibility: hidden;
-      font-size: 0px;
-    }
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
 
 
+  h1{
+    font-size: 4vw;
+  }
+
+  p{
+    font-size: 1.5vw;
+  }
+
+  li{
+    font-size: 1.5vw;
+  }
+
+
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 1024px)
+{
+  #big-text{
+    font-size: 10vw
+  }
+
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .para {
+    background-attachment: scroll;
+
+  }
+
+  h1{
+    font-size: 5vw;
+  }
+
+  p{
+    font-size: 2vw;
+  }
+
+  #text_over_image{
+    font-size: 7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media screen and (max-width: 900px)
 {
+  #big-text{
+    font-size: 11vw
+  }
 
-    h2
-    {
-        font-size: 7.5vw;
-    }
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
 
-    li{
-      font-size: 6vw;
-    }
+  .para {
+    background-attachment: scroll;
 
-    p{
-      font-size: 6vw;
-    }
+  }
 
-    h1{
-      font-size:8vw;
-    }
+  h1{
+    font-size: 5vw;
+  }
 
-    canvas{
-      font-size:8vw;
-    }
+  p{
+    font-size: 2.4vw;
+  }
 
+  #text_over_image{
+    font-size: 7.7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 800px)
+{
+  #big-text{
+    font-size: 11vw
+  }
+
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .para {
+    background-attachment: scroll;
+
+  }
+
+  h1{
+    font-size: 5vw;
+  }
+
+  p{
+    font-size: 2.4vw;
+  }
+
+  #text_over_image{
+    font-size: 7.7vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 700px)
+{
+  #big-text{
+    font-size: 11vw
+  }
+
+  .para {
+    background-attachment: scroll;
+
+  }
+
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  h1{
+    font-size: 5vw;
+  }
+
+  p{
+    font-size: 3.2vw;
+  }
+
+  #text_over_image{
+    font-size: 8vw;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 600px)
+{
+  #big-text{
+    font-size: 10vw
+  }
+
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  #text_over_image{
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  h1{
+    font-size: 5vw;
+  }
+
+  p{
+    font-size: 4vw;
+  }
+
+
+  li{
+    font-size: 4vw;
+  }
+
+  .para {
+    background-attachment: scroll;
+
+  }
 }

@@ -1,76 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!--Bootstrap, css, and font links-->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-163985598-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-163985598-1');
-    </script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Oxanium|Montserrat|Monoton|Sacramento&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=VT323|Bungee' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Bungee Inline' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-    <link rel = "icon" href = "favicon.ico">
-    <title>Kristof Hracza</title>
-  </head>
-  <body>
-    <!--Navigation bar-->
-    <div class="topnav" id = "myTopnav">
-      <a href="index.html"><b>Home</b></a>
-      <a href="News/page_1.html"><b>News</b></a>
-      <a href="about.html"><b>About me</b></a>
-      <a class="active" href="projects.html"><b>Projects</b></a>
-      <a href="games.html"><b>Games</b></a>
-      <div id="ham">
-        <a href="javascript:void(0);" class="icon" onclick="dropdown()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-      <div>
-        <div id="cont_git">
-          <a href="https://github.com/IVBecy"><img src="Pictures/git.png" id="contact_ico"></a>
-        </div>
-        <div id="cont_mail">
-          <a href="mailto:kristofhracza@gmail.com"><img src="Pictures/mail.png" id="contact_ico"></a>
-        </div>
-        <div id="cont_dis">
-          <a href="https://discord.gg/S9xCQM5"><img src="Pictures/discord.png" id="contact_ico"></a>
-        </div>
-      </div>
-    </div>
-    <h2>Projects</h2>
-    <p style = "margin-left: 25px;">Click on the project title, to read more about it.</p>
-    <div class="top-container" id="p_div">
-    <!--Projects headers and descriptions-->
-    <div>
-    <ul>
-    <!--Showcase website-->
-    <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="showcase()">Showcase website</h2>
-    <div id="p_showcase" style="display: none">
-    <p>I am really proud of this website, and what I have achieved, but as I am interested in front-end development
-        I wanted to implement more functions.<br>
-        There was only one problem, that it would not fit the overall theme.
-        So I decided to make a "showcase" website, that is different from this one.
-        I have made trello board, full of stuff, that I would have to do for the new website.
-        So I got going, in about 5/6 hours, I pushed my 1st commit, to github, and I was done.
-        I might change some details in the future, but I would rather, do another project like this.</p>
-        <p>Click <a href="https://github.com/IVBecy/showcase_website">here</a> to check out the github repository.</p>
-    </div>
+<head>
+  <!--Bootstrap, css, and font links-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Kumar One' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Squada One' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+  <!--Site Description-->
+  <meta property="og:site_name" content="A shwocase website"/>
+  <meta property="og:title" content="Demo"/>
+  <meta property="og:description" content="A website to show my skills on the front-end part of web development."/>
+  <meta property="og:type" content="website"/>
+  <link rel = "icon" href = "favicon.ico">
+  <title>NERDS</title>
+</head>
+<body>
+  <div class="topnav" id="topnav">
+    <a href="index.html"><b>Home</b></a>
+    <a href="about.html"><b>About me</b></a>
+    <a class="active" href="projects.html"><b>Projects</b></a>
+    <a  href="games.html"><b>Games</b></a>
+    <a href="javascript:void(0);" class="icon" onclick="hamburger()">
+    <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  <div class="para" id=""><h1 id="text_over_image">NERDS<br><p>by Kristof Hracza</p></h1></div>
+  <div class="container">
+    <h1 id="big-text">Projects</h1>
+    <p>Click on the project title, to reveal the story behind it.</p>
+    <br>
+    <br>
     <!--Web Scraper-->
-    <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="amazon()">Amazon Price Checker</h2>
+    <h2   onclick="amazon()">Amazon Price Checker</h2>
     <div id="p_amazon" style="display: none">
     <p> Since the Instagram attack, I wanted to use selenium, as I found it interesting.
         So, I've got an idea, I was sure that I wanted to make a GUI app.
@@ -83,8 +52,10 @@
       <a href="https://github.com/IVBecy/amazon-price-checker" ><img src = "Pictures/webscrape.png" id = "responsive"></a>
       <a href="https://github.com/IVBecy/amazon-price-checker" ><img src = "Pictures/webscrape2.png" id = "responsive"></a>
     </div>
+    <br>
+    <br>
       <!--Space Invaders-->
-      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="space()">Space Invaders</h2>
+      <h2   onclick="space()">Space Invaders</h2>
       <div id="p_space" style="display: none">
       <p> Back in 2019 I have made a Space Invaders "game", but it was a catastrophy.
           So now, that I have more experience in programming, I have remade it.
@@ -95,8 +66,10 @@
         </p>
         <a href="https://github.com/IVBecy/spaceinvaders" ><img src = "Pictures/space_invaders.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Insta bruter-->
-      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="insta()">Instagram attack</h2>
+      <h2   onclick="insta()">Instagram attack</h2>
       <div id="p_insta" style="display: none">
       <p> After making Slow Loris, I felt like its the path I want to work more on.
         So I made an Instagram dictionary attack, which uses TOR.
@@ -106,8 +79,10 @@
         </p>
         <a href="https://github.com/IVBecy/instagram_attack" ><img src = "Pictures/insta.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Slow Loris-->
-      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="slow()">Slow Loris (DoS)</h2>
+      <h2   onclick="slow()">Slow Loris (DoS)</h2>
       <div id="p_slow" style="display: none">
       <p>
         Slow Loris is a DoS method, which anyone can use even with a low bandwith.
@@ -118,8 +93,10 @@
         Both of the scripts are written using Python.</p>
         <a href="https://github.com/IVBecy/slow_loris_python" ><img src = "Pictures/sl.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Password Manager-->
-      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="pass()">Password Manager</h2>
+      <h2   onclick="pass()">Password Manager</h2>
       <div id="p_pass" style="display: none">
       <p>
         The inspiration to make this app came from one of my friends. He asked me if I use password managers.
@@ -130,8 +107,10 @@
         and encrypt (only the login password) in Sha1.</p>
       <a href="https://github.com/IVBecy/password_manager" ><img src = "Pictures/pass.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Flappy Bird-->
-      <h2 style = "margin-right: 40px;" id="cyan_h_p" onclick="flappy()" >Flappy Bird </h2>
+      <h2  onclick="flappy()" >Flappy Bird </h2>
       <div id = "p_flappy" style="display: none">
       <p>I made this game both in Python and javascript, but I will only talk about the Javascript
          version, as I feel like the Python one, was a bit of a fail. I will probably remake it in the
@@ -145,8 +124,10 @@
         <a href="https://github.com/IVBecy/flappy_js"><img src="Pictures/flappy_prev.png" id = "responsive"></a>
         <a href="https://github.com/IVBecy/flappy_js"><img src="Pictures/flappy_go.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Website-->
-      <h2  style = "margin-right: 40px;" id="cyan_h_p" onclick="website()">Website</h2>
+      <h2   onclick="website()">Website</h2>
       <div id="p_web" style="display: none">
       <p>Obviously my biggest project is, this website.<br>
         I started making my website so that I will be able to write in HTML, CSS and JS.
@@ -156,21 +137,29 @@
         </p>
       <a href="https://ivbecy.github.io" ><img src = "Pictures/prev.png" id = "responsive"></a>
       </div>
+      <br>
+      <br>
       <!--Snake-->
-      <h2 style = "margin-right: 40px;" id="cyan_h_p" onclick="snake()">Snake Game</h2>
+      <h2  onclick="snake()">Snake Game</h2>
       <div id = "p_snake" style="display: none">
       <p>Being a self described nerd, I was interested in programming, and I was desperate to make my own game
         This was my very first game, written in Python, by using the Turtle Module. Roughly it took 2 weeks
         to finsih it. After that I knew all the basic syntaxes of Turtle and I was ready for a new challenge.
-        <br>You can play Snake at the <a href="games.html">GAMES</a> section</p>
         <a href="https://github.com/IVBecy/snakegame"><img src="Pictures/snake.jpg" id = "responsive"></a>
       </div>
     </ul>
     </div>
     </div>
-    <!--Copyright text-->
-    <h3 id="cr">© 2020 Kristof Hracza</h3>
-    <!--Javascript for responsiveness, paragraphs, hamburger menu and headers-->
-    <script src="Javascript/funcs.js"></script>
-  </body>
+  </div>
+  <br>
+  <br>
+  <!--Footer-->
+  <footer>
+    <a href="mailto:kristofhracza@gmail.com"><i class="fa fa-envelope" style="font-size: 30px;"></i></a>
+    <a href="https://github.com/IVBecy"><i class="fa fa-github" style="font-size: 30px;"></i></a>
+    <a href="https://www.youtube.com/channel/UCPdJpsymfMobXq6oncfvicA?view_as=subscriber"><i class="fa fa-youtube" style="font-size: 30px;"></i></a>
+    <p>© Kristof Hracza 2020 || All rights reserved</p>
+  </footer>
+  <script src="functions.js"></script>
+</body>
 </html>
