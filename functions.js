@@ -76,11 +76,11 @@ document.getElementById('space').onmouseover = function() {space()};
 document.getElementById('space').onmouseout = function() {notclick()};
 
 function space(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('space').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('space').style.opacity = "1";
 }
 
 
@@ -89,11 +89,11 @@ document.getElementById('insta').onmouseover = function() {insta()};
 document.getElementById('insta').onmouseout = function() {notclick()};
 
 function insta(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('insta').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('insta').style.opacity = "1";
 }
 
           //////////////   Slow Loris   //////////////
@@ -101,11 +101,11 @@ document.getElementById('slow_loris').onmouseover = function() {slow_loris()};
 document.getElementById('slow_loris').onmouseout = function() {notclick()};
 
 function slow_loris(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('slow_loris').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('slow_loris').style.opacity = "1";
 }
 
         //////////////   Flappy Bird  //////////////
@@ -113,11 +113,11 @@ document.getElementById('flappy').onmouseover = function() {flappy()};
 document.getElementById('flappy').onmouseout = function() {notclick()};
 
 function flappy(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('flappy').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('flappy').style.opacity = "1";
 }
 
         //////////////   Password Manager  //////////////
@@ -125,11 +125,11 @@ document.getElementById('pass').onmouseover = function() {pass()};
 document.getElementById('pass').onmouseout = function() {notclick()};
 
 function pass(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('pass').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('pass').style.opacity = "1";
 }
 
 
@@ -138,11 +138,11 @@ document.getElementById('website').onmouseover = function() {website()};
 document.getElementById('website').onmouseout = function() {notclick()};
 
 function website(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('website').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('website').style.opacity = "1";
 }
 
 
@@ -151,11 +151,11 @@ document.getElementById('snake').onmouseover = function() {snake()};
 document.getElementById('snake').onmouseout = function() {notclick()};
 
 function snake(){
-var cards = document.getElementsByClassName('flip-card')
-for(var i=0; i<cards.length; i++){
-cards[i].style.opacity = "0.2";
-}
-document.getElementById('snake').style.opacity = "1";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('snake').style.opacity = "1";
 }
 
 ////  Function called when we move the mouse out of the bounds of the box ////
