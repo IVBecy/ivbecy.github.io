@@ -48,8 +48,10 @@ if (document.getElementById("brs")) {
 ////////////////////////////////////////////////////////////////////////////////
 
             //////////////   Old  website   //////////////
-document.getElementById('old_website').onmouseover = function() {old_website()};
-document.getElementById('old_website').onmouseout = function() {notclick()};
+if (document.getElementById('old_website')){
+  document.getElementById('old_website').onmouseover = function() {old_website()};
+  document.getElementById('old_website').onmouseout = function() {notclick()};
+}
 
 function old_website(){
   var cards = document.getElementsByClassName('flip-card')
@@ -60,8 +62,10 @@ function old_website(){
 }
 
             //////////////   Amazon   //////////////
-document.getElementById('amazon').onmouseover = function() {amazon()};
-document.getElementById('amazon').onmouseout = function() {notclick()};
+if(document.getElementById('amazon')){
+  document.getElementById('amazon').onmouseover = function() {amazon()};
+  document.getElementById('amazon').onmouseout = function() {notclick()};
+}
 
 function amazon(){
   var cards = document.getElementsByClassName('flip-card')
@@ -72,8 +76,10 @@ function amazon(){
 }
 
           //////////////   Space Invaders   //////////////
-document.getElementById('space').onmouseover = function() {space()};
-document.getElementById('space').onmouseout = function() {notclick()};
+if(document.getElementById('space')){
+  document.getElementById('space').onmouseover = function() {space()};
+  document.getElementById('space').onmouseout = function() {notclick()};
+}
 
 function space(){
   var cards = document.getElementsByClassName('flip-card')
@@ -85,8 +91,10 @@ function space(){
 
 
           //////////////   Insta   //////////////
-document.getElementById('insta').onmouseover = function() {insta()};
-document.getElementById('insta').onmouseout = function() {notclick()};
+if(document.getElementById('insta')){
+  document.getElementById('insta').onmouseover = function() {insta()};
+  document.getElementById('insta').onmouseout = function() {notclick()};
+}
 
 function insta(){
   var cards = document.getElementsByClassName('flip-card')
@@ -97,8 +105,10 @@ function insta(){
 }
 
           //////////////   Slow Loris   //////////////
-document.getElementById('slow_loris').onmouseover = function() {slow_loris()};
-document.getElementById('slow_loris').onmouseout = function() {notclick()};
+if(document.getElementById('slow_loris')){
+  document.getElementById('slow_loris').onmouseover = function() {slow_loris()};
+  document.getElementById('slow_loris').onmouseout = function() {notclick()};
+}
 
 function slow_loris(){
   var cards = document.getElementsByClassName('flip-card')
@@ -109,8 +119,10 @@ function slow_loris(){
 }
 
         //////////////   Flappy Bird  //////////////
-document.getElementById('flappy').onmouseover = function() {flappy()};
-document.getElementById('flappy').onmouseout = function() {notclick()};
+if(document.getElementById('flappy')){
+  document.getElementById('flappy').onmouseover = function() {flappy()};
+  document.getElementById('flappy').onmouseout = function() {notclick()};
+}
 
 function flappy(){
   var cards = document.getElementsByClassName('flip-card')
@@ -121,8 +133,10 @@ function flappy(){
 }
 
         //////////////   Password Manager  //////////////
-document.getElementById('pass').onmouseover = function() {pass()};
-document.getElementById('pass').onmouseout = function() {notclick()};
+if(document.getElementById('pass')){
+  document.getElementById('pass').onmouseover = function() {pass()};
+  document.getElementById('pass').onmouseout = function() {notclick()};
+}
 
 function pass(){
   var cards = document.getElementsByClassName('flip-card')
@@ -134,8 +148,10 @@ function pass(){
 
 
       //////////////   Website  //////////////
-document.getElementById('website').onmouseover = function() {website()};
-document.getElementById('website').onmouseout = function() {notclick()};
+if(document.getElementById('website')){
+  document.getElementById('website').onmouseover = function() {website()};
+  document.getElementById('website').onmouseout = function() {notclick()};
+}
 
 function website(){
   var cards = document.getElementsByClassName('flip-card')
@@ -147,8 +163,10 @@ function website(){
 
 
         //////////////   Snake  //////////////
-document.getElementById('snake').onmouseover = function() {snake()};
-document.getElementById('snake').onmouseout = function() {notclick()};
+if(document.getElementById('snake')){
+  document.getElementById('snake').onmouseover = function() {snake()};
+  document.getElementById('snake').onmouseout = function() {notclick()};
+}
 
 function snake(){
   var cards = document.getElementsByClassName('flip-card')
