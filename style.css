@@ -86,8 +86,6 @@ i{
 .container{
   text-align: center;
   position: relative;
-  padding-left:50px;
-  padding-right: 50px;
 }
 
 /*Text on the left side*/
@@ -109,17 +107,18 @@ i{
 }
 
 .card:hover{
-  transform:scale(1.5)
+  transform:scale(1.5);
 }
 
+/* Flip Card for projects */
 
 .flip-card {
-  background-color: transparent;
   width: 300px;
   height: 400px;
   perspective: 1000px;
   display:inline-block;
   margin:10px;
+  background-color: transparent;
 }
 
 .flip-card-inner {
@@ -150,17 +149,16 @@ i{
 }
 
 .flip-card-front {
-  background-color: #bbb;
   color: black;
   border-style: solid;
 }
 
-.flip-card-back {
-  background-color:#ccc;
-  color: black;
+.flip-card-back {;
+  color: white;
   height: fit-content;
   transform: rotateY(180deg);
   border-style: solid;
+  background-color: black;
 }
 
 /*Parallax scrolling effect*/
