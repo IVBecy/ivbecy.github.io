@@ -158,7 +158,7 @@ i{
 .flip-card-back {
   background-color:#ccc;
   color: black;
-  height: 700px;
+  height: fit-content;
   transform: rotateY(180deg);
   border-style: solid;
 }
