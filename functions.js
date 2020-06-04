@@ -1,9 +1,22 @@
 /////////////  JS For kristofhracza.com  /////////////////
 /////////////////////////////////////////////////////////
 
+
 // Fading in the page, onload then the "NERDS" banner
 $("body").hide().fadeIn(900);
 $("#text_over_image").hide().delay(1000).fadeIn(1000);
+
+////////////////////////////////////////////////////////////////////////////////
+
+//Navbar function
+function hamburger() {
+  var x = document.getElementById("topnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -28,115 +41,131 @@ if (document.getElementById("brs")) {
   image_size(img)
   img.addListener(image_size)
 }
-////////////////////////////////////////////////////////////////////////////////
-//Navbar function
-function hamburger() {
-  var x = document.getElementById("topnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
 
 ////////////////////////////////////////////////////////////////////////////////
+////////////////////  Fading cards on hover ////////////////////////////////////
+////////////////////  PROJECTS SECTION      ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
 
-///////////////////////////////////////////////////
-//////////////////////////////////////////////////
-/////////// PROJECTS SECTION//////////////////////
-//////////////////////////////////////////////////
+            //////////////   Old  website   //////////////
+document.getElementById('old_website').onmouseover = function() {old_website()};
+document.getElementById('old_website').onmouseout = function() {notclick()};
 
-// IF clicking headers in "Projects" section, text will be displayed
-
-//If header clicked make text appear -- Snake
-function snake(){
-  s = document.getElementById('p_snake')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Flappy Bird
-function flappy(){
-  s = document.getElementById('p_flappy')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Password Manager
-function pass(){
-  s = document.getElementById('p_pass')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Slow Loris DoS
-function slow(){
-  s = document.getElementById('p_slow')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Website
-function website(){
-  s = document.getElementById('p_web')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Instagram Attack
-function insta(){
-  s = document.getElementById('p_insta')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Space Invaders
-function space(){
-  s = document.getElementById('p_space')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Web Scraper
-function amazon(){
-  s = document.getElementById('p_amazon')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
-  }
-}
-
-//If header clicked make text appear -- Old website
 function old_website(){
-  s = document.getElementById('p_old_website')
-  if (s.style.display === "none") {
-    s.style.display = "block";
-  } else {
-    s.style.display = "none";
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.3";
+  }
+  document.getElementById('old_website').style.opacity = "1";
+}
+
+            //////////////   Amazon   //////////////
+document.getElementById('amazon').onmouseover = function() {amazon()};
+document.getElementById('amazon').onmouseout = function() {notclick()};
+
+function amazon(){
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('amazon').style.opacity = "1";
+}
+
+          //////////////   Space Invaders   //////////////
+document.getElementById('space').onmouseover = function() {space()};
+document.getElementById('space').onmouseout = function() {notclick()};
+
+function space(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('space').style.opacity = "1";
+}
+
+
+          //////////////   Insta   //////////////
+document.getElementById('insta').onmouseover = function() {insta()};
+document.getElementById('insta').onmouseout = function() {notclick()};
+
+function insta(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('insta').style.opacity = "1";
+}
+
+          //////////////   Slow Loris   //////////////
+document.getElementById('slow_loris').onmouseover = function() {slow_loris()};
+document.getElementById('slow_loris').onmouseout = function() {notclick()};
+
+function slow_loris(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('slow_loris').style.opacity = "1";
+}
+
+        //////////////   Flappy Bird  //////////////
+document.getElementById('flappy').onmouseover = function() {flappy()};
+document.getElementById('flappy').onmouseout = function() {notclick()};
+
+function flappy(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('flappy').style.opacity = "1";
+}
+
+        //////////////   Password Manager  //////////////
+document.getElementById('pass').onmouseover = function() {pass()};
+document.getElementById('pass').onmouseout = function() {notclick()};
+
+function pass(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('pass').style.opacity = "1";
+}
+
+
+      //////////////   Website  //////////////
+document.getElementById('website').onmouseover = function() {website()};
+document.getElementById('website').onmouseout = function() {notclick()};
+
+function website(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('website').style.opacity = "1";
+}
+
+
+        //////////////   Snake  //////////////
+document.getElementById('snake').onmouseover = function() {snake()};
+document.getElementById('snake').onmouseout = function() {notclick()};
+
+function snake(){
+var cards = document.getElementsByClassName('flip-card')
+for(var i=0; i<cards.length; i++){
+cards[i].style.opacity = "0.2";
+}
+document.getElementById('snake').style.opacity = "1";
+}
+
+////  Function called when we move the mouse out of the bounds of the box ////
+function notclick(){
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+    cards[i].style.opacity = "1";
   }
 }
-//////////////////////////////////////////
-////////// END OF PROJECTS///////////////
-////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////////
+///////////////////////   END OF PROJECTS   ////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
