@@ -47,6 +47,20 @@ if (document.getElementById("brs")) {
 ////////////////////  PROJECTS SECTION      ////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 
+            //////////////   Password cracker   //////////////
+if(document.getElementById('snake')){
+  document.getElementById('password_cracker').onmouseover = function() {password_cracker()};
+  document.getElementById('password_cracker').onmouseout = function() {notclick()};
+}
+
+function password_cracker(){
+  var cards = document.getElementsByClassName('flip-card')
+  for(var i=0; i<cards.length; i++){
+  cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('password_cracker').style.opacity = "1";
+}
+
             //////////////   Old  website   //////////////
 if (document.getElementById('old_website')){
   document.getElementById('old_website').onmouseover = function() {old_website()};
