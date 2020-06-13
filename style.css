@@ -153,7 +153,7 @@ i{
   border-style: solid;
 }
 
-.flip-card-back {;
+.flip-card-back {
   color: white;
   height: fit-content;
   transform: rotateY(180deg);
@@ -503,12 +503,16 @@ i{
     transform: translate(-50%, -50%);
   }
 
+  footer p{
+    font-size: 3vw;;
+  }
+
   h1{
     font-size: 5vw;
   }
 
   h2{
-    font-size: 6vw;
+    font-size: 11vw;
   }
 
   p{
