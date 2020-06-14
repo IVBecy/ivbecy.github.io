@@ -103,6 +103,17 @@ i:hover{
     text-align: center;
 }
 
+/*Frame for email form*/
+#email_frame{
+  margin: auto;
+  width: 60%;
+  float:left;
+  padding: 10px;
+  background-color:#d2d3d1 ;
+  border-radius: 10px;
+  text-align: center;
+}
+
 /*Frame for logging in*/
 #login_frame{
     margin: auto;
@@ -125,14 +136,14 @@ i:hover{
 /*Left aligned container*/
 .left_container{
     text-align: left;
-    margin-left: 250px;
+    margin-left: 150px;
     padding-top: 100px;
 }
 
 /*Left aligned text*/
 .left_text{
     text-align: left;
-    margin-right: 250px;
+    margin-right: 150px;
 }
 
 /* Start of navigation bar*/
@@ -218,11 +229,7 @@ i:hover{
 
 /************************************** MEDIA QUERIES ************************************************/
 
-@media screen and (max-width: 2000px){
-   #contact_frame{
-    margin-right: 200px;
-    }
-}
+
 
 @media screen and (max-width: 1300px){
     h1{
@@ -251,13 +258,18 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
     }
 }
 @media screen and (max-width: 1024px){
     h1{
     font-size: 5vw;
   }
+
+  #email_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
 
     #login_frame{
     margin: auto;
@@ -293,7 +305,6 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
     }
 }
 @media screen and (max-width: 900px){
@@ -323,7 +334,6 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
     }
 }
 
@@ -354,7 +364,6 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
     }
 }
 
@@ -385,7 +394,6 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
     }
 }
 
@@ -399,6 +407,12 @@ i:hover{
   }
 
   #login_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
+
+  #email_frame{
     margin: auto;
     width: 80%;
     padding: 10px;
@@ -424,6 +438,6 @@ i:hover{
     #contact_frame{
     border-radius: 10px;
     padding: 20px;
-    margin-right: 20px;
+    margin: auto;
     }
 }
