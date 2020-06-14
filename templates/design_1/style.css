@@ -1,0 +1,429 @@
+/*************************************** CSS for design idea on kristofhracza.com***********************************
+*******************************************************************************************************************/
+
+/************************************** HTML ELEMENTS  ************************************************/
+h1,h2,h3,h4{
+    font-family: "Anton";
+    letter-spacing: 3px;
+}
+
+h1{
+    font-size: 4rem;
+    color:#ff6b15;
+
+}
+
+h2{
+    color:black;
+}
+
+a{
+   font-family: 'Staatliches'; 
+}
+
+p{
+    font-size:1.3rem;
+    text-align: center;
+    font-family: "Basic";
+}
+
+a{
+    font-size:1.1rem;
+    text-align: center;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: "Basic";
+}
+
+input[type=submit] {
+  background-color: #ff6b15;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Basic";
+}
+
+label{
+    font-family: "Basic";
+}
+
+input[type=submit]:hover{
+    background-color: #b34d12;
+}
+
+i:hover{
+    color: red;
+}
+/************************************** ID SELECTORS ************************************************/
+
+
+/*Login and signup "buttons"*/
+#log_sign{
+    color: #B7360E;
+    margin-right: 50px; 
+    display: inline-block; 
+}
+
+/* Container of login and signup buttons*/
+#row{
+    display: block;
+}
+
+/*Make the login button white*/
+#log_sign:first-child{
+    color: white;  
+}
+
+#log_sign:hover{
+    color:black;
+}
+
+/*Area to display phone number + login and signup buttons*/
+#login_area{
+    background-color: #ff6b15;
+    padding: 0.5%;
+}
+
+/*Frame for the contact form*/
+#contact_frame{
+    border-radius: 10px;
+    background-color:#d2d3d1 ;
+    padding: 20px;
+    text-align: center;
+}
+
+/*Frame for logging in*/
+#login_frame{
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+/*Frame for signing up*/
+#signup_frame{
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+/************************************** CLASS SELECTORS ************************************************/
+/*Container to keep text centered*/
+.container{
+    text-align: center;
+}
+
+/*Left aligned container*/
+.left_container{
+    text-align: left;
+    margin-left: 250px;
+    padding-top: 100px;
+}
+
+/*Left aligned text*/
+.left_text{
+    text-align: left;
+    margin-right: 250px;
+}
+
+/* Start of navigation bar*/
+.navbar{
+    overflow: hidden;
+    background-color: #f0eeee;
+}
+
+.navbar a{
+    text-align: center;
+    float: left;
+    display: block;
+    padding:0;
+    text-decoration: none;
+    font-weight: bold;
+    color:black;
+    font-size: 1.4rem;
+}
+
+.navbar a:hover{
+    opacity:0.6;
+    border-bottom:solid orangered;
+}
+
+.navbar a.active{
+    border-bottom:solid orangered;
+}
+
+.navbar a:nth-child(2){
+    margin-left: 500px; 
+}
+
+.navbar h2{
+    padding:20px;
+}
+
+.navbar a.icon {
+    display: none;
+  }
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child){
+    display:none;
+  }
+
+  .navbar a:nth-child(2){
+    margin: 0px; 
+}
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+    background-color: #f0eeee;;
+    border-bottom: 7px solid #f0eeee;
+    padding:0;
+  }
+
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right:16px;
+    margin-top: 31px;
+    
+  }
+
+    .navbar.responsive h2{
+    padding:20px;
+    margin-right: 500px;;
+    }
+
+  .navbar.responsive a {
+    text-align: center;
+    float: none;
+    display: block;
+    padding:0;
+    margin-right: 300px;;
+  }
+}
+
+/*End of navigation bar*/
+
+
+/************************************** MEDIA QUERIES ************************************************/
+
+@media screen and (max-width: 2000px){
+   #contact_frame{
+    margin-right: 200px;
+    }
+}
+
+@media screen and (max-width: 1300px){
+    h1{
+    font-size: 5vw;
+  }
+
+  p{
+    font-size: 2vw;
+  }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .navbar a:nth-child(2){
+    margin-left: 0; 
+}
+
+.left_text{
+    text-align: left;
+    margin-right: 20px;
+    }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
+@media screen and (max-width: 1024px){
+    h1{
+    font-size: 5vw;
+  }
+
+    #login_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
+
+    #signup_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
+
+  p{
+    font-size: 2vw;
+  }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .navbar a:nth-child(2){
+    margin-left: 0; 
+    }
+
+    .left_text{
+        text-align: left;
+        margin-right: 20px;
+        }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
+@media screen and (max-width: 900px){
+    h1{
+    font-size: 6vw;
+  }
+
+  p{
+    font-size: 2.5vw;
+  }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .navbar a:nth-child(2){
+    margin-left: 0; 
+}
+
+    .left_text{
+        text-align: left;
+        margin-right: 20px;
+        }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 800px){
+    h1{
+    font-size: 6vw;
+  }
+
+  p{
+    font-size: 2.5vw;
+  }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .navbar a:nth-child(2){
+    margin-left: 0; 
+}
+
+    .left_text{
+        text-align: left;
+        margin-right: 20px;
+        }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    h1{
+    font-size: 7vw;
+  }
+
+  p{
+    font-size: 3.2vw;
+  }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .navbar a:nth-child(2){
+    margin-left: 0; 
+}
+
+    .left_text{
+        text-align: left;
+        margin-right: 20px;
+        }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    h1{
+    font-size: 7vw;
+  }
+
+  p{
+    font-size: 3.7vw;
+  }
+
+  #login_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
+
+  #signup_frame{
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+    }
+
+  .left_container{
+    text-align: left;
+    margin-left: 20px;
+    padding-top: 100px;
+    }
+
+    .left_text{
+        text-align: left;
+        margin-right: 20px;
+        }  
+    
+    #contact_frame{
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    }
+}
