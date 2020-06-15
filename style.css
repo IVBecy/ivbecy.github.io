@@ -162,7 +162,7 @@ i{
   background-color: black;
 }
 
-/*Parallax scrolling effect*/
+/*Parallax scrolling effect + background for starting page*/
 .para {
   position: relative;
   background-image: url('Pictures/intro.jpg');
@@ -204,6 +204,7 @@ i{
   background-color: #505050;
 }
 
+/*Making a hamburger menu, when the pixels are <= 600px in width*/
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child){
     display:none;
@@ -233,7 +234,6 @@ i{
   }
 }
 /*End of navigation bar*/
-
 
 /***************Media Queries**********************/
 

@@ -45,7 +45,7 @@ if (document.getElementById("brs")) {
 
 
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////// Footer  /////////////////////////////////////
+/////////////////////// Footer rendering by REACT  /////////////////////////
 // React FOOTER render
 function Footer(){
   return(
@@ -207,7 +207,7 @@ function snake(){
   document.getElementById('snake').style.opacity = "1";
 }
 
-////  Function called when we move the mouse out of the bounds of the box ////
+////  Function called when we move the mouse out of the bounds of any box ////
 function notclick(){
   var cards = document.getElementsByClassName('flip-card')
   for(var i=0; i<cards.length; i++){
