@@ -1,6 +1,8 @@
 ////////////////////////////////////////////// JS for design idea on kristofhracza.com /////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Sliding the image in, when the window opens
+$(document).ready(function () { $("#image").hide(0),$('#image').slideToggle("slow");})
 
 /////////// Navigation bar function /////////////
 
@@ -32,7 +34,7 @@ function button(screen_size) {
         $(document).ready(function () {
             $("#next_button").toggle(
                 function () { $(".row").children().hide(), $(".row :nth-child(2)").show(0),
-                    $(".dot").css("background-color", "#bbb"), $(".row :nth-child(2)").animate({right:"250px"})
+                    $(".dot").css("background-color", "#bbb"),
                     $("#dot2").css("background-color", "blue") },
                 function () { $(".row").children().hide(), $(".row :nth-child(3)").show(0),
                     $(".dot").css("background-color", "#bbb"),
