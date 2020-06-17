@@ -110,7 +110,7 @@ function Contact_form() {
                 <label htmlFor="lname">E-mail</label><br />
                 <input type="text" id="email" name="email" placeholder="Your e-mail"></input><br />
                 <label htmlFor="lname">Message</label><br />
-                <textarea style={{height:"50"}} type="text" id="message" name="Message" placeholder="Write something"></textarea><br />
+                <textarea type="text" id="message" name="Message" placeholder="Write something"></textarea><br />
                 <input type="submit" value="Submit"></input>
             </form>
         </div>
