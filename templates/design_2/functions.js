@@ -2,7 +2,7 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Sliding the image in, when the window opens
-$(document).ready(function () { $("#image").hide(0),$('#image').slideToggle("slow");})
+$(document).ready(function () { $("#image").hide(0),$('#image').slideToggle(1500);})
 
 /////////// Navigation bar function /////////////
 
