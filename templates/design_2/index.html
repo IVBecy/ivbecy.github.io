@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="favicon.ico">
     <!--  Bootstrap(s)  -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <!--  Jquery link(s)  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
@@ -25,13 +26,15 @@
     <title>Title</title>
 </head>
 <body>
+    <!-- Overlay CONTACT -->
+    <div id="overlay"></div>
     <!-- Intro -->
     <div id="image">
         <!-- Navigation bar -->
         <div class="navbar" id="navbar">
             <h1 style="color:white">YOURLOGO</h1>
             <a class="active" href="index.html">Home</a>
-            <a href="#title2">Title 2</a>
+            <a href="about.html">About</a>
             <a href="javascript:void(0);" class="icon" onclick="hamburger()"><i class="fa fa-bars"></i></a>
         </div>
         <h1 class="container" id="text_over_image">Promo sentence here</h1><br>
@@ -55,36 +58,33 @@
         </div>
         <!-- Next button -->
         <div id="next"></div>
+        <!-- About us button -->
+        <button onclick="about_redirect()" id="about_btn" style="background-color:#1c91df;">Explore company</button>
     </div>
-    <hr>
-    <!-- Our works -->
-    <div class="container" style="margin-top: 50px;">
-        <h1>Our works</h1>
-        <p>Here are some the results of our work.</p>
-        <div class="work_box">
-            <h3 style="color:white;">Title of work</h3>
-            <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-            <img src="../../Pictures/prev.png" class="box_image" />
-        </div>
-        <div class="work_box" style="background-color: #21738b;">
-            <h3 style="color:white;">Title of work</h3>
-            <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-            <img src="../../Pictures/old_website.png"class="box_image" />
-        </div>
-        <div class="work_box" style="background-color: #31cbdf;">
-            <h3 style="color:white;">Title of work</h3>
-            <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscingt.</p>
-            <img src="../../Pictures/design_1.png" class="box_image" />
-        </div>
-        <div class="work_box" style="background-color: #27418a;">
-            <h3 style="color:white;">Title of work</h3>
-            <p style="color:white;">Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-            <img src="../../Pictures/template_restaurant.png" class="box_image" />
+    <div style="background-color: #dfdfdf;">
+        <!-- Our works -->
+        <div class="cont">
+            <h1 style="padding-top:100px;">Our works</h1>
+            <p>Here are some the results of our work.</p>
+            <div class="work_box">
+                <h3>Title of work</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <img src="../../Pictures/prev.png" class="box_image" />
+            </div>
+            <div class="work_box" style="background-color: #27418a;">
+                <h3>Title of work</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <img src="../../Pictures/template_restaurant.png" class="box_image" />
+            </div>
+            <div class="work_box" style="background-color: #36278a;">
+                <h3>Title of work</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <img src="../../Pictures/design_2.png" class="box_image" />
+            </div>
         </div>
     </div>
-    <hr>
     <!-- Approach -->
-    <div class="container" style="margin-top: 50px;">
+    <div class="cont">
         <h1>Our approach to work</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscingt.</p>
         <br>
@@ -108,7 +108,19 @@
             <h3>Maintenance</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscingt.</p>
         </div>
+        <div class="side_text">
+            <i class="fa fa-pencil" style="font-size: 35px; margin-bottom: 30px;"></i>
+            <h3>Management</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingt.</p>
+        </div>
+        <div class="side_text">
+            <i class="fa fa-users" style="font-size: 35px; margin-bottom: 30px;"></i>
+            <h3>Teamwork</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscingt.</p>
+        </div>
     </div>
+    <!-- Contact -->
+    <div class="cont" id="contact"></div>
     <!-- Footer -->
     <footer>
         <h1 style="color:white;">YOURLOGO</h1><p style="color:white;">Description of the company</p>

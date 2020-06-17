@@ -4,7 +4,6 @@
 /************************************** HTML ELEMENTS  ************************************************/
 body,html {
   height: 100%;
- 
 }
 
 h1,h2,h3,h4{
@@ -55,7 +54,6 @@ button{
 
 button:hover{
     background: #39393a;
-    transform: scale(1.2);
 }
 
 hr{
@@ -69,6 +67,10 @@ i{
     margin-bottom: 20px;
 }
 
+i:hover{
+    color: #0c1adf;
+}
+
 footer {
   text-align: center;
   padding: 20px;
@@ -78,15 +80,66 @@ footer {
 
 
 footer hr{
-   border: 2px solid rgb(112, 112, 112);
+   border: 2px solid rgb(187, 186, 186);
 }
 
+input[type=text], select, textarea {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-family: "Basic";
+  background-color: #f8f8f8;
+}
+
+input[type=submit] {
+  background-color: #1e11da;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: "Basic";
+}
+
+input[type=submit]:hover {
+  background-color: #1180da;
+}
+
+label{
+    font-family: "Basic";
+}
+
+
 /************************************** ID SELECTORS  ************************************************/
-/*Into image*/
+/*Intro image*/
 #image{
     position: relative;
     background-image: url('Pictures/intro.jpg');
     height: 70%;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #494949;
+    background-blend-mode: multiply;
+    margin-bottom: 100px;
+}
+
+#message{
+    width: 40%;
+    height: 100%;
+}
+
+/*Intro image (ABOUT)*/
+#image_2{
+    position: relative;
+    background-image: url('Pictures/intro_2.jpg');
+    height: 100%;
     display: block;
     background-position: center;
     background-repeat: no-repeat;
@@ -109,10 +162,44 @@ footer hr{
     border:2px solid black; 
 }
 
+#contact{
+    background-color: #d1d8e2;
+    padding:50px;
+}
+
+#overlay{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7c8c9;
+  z-index: 2;
+}
+
+#contact_frame{
+    width:70%;
+    height:70%;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid grey;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10%;
+}
 
 
 /************************************** CLASS SELECTORS ************************************************/
 /*Center aligned container*/
+.cont{
+    text-align: center;
+    padding-bottom: 20px;
+}
+
 .container{
     text-align: center;
 }
@@ -132,10 +219,10 @@ footer hr{
 
 
 .dot {
-  height: 20px;
-  width: 20px;
+  height: 15px;
+  width: 15px;
   margin:10px;
-  background-color: #bbb;
+  background-color: #93b2e0;
   border-radius: 50%;
   display: inline-block;
 }
@@ -145,6 +232,8 @@ footer hr{
     display: inline-block;
     margin:30px;
 }
+
+
 .side_text h3{
     font-family: "Anton";
 }
@@ -153,6 +242,12 @@ footer hr{
     color: #969393;
 }
 
+
+.left_text{
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 1000px;
+}
 /********  IMAGES  ************/
 
 /*Row for images*/
@@ -191,6 +286,17 @@ footer hr{
     border-radius: 5px;
 }
 
+.value_box{
+    background-color: white;
+    text-align: center;
+    padding:20px;
+    display: inline-block;
+    margin:10px;  
+    border-radius: 5px;
+    width: 450px;
+    height: 400px;
+}
+
 /****** Navigation bar *******/
 .navbar{
     background-color: transparent;
@@ -201,11 +307,11 @@ footer hr{
   color: white;
   text-align: center;
   text-decoration: none;
+  float: left;
 }
 
 .navbar .icon{
     display: none;
-    border-bottom: solid transparent;
 }
 
 
@@ -226,8 +332,9 @@ footer hr{
 @media screen and (max-width:600px){
 
     .navbar{
-        background-color: rgba(0,0,0,0.3);
+        background-color: rgba(0,0,0,0.7);
     }
+
     .navbar a{
         display: none;
     }
@@ -236,12 +343,13 @@ footer hr{
         float:right;
         margin:0;
         border-bottom: solid transparent;
+        padding:0;
     }
 
     .navbar.responsive .icon {
         position: absolute;
-        right: 20px;
-        top: 20px;
+        right: 15px;
+        top: 14px;
     }
 
     .navbar.responsive a{
@@ -256,6 +364,14 @@ footer hr{
 }
 /************************************** MEDIA QUERIES  ************************************************/
 
+@media screen  and (max-width:1500px){
+    .left_text{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 300px;
+    }
+}
+
 @media screen and (max-width:800px){
     h1{
         font-size: 8vw;
@@ -268,6 +384,12 @@ footer hr{
     .column{
         width: 50%;
         float: none;
+    }
+
+    .left_text{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 50px;
     }
 }
 
@@ -295,6 +417,10 @@ footer hr{
         font-size: 4vw;
     }
 
+    h2{
+        font-size: 7vw;
+    }
+
     .column{
         width: 100%;
         float: none;
@@ -308,13 +434,38 @@ footer hr{
         width:100%;
         padding:0;
         margin:0;
-        margin-bottom: 50px;
+        margin-bottom: 1px;
         text-align: center;
     }
 
     .box_image{
         width:90%;
         height:50%;
+    }
+
+    .left_text{
+        text-align: left;
+        margin-left: 10px;
+        margin-right: 50px;
+    }
+
+    .value_box{
+        margin:0px;  
+        margin-bottom: 15px;
+        width: 100%;
+        height: 400px;
+    }
+
+    #contact_frame{
+        width:95%;
+        height:70%;
+        background-color: white;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid grey;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:10%;
     }
 
 }
