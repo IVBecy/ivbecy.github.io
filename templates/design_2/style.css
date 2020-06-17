@@ -370,6 +370,18 @@ label{
         margin-left: 10px;
         margin-right: 300px;
     }
+
+    #contact_frame{
+        width:95%;
+        height:95%;
+        background-color: white;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid grey;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top:1%;
+    }
 }
 
 @media screen and (max-width:800px){
@@ -458,7 +470,7 @@ label{
 
     #contact_frame{
         width:95%;
-        height:70%;
+        height:95%;
         background-color: white;
         text-align: center;
         border-radius: 10px;
