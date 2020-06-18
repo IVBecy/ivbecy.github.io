@@ -9,11 +9,11 @@ $("#text_over_image").hide().delay(1000).fadeIn(1000);
 
 //Navbar function
 function hamburger() {
-  var x = document.getElementById("topnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
+  var navbar = document.getElementById("topnav");
+  if (navbar.className === "topnav") {
+    navbar.className += " responsive";
   } else {
-    x.className = "topnav";
+    navbar.className = "topnav";
   }
 }
 
