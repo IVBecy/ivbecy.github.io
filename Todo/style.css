@@ -4,7 +4,7 @@ body,html{
 }
 
 body{
-  background-image: linear-gradient(#0dbad8, #0dafd8,#0d54d8);
+  background-color: #17a4e6;
   
 }
 
@@ -69,7 +69,6 @@ button:hover{
 
 #adding_box:hover{
   background-color: rgba(0,0,0,0.5);
-  transform: scale(1.3);
 }
 
 
