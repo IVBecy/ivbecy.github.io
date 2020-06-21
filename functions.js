@@ -207,6 +207,20 @@ function snake(){
   document.getElementById('snake').style.opacity = "1";
 }
 
+      //////////////   Todo  //////////////
+if (document.getElementById('todo')) {
+  document.getElementById('todo').onmouseover = function () { todo() };
+  document.getElementById('todo').onmouseout = function () { notclick() };
+}
+
+function todo() {
+  var cards = document.getElementsByClassName('flip-card')
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].style.opacity = "0.2";
+  }
+  document.getElementById('todo').style.opacity = "1";
+}
+
 ////  Function called when we move the mouse out of the bounds of any box ////
 function notclick(){
   var cards = document.getElementsByClassName('flip-card')

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--  Metadata-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!--  Bootstrap(s)  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+  integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!--  Jquery link(s)  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--  React.js libraries  -->
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<!-- Font awesome kit  -->
+<script src="https://kit.fontawesome.com/b82b391bad.js" crossorigin="anonymous"></script>
+<!-- Font links -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href='https://fonts.googleapis.com/css?family=Fredoka One' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+<!--  My CSS and JS  -->
+<script type="text/jsx" src="app.js"></script>
+<link rel="stylesheet" href="style.css">
+<title>TODO list</title>
+</head>
+<body>
+  <!-- title section -->
+  <div class="container"><h1>TODO list</h1><br/><h4>Click on a card to delete it.</h4></div>
+  <div id="todo_cards"></div>
+  <div id="boxes"></div>
+  <!-- Box -->
+  <div id="adding_box" onclick="render_input()">
+    <h3>Add a card</h3><i style="color:black;" class="fa fa-plus"></i>
+  </div>
+
+</body>
+</html>
