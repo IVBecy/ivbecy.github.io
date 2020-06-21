@@ -5,16 +5,16 @@ var card_count = 0;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////// Reading from local storage and making the cards ///////////////////
-window.onload = function(){
+$(document).ready(function (){
   //// Displaying info from the local storage into card form
   for (var i = 0; i < localStorage.length; i++) {
     var card = document.createElement("div");
     card.setAttribute("id", Object.keys(localStorage)[i]);
     card.setAttribute("class", "cards");
-    document.getElementById("todo_cards").appendChild(card)
+    document.getElementById("todo_cards").appendChild(card);
     card.textContent = Object.values(localStorage)[i];
   }
-}
+});
 // Assigning the card count to the number of items in the local storage
 card_count = localStorage.length
 
