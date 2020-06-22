@@ -14,6 +14,11 @@ $(document).ready(function (){
     document.getElementById("todo_cards").appendChild(card);
     card.textContent = Object.values(localStorage)[i];
   }
+  /// Hiding score from Flappy Bird, so that it does not get deleted
+  setTimeout(Flappy, 0)
+  function Flappy(){
+    document.getElementById("High Score").style.display = "none";
+  }
 });
 // Assigning the card count to the number of items in the local storage
 card_count = localStorage.length
