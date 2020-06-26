@@ -8,17 +8,17 @@ var card_count = 0;
 $(document).ready(function (){
   //// Displaying info from the local storage into card form
   for (var i = 0; i < localStorage.length; i++) {
-    var card = document.createElement("div");
-    card.setAttribute("id", Object.keys(localStorage)[i]);
-    card.setAttribute("class", "cards");
-    document.getElementById("todo_cards").appendChild(card);
-    card.textContent = Object.values(localStorage)[i];
-  }
-  /// Hiding score from Flappy Bird, so that it does not get deleted
-  if (document.getElementById("High Score")) {
-    setTimeout(Flappy, 0)
-    function Flappy() {
-      document.getElementById("High Score").style.display = "none";
+    // Hiding the flappy bird score so it does not get deleted 
+    if (Object.keys(localStorage)[i] == "High Score"){
+      continue
+    }
+    // Show everything else in the local storage except the Flappy Bird High score
+    else{
+      var card = document.createElement("div");
+      card.setAttribute("id", Object.keys(localStorage)[i]);
+      card.setAttribute("class", "cards");
+      document.getElementById("todo_cards").appendChild(card);
+      card.textContent = Object.values(localStorage)[i];
     }
   }
 });
