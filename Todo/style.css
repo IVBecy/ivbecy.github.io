@@ -4,8 +4,7 @@ body,html{
 }
 
 body{
-  background-color: #17a4e6;
-  
+  background-color: DeepSkyBlue;
 }
 
 h1,h2,h3,h4{
@@ -54,6 +53,17 @@ button:hover{
   background-color: #8f8f8f;
 }
 
+select{
+  background-color: #8f8d8d;
+  color: black;
+  font-family: "Fredoka One";
+  border:2px solid black;
+}
+
+i{
+  color: black;
+}
+
 /***************************** ID SELECTORS *************************************/
 /*Box for adding cards*/
 #adding_box{
@@ -76,10 +86,35 @@ button:hover{
   background-color: rgb(15, 15, 15);
 }
 
+#settings{
+  text-align: center;
+  margin-right: auto;
+  margin:20px;
+}
+
+#settings:hover{
+  color:rgba(77, 77, 77);
+}
+
 #overlay{
-  width:100%;
-  height:100%;
-  background-color: rgba(0,0,0,0.5);
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #c7c7c9;
+  z-index: 2;
+}
+
+#cancel_settings{
+  margin:20px;
+}
+
+#cancel_settings:hover{
+  color:#da4f0f;
 }
 
 /***************************** CLASS SELECTORS *************************************/
@@ -111,13 +146,29 @@ button:hover{
   margin-left: auto;
   margin-right: auto;
   padding:20px;
-  background-color: #e9e9e9;
+  background-color: whitesmoke;
   border-radius: 5px;
   font-family: "Fredoka One";
 }
 
 .cards:hover{
-  background-color:#4649dd ;
+  background-color:#696969 ;
+}
+
+.properties{
+  margin-left: auto;
+  margin-right: auto;
+  padding:20px;
 }
 
 /***************************** MEDIA QUERIES *************************************/
+@media screen and (max-width:600px){
+  h1{
+    font-size: 3.5rem;
+  }
+  h2{
+    font-size: 2rem;
+  }
+
+
+}
