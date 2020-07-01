@@ -2,9 +2,15 @@
 **********************************************************/
 
 /*************************  HTML Elements  ************************/
+:root{
+  --dark_grey:#202020;
+  --light_grey:#505050;
+  --main_bg_color:#E0E0E0;
+}
+
 body, html {
   height: 100%;
-  background-color: #E0E0E0;
+  background-color: var(--main_bg_color);
 }
 
 h1{
@@ -38,7 +44,7 @@ li{
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #202020;
+  background-color: var(--dark_grey);
   color:white;
 }
 
@@ -102,7 +108,7 @@ i{
   margin: 20px;
   text-align: center;
   font-family: arial;
-  background-color: #E0E0E0;
+  background-color: var(--main_bg_color);
   display:inline-block;
   transition: transform .2s;
 }
@@ -168,8 +174,6 @@ i{
   background-image: url('Pictures/intro.jpg');
   height: 70%;
   display: block;
-
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -179,7 +183,7 @@ i{
 /*Navigation Bar*/
 .topnav {
   overflow: hidden;
-  background-color: #202020;
+  background-color: var(--dark_grey);
 }
 
 .topnav a {
@@ -197,11 +201,11 @@ i{
 }
 
 .topnav a:hover {
-  background-color: #505050;;
+  background-color: var(--light_grey);;
 }
 
 .topnav a.active {
-  background-color: #505050;
+  background-color: var(--light_grey);
 }
 
 /*Making a hamburger menu, when the pixels are <= 600px in width*/
@@ -213,8 +217,8 @@ i{
   .topnav a.icon {
     float: right;
     display: block;
-    background-color: #202020;
-    border-bottom: 6px solid #202020;
+    background-color: var(--dark_grey);
+    border-bottom: 6px solid var(--dark_grey);
     padding:0;
   }
 
