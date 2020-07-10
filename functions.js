@@ -10,6 +10,8 @@ $("#text_over_image").hide().delay(1000).fadeIn(1000);
 //Navbar function
 function hamburger() {
   var navbar = document.getElementById("topnav");
+  // Setting color for the hamburger icon
+  document.getElementById("icon").style.color = "white" 
   if (navbar.className === "topnav") {
     navbar.className += " responsive";
   } else {
@@ -44,8 +46,8 @@ if (document.getElementById("brs")) {
 }
 
 
+        ///////////////////////// REACT ////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-/////////////////////// Footer rendering by REACT  /////////////////////////
 // React FOOTER render
 function Footer(){
   return(
@@ -58,6 +60,27 @@ function Footer(){
   )
 }
 ReactDOM.render(<Footer />, document.getElementById('footer'));
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// React Navigation Bar render
+function Navbar(){
+  return(
+    <div className="topnav" id="topnav">
+      <a href="index.html" id="index.html"><b>Home</b></a>
+      <a href="about.html" id="about.html"><b>About me</b></a>
+      <a href="projects.html" id="projects.html"><b>Projects</b></a>
+      <a href="template.html" id="template.html"><b>Templates</b></a>
+      <a href="apps.html" id="apps.html"><b>Apps</b></a>
+      <a id="icon" className="icon" onClick={hamburger}><i className="fa fa-bars"></i></a>
+    </div>
+  )
+}
+ReactDOM.render(<Navbar />, document.getElementById("navigation_bar"))
+// Giving an active class to the current page
+var path = window.location.pathname;
+var page = path.split("/").pop();
+document.getElementById(page).className = "active"
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////  Fading cards on hover ////////////////////////////////////
