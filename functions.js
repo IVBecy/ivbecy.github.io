@@ -80,7 +80,13 @@ ReactDOM.render(<Navbar />, document.getElementById("navigation_bar"))
 // Giving an active class to the current page
 var path = window.location.pathname;
 var page = path.split("/").pop();
-document.getElementById(page).className = "active"
+if (page === "") {
+  // On starting page
+  document.getElementById("index.html").className = "active"
+}
+// Any page
+else { document.getElementById(page).className = "active"}
+
 
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////  Fading cards on hover ////////////////////////////////////
