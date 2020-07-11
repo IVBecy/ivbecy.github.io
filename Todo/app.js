@@ -1,6 +1,6 @@
 ///// Variables needed
 var all_the_cards = [];
-var card_count = 0;
+var card_count = Math.floor(Math.random() * 10000);
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -64,16 +64,19 @@ $(document).ready(function (){
   }
 });
 
-// Assigning the card count to the number of items in the local storage !!!! IMPORTANT
-card_count = localStorage.length
+// Assigning the card count to a random number, so it never gets overwritten   !!!! IMPORTANT
+card_count = Math.floor(Math.random() * 10000);
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //////////// Rendering cards //////////////
 function render_cards() {
-  // get input value, and increment the card count by 1
+  // get input value, randomize card count once again
   var card_value = document.getElementById("todo_input").value;
   all_the_cards.push(card_value);
-  card_count += 1;
+  card_count = Math.floor(Math.random() * 10000);
+  if (localStorage.getItem("card".concat(card_count))) {
+    card_count = Math.floor(Math.random() * 10000);
+  }
   // log the card name and value to the local storage
   var storage_name = "card".concat(card_count);
   localStorage.setItem(storage_name, all_the_cards[all_the_cards.length - 1]);
