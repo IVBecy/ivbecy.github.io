@@ -162,6 +162,7 @@ i{
   background-color: whitesmoke;
   border-radius: 5px;
   font-family: "Fredoka One";
+  font-size: 2rem;
 }
 
 .cards:hover{
@@ -177,11 +178,9 @@ i{
 /***************************** MEDIA QUERIES *************************************/
 @media screen and (max-width:600px){
   h1{
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
   h2{
     font-size: 2rem;
   }
-
-
 }

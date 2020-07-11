@@ -14,15 +14,20 @@ $(document).ready(function (){
     if (Object.keys(localStorage)[i] == "High Score"){
       continue
     }
-    // Remembering the bg color of the app, on every log on 
+    // Remembering the bg color of the app, on every log on (IF SET)
     else if (Object.keys(localStorage)[i] == "bg_color") {
       document.body.style.background = Object.values(localStorage)[i]
     }
-    // This prevents the code, from generating a card with the name of its color 
+    // Remembering the title of the app, on every log on  (IF SET)
+    else if (Object.keys(localStorage)[i] == "title") {
+      document.getElementById("title").innerHTML = ""
+      document.getElementById("title").innerHTML = Object.values(localStorage)[i]
+    }
+    // This prevents the code, from generating a card with the name of its color  (IF SET)
     else if (Object.keys(localStorage)[i] == "card_color") {
       continue
     }
-    // Show everything else in the local storage except the Flappy Bird High score and the settings
+    // Show everything else in the local storage except the Flappy Bird High score and the settings (IF SET)
     else{
       var card = document.createElement("div");
       card.setAttribute("id", Object.keys(localStorage)[i]);
@@ -43,7 +48,7 @@ $(document).ready(function (){
       card.appendChild(x)
     }
   }
-  // Coloring in the cards, if the user have set their own color
+  // Coloring in the cards, if the user have set their own color (IF SET)
   if (localStorage.getItem("card_color")) {
     var cards = document.getElementsByClassName("cards");
     var color = localStorage.getItem("card_color")
@@ -114,8 +119,29 @@ $(document).on('click', "#check", function (e) {
   localStorage.removeItem(e.target.parentNode.id)
 });
 
+////////////////////////////////////////////////////////////////////////////////////
+
+// If you click on the title, you can change its name
+$("#title").click(function(){
+  console.log("HELLO")
+    function TitleChange() {
+      return (
+        <div className="container" id="input_field" style={{ "display": "block" }}>
+          <input id="title_input" type="text" placeholder="Enter a new title" /><button onClick={render_title}>Save title</button>
+        </div>
+      )
+    }
+    ReactDOM.render(<TitleChange />, document.getElementById("titleChange"))
+});
+function render_title(){
+  document.getElementById("title").innerHTML = "";
+  document.getElementById("title").innerHTML = document.getElementById("title_input").value;
+  localStorage.setItem("title", document.getElementById("title_input").value)
+  document.getElementById("input_field").style.display = "none";
+}
+
 ///////////////////////////////////////////////////////////////
-// Settings menu render (REACT)
+//////////// Settings menu render (REACT)
 $("#settings").click(
   function render_settings(){
     $("#overlay").slideToggle(500);
@@ -182,7 +208,6 @@ function close_settings(){
 };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //////// Rendering the input field, whenever the "add a card" button is clicked (REACT) ///////////
 function render_input() {
   function Inputs() {
@@ -193,4 +218,4 @@ function render_input() {
     )
   }
   ReactDOM.render(<Inputs />, document.getElementById("boxes"))
-}
+};
