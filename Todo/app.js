@@ -32,25 +32,32 @@ $(document).ready(function (){
       card.setAttribute("id", Object.keys(localStorage)[i]);
       card.setAttribute("class", "cards");
       document.getElementById("todo_cards").appendChild(card);
-      card.textContent = Object.values(localStorage)[i];
+      var message = Object.values(localStorage)[i];
+      // Getting string length (ONLY display 30 chars, 37 + ellipses)
+      if (message.length > 30) {
+        card.textContent = message.substring(0, 27) + "...";
+        card.value = "short";
+      }
+      else { card.textContent = message; }
+
       //// Making buttons for "Done" state, and deleting
       // Done (check)
-      var check = document.createElement("i")
-      check.setAttribute("class", "fa fa-check")
-      check.setAttribute("id", "check")
+      var check = document.createElement("i");
+      check.setAttribute("class", "fa fa-check");
+      check.setAttribute("id", "check");
       // Delete (x)
-      var x = document.createElement("i")
-      x.setAttribute("class", "fa fa-times")
-      x.setAttribute("id", "x")
+      var x = document.createElement("i");
+      x.setAttribute("class", "fa fa-times");
+      x.setAttribute("id", "x");
       // appending
-      card.appendChild(check)
-      card.appendChild(x)
+      card.appendChild(check);
+      card.appendChild(x);
     }
   }
   // Coloring in the cards, if the user have set their own color (IF SET)
   if (localStorage.getItem("card_color")) {
     var cards = document.getElementsByClassName("cards");
-    var color = localStorage.getItem("card_color")
+    var color = localStorage.getItem("card_color");
     for (var i = 0; i < cards.length; i++) {
       cards[i].style.backgroundColor = color;
     }
@@ -65,37 +72,43 @@ card_count = localStorage.length
 function render_cards() {
   // get input value, and increment the card count by 1
   var card_value = document.getElementById("todo_input").value;
-  all_the_cards.push(card_value)
+  all_the_cards.push(card_value);
   card_count += 1;
   // log the card name and value to the local storage
-  var storage_name = "card".concat(card_count)
+  var storage_name = "card".concat(card_count);
   localStorage.setItem(storage_name, all_the_cards[all_the_cards.length - 1]);
   // making a single card, with the value of the input box
-  setTimeout(getting_value, 0)
+  setTimeout(getting_value, 0);
   function getting_value() {
-    var container = document.createElement("div")
-    container.setAttribute("id","cont")
-    document.getElementById("todo_cards").appendChild(container)
+    var container = document.createElement("div");
+    container.setAttribute("id","cont");
+    document.getElementById("todo_cards").appendChild(container);
     var card = document.createElement("div");
     card.setAttribute("id", "card".concat(card_count));
     card.setAttribute("class", "cards");
-    container.appendChild(card)
-    card.textContent = all_the_cards[all_the_cards.length - 1];
+    container.appendChild(card);
+    var message = all_the_cards[all_the_cards.length - 1];
+    // Getting string length (ONLY display 30 chars, 37 + ellipses)
+    if (message.length > 30) {
+      card.textContent = message.substring(0,27) + "...";
+      card.value = "short";
+    }
+    else { card.textContent = message;}
     if (localStorage.getItem("card_color")) {
       card.style.backgroundColor = localStorage.getItem("card_color");
     }
     //// Making buttons for "Done" state, and deleting
     // Done (check)
-    var check = document.createElement("i")
-    check.setAttribute("class", "fa fa-check")
-    check.setAttribute("id", "check")
+    var check = document.createElement("i");
+    check.setAttribute("class", "fa fa-check");
+    check.setAttribute("id", "check");
     // Delete (x)
-    var x = document.createElement("i")
-    x.setAttribute("class", "fa fa-times")
-    x.setAttribute("id", "x")
+    var x = document.createElement("i");
+    x.setAttribute("class", "fa fa-times");
+    x.setAttribute("id", "x");
     // appending
-    card.appendChild(check)
-    card.appendChild(x)
+    card.appendChild(check);
+    card.appendChild(x);
   }
   // Making the input filed disappear
   document.getElementById("input_field").style.display = "none";
@@ -114,9 +127,33 @@ $(document).on('click', "#x", function (e) {
 // If the page is refreshed, it will disappear, as it was no longer needed
 $(document).on('click', "#check", function (e) {
   $("#".concat(e.target.parentNode.id)).css({"text-decoration" : "line-through", "opacity":0.6});
-  document.getElementById(e.target.parentNode.id).value = "done"
-  localStorage.removeItem(e.target.parentNode.id)
+  localStorage.removeItem(e.target.parentNode.id);
 });
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// if we a click on a shortened card, all the message will get displayed
+$(document).on('click', ".cards", function (e) {
+  if (e.target.value == "short") {
+    $("#card_overlay").slideToggle(500);
+    document.getElementById("pre_overlay").style.display = "block";
+    document.getElementById("card_overlay").style.display = "block";
+    function Message(){
+      return(
+        <div className="container">
+          <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={close_message}></i></div>
+          <div id="message">{localStorage.getItem(e.target.id)}</div>
+        </div>
+      )
+    };
+    ReactDOM.render(<Message />, document.getElementById("card_overlay"));
+  };
+});
+
+// Function for closing the message pop-up
+function close_message(){
+  $("#card_overlay").slideToggle(500);
+  document.getElementById("pre_overlay").style.display = "none";
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // If you click on the title, you can change its name
@@ -132,7 +169,7 @@ $("#title").click(function(){
 });
 function render_title(){
   document.getElementById("title").innerHTML = document.getElementById("title_input").value;
-  localStorage.setItem("title", document.getElementById("title_input").value)
+  localStorage.setItem("title", document.getElementById("title_input").value);
   document.getElementById("input_field").style.display = "none";
 }
 
@@ -228,6 +265,8 @@ $("#info").click(
               <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. Note that
               it will disappear, next time you open the app, or refresh.</p></li>
               <li><p>You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p></li>
+              <li><p>If the message in a card, has more than 30 characters, the app will chop the message. The whole message can be looked
+                at, by clicking on the given card. (Shortened messages have an ellipses at the end)</p></li>
             </ul>
           </div>
         </div>

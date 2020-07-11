@@ -25,20 +25,24 @@
 <title>TODO list</title>
 </head>
 <body>
+  <!-- Overlays -->
   <div id="overlay"></div>
-  <!-- Settings and Info -->
-  <div><i class="fa fa-gear" id="settings" style="font-size: 30px;"></i><i class="fa fa-info" id="info" style="font-size: 30px;"></i></div>
-  <!-- Title section -->
-  <div class="container"><h1 id="title">TODO list</h1><br/></div>
-  <!-- Title Changing  -->
-  <div id="titleChange"></div>
-  <!-- Cards -->
-  <div id="todo_cards"></div>
-  <div id="boxes"></div>
-  <!-- Box -->
-  <div id="adding_box" onclick="render_input()">
-    <h3>Add a card</h3><i style="color:black;" class="fa fa-plus"></i>
+  <div id="card_overlay"></div>
+  <div id="pre_overlay"></div>
+  <div id="body">
+    <!-- Settings and Info -->
+    <div><i class="fa fa-gear" id="settings" style="font-size: 30px;"></i><i class="fa fa-info" id="info" style="font-size: 30px;"></i></div>
+    <!-- Title section -->
+    <div class="container"><h1 id="title">TODO list</h1><br/></div>
+    <!-- Title Changing  -->
+    <div id="titleChange"></div>
+    <!-- Cards -->
+    <div id="todo_cards"></div>
+    <div id="boxes"></div>
+    <!-- Box -->
+    <div id="adding_box" onclick="render_input()">
+      <h3>Add a card</h3><i style="color:black;" class="fa fa-plus"></i>
+    </div>
   </div>
-
 </body>
 </html>
