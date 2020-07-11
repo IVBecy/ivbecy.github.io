@@ -20,7 +20,6 @@ $(document).ready(function (){
     }
     // Remembering the title of the app, on every log on  (IF SET)
     else if (Object.keys(localStorage)[i] == "title") {
-      document.getElementById("title").innerHTML = ""
       document.getElementById("title").innerHTML = Object.values(localStorage)[i]
     }
     // This prevents the code, from generating a card with the name of its color  (IF SET)
@@ -120,10 +119,8 @@ $(document).on('click', "#check", function (e) {
 });
 
 ////////////////////////////////////////////////////////////////////////////////////
-
 // If you click on the title, you can change its name
 $("#title").click(function(){
-  console.log("HELLO")
     function TitleChange() {
       return (
         <div className="container" id="input_field" style={{ "display": "block" }}>
@@ -134,7 +131,6 @@ $("#title").click(function(){
     ReactDOM.render(<TitleChange />, document.getElementById("titleChange"))
 });
 function render_title(){
-  document.getElementById("title").innerHTML = "";
   document.getElementById("title").innerHTML = document.getElementById("title_input").value;
   localStorage.setItem("title", document.getElementById("title_input").value)
   document.getElementById("input_field").style.display = "none";
@@ -206,6 +202,44 @@ function close_settings(){
    //  Store the card color in local storage, so the users will not lose their settings
   localStorage.setItem("card_color", document.getElementById("card_color").value);
 };
+
+///////////////////////////////////////////////////////////////
+//////////// Info menu render (REACT)
+$("#info").click(
+  function render_info(){
+    $("#overlay").slideToggle(500);
+    document.getElementById("overlay").style.display = "block";
+    function Info(){
+      return(
+        <div>
+          <div className="container">
+            <i className="fa fa-times" id="cancel_settings" onClick={close_info} style={{ fontSize: "30px" }}></i>
+            <h1>Info</h1>
+            <hr/>
+            <h2 id="secondary_title">Title</h2>
+            <p>By clicking on the title, you can re-name it, as you wish.</p>
+            <hr/>
+            <h2 id="secondary_title">Settings</h2>
+            <p>By clicking the gear, on the main screen, you can edit the colour of the background, and the cards.</p>
+            <hr/>
+            <h2 id="secondary_title">Cards</h2>
+            <ul>
+              <li><p>You can click the "Add a card" button, to add new items to your list.</p></li>
+              <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. Note that
+              it will disappear, next time you open the app, or refresh.</p></li>
+              <li><p>You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p></li>
+            </ul>
+          </div>
+        </div>
+      )
+    }
+    ReactDOM.render(<Info/>, document.getElementById("overlay"))
+});
+
+// Closing the info panel
+function close_info(){
+  $("#overlay").slideToggle(500);
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////// Rendering the input field, whenever the "add a card" button is clicked (REACT) ///////////
