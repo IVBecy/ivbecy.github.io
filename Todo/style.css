@@ -117,6 +117,19 @@ i{
   color:#da4f0f;
 }
 
+#check{
+  background-color: #16df0f;
+  padding: 10px;
+  margin-left: 10px;
+}
+
+#x{
+  background-color: #f05108;
+  padding: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 /***************************** CLASS SELECTORS *************************************/
 /*Center aligned text*/
 .container{
@@ -145,7 +158,7 @@ i{
   text-align: left;
   margin-left: auto;
   margin-right: auto;
-  padding:20px;
+  padding-left:20px;
   background-color: whitesmoke;
   border-radius: 5px;
   font-family: "Fredoka One";

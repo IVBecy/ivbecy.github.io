@@ -29,6 +29,18 @@ $(document).ready(function (){
       card.setAttribute("class", "cards");
       document.getElementById("todo_cards").appendChild(card);
       card.textContent = Object.values(localStorage)[i];
+      //// Making buttons for "Done" state, and deleting
+      // Done (check)
+      var check = document.createElement("i")
+      check.setAttribute("class", "fa fa-check")
+      check.setAttribute("id", "check")
+      // Delete (x)
+      var x = document.createElement("i")
+      x.setAttribute("class", "fa fa-times")
+      x.setAttribute("id", "x")
+      // appending
+      card.appendChild(check)
+      card.appendChild(x)
     }
   }
   // Coloring in the cards, if the user have set their own color
@@ -57,14 +69,29 @@ function render_cards() {
   // making a single card, with the value of the input box
   setTimeout(getting_value, 0)
   function getting_value() {
+    var container = document.createElement("div")
+    container.setAttribute("id","cont")
+    document.getElementById("todo_cards").appendChild(container)
     var card = document.createElement("div");
     card.setAttribute("id", "card".concat(card_count));
     card.setAttribute("class", "cards");
-    document.getElementById("todo_cards").appendChild(card)
+    container.appendChild(card)
     card.textContent = all_the_cards[all_the_cards.length - 1];
     if (localStorage.getItem("card_color")) {
       card.style.backgroundColor = localStorage.getItem("card_color");
     }
+    //// Making buttons for "Done" state, and deleting
+    // Done (check)
+    var check = document.createElement("i")
+    check.setAttribute("class", "fa fa-check")
+    check.setAttribute("id", "check")
+    // Delete (x)
+    var x = document.createElement("i")
+    x.setAttribute("class", "fa fa-times")
+    x.setAttribute("id", "x")
+    // appending
+    card.appendChild(check)
+    card.appendChild(x)
   }
   // Making the input filed disappear
   document.getElementById("input_field").style.display = "none";
@@ -73,11 +100,18 @@ function render_cards() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// Operations ///////////////////////////////////////////////////////////////////
 
-// if we click on any card, it will disappear and remove its name and value from the local storage
-$(document).on('click', ".cards", function (e) {
-  //document.getElementById(e.target.id).style.backgroundColor = "red"
-  $("#".concat(e.target.id)).fadeOut(500);
-  localStorage.removeItem(e.target.id);
+// if we click on the x on any  card, the given card will disappear
+$(document).on('click', "#x", function (e) {
+  $("#".concat(e.target.parentNode.id)).fadeOut(500);
+  localStorage.removeItem(e.target.parentNode.id);
+});
+
+// if we click on the check on any  card, the given card loose its original opacity and will have a line through it, as it will be marked "done"
+// If the page is refreshed, it will disappear, as it was no longer needed
+$(document).on('click', "#check", function (e) {
+  $("#".concat(e.target.parentNode.id)).css({"text-decoration" : "line-through", "opacity":0.6});
+  document.getElementById(e.target.parentNode.id).value = "done"
+  localStorage.removeItem(e.target.parentNode.id)
 });
 
 ///////////////////////////////////////////////////////////////
