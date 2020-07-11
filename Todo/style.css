@@ -170,6 +170,7 @@ ul li {
   overflow-y: scroll;
   display: none;
   width: fit-content;
+  max-width: 80%;
   height: fit-content;
   padding:10px;
   top: 0;
