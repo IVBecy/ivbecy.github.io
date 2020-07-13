@@ -1,6 +1,7 @@
 ///// Variables needed
 var all_the_cards = [];
 var card_count = Math.floor(Math.random() * 10000);
+var done_cards = [];
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,6 +22,10 @@ $(document).ready(function (){
     // Remembering the title of the app, on every log on  (IF SET)
     else if (Object.keys(localStorage)[i] == "title") {
       document.getElementById("title").innerHTML = Object.values(localStorage)[i]
+    }
+    // Passing if there are any "Done" cards
+    else if (Object.keys(localStorage)[i] == "Done") {
+      continue
     }
     // This prevents the code, from generating a card with the name of its color  (IF SET)
     else if (Object.keys(localStorage)[i] == "card_color") {
@@ -62,6 +67,19 @@ $(document).ready(function (){
       cards[i].style.backgroundColor = color;
     }
   }
+  // Set cards as "Done", if they were set before, and delete them from local storage if they are deleted
+  if (localStorage.getItem("Done")) {
+    done_cards.push(localStorage.getItem("Done").split(","));
+    var individual_cards = String(done_cards).split(",");
+    done_cards = []
+    for (var i = 0; i < individual_cards.length; i++) {
+      if (document.getElementById(individual_cards[i])) {
+        $("#".concat(individual_cards[i])).css({ "text-decoration": "line-through", "opacity": 0.6 });
+        done_cards.push(individual_cards[i])
+        localStorage.setItem("Done", done_cards)
+     }
+    }
+  } 
 });
 
 // Assigning the card count to a random number, so it never gets overwritten   !!!! IMPORTANT
@@ -127,10 +145,12 @@ $(document).on('click', "#x", function (e) {
 });
 
 // if we click on the check on any  card, the given card loose its original opacity and will have a line through it, as it will be marked "done"
-// If the page is refreshed, it will disappear, as it was no longer needed
+// The cards will, still be displayed on the screen, until the user does not delete it.
 $(document).on('click', "#check", function (e) {
   $("#".concat(e.target.parentNode.id)).css({"text-decoration" : "line-through", "opacity":0.6});
-  localStorage.removeItem(e.target.parentNode.id);
+  document.getElementById(e.target.parentNode.id).value = "done";
+  done_cards.push(e.target.parentNode.id);
+  localStorage.setItem("Done", done_cards)
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////
