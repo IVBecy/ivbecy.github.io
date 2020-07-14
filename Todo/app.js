@@ -2,6 +2,7 @@
 var all_the_cards = [];
 var card_count = Math.floor(Math.random() * 10000);
 var done_cards = [];
+var key;
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -142,6 +143,7 @@ function render_cards() {
 $(document).on('click', "#x", function (e) {
   $("#".concat(e.target.parentNode.id)).fadeOut(500);
   localStorage.removeItem(e.target.parentNode.id);
+  key = "deleted"
 });
 
 // if we click on the check on any  card, the given card loose its original opacity and will have a line through it, as it will be marked "done"
@@ -151,25 +153,128 @@ $(document).on('click', "#check", function (e) {
   document.getElementById(e.target.parentNode.id).value = "done";
   done_cards.push(e.target.parentNode.id);
   localStorage.setItem("Done", done_cards)
+  return(key = "done")
 });
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // if we a click on a shortened card, all the message will get displayed
 $(document).on('click', ".cards", function (e) {
+  // If the cards are shortened
   if (e.target.value == "short") {
-    $("#card_overlay").slideToggle(500);
-    document.getElementById("pre_overlay").style.display = "block";
-    document.getElementById("card_overlay").style.display = "block";
-    function Message(){
-      return(
-        <div className="container">
-          <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={close_message}></i></div>
-          <div id="message">{localStorage.getItem(e.target.id)}</div>
-        </div>
-      )
-    };
-    ReactDOM.render(<Message />, document.getElementById("card_overlay"));
-  };
+    key = "short"
+    // If we click the "check" or the "x", the user will not be able to edit text only if the key differs
+    if (key == "done") { }
+    else if (key == "deleted") { }
+    else{
+      $("#card_overlay").slideToggle(500);
+      document.getElementById("pre_overlay").style.display = "block";
+      document.getElementById("card_overlay").style.display = "block";
+      // If a user clicks on a non short card, they can edit the content of the card
+      function MessageChange() {
+        return (
+          <div>
+            <div className="container">
+              <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={close_message}></i></div>
+              <h3>Your message</h3>
+              <div id="message">{localStorage.getItem(e.target.id)}</div>
+            </div>
+            <br/>
+            <hr/>
+            <div className="container" id="input_field" style={{ "display": "block" }}>
+              <h3>Edit the content of your message</h3>
+              <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
+            </div>
+          </div>
+        )
+      };
+      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"))
+      // Set innerhtml (value), so user can edit more freely
+      document.getElementById("message_input").value = localStorage.getItem(e.target.id);
+      function save_message() {
+        // If the new message is less than 30 chars. then remove the short value || if not keep it short
+        var message = document.getElementById("message_input").value
+        if (message.length > 30) {
+          document.getElementById(e.target.id).innerHTML = message.substring(0, 27) + "...";
+          document.getElementById(e.target.id).value = "short";
+        }
+        else {
+          document.getElementById(e.target.id).innerHTML = message;
+          document.getElementById(e.target.id).value = "";
+        }
+        var card = document.getElementById(e.target.id);
+        //// Making buttons for "Done" state, and deleting
+        // Done (check)
+        var check = document.createElement("i");
+        check.setAttribute("class", "fa fa-check");
+        check.setAttribute("id", "check");
+        // Delete (x)
+        var x = document.createElement("i");
+        x.setAttribute("class", "fa fa-times");
+        x.setAttribute("id", "x");
+        // appending
+        card.appendChild(check);
+        card.appendChild(x);
+        localStorage.setItem(e.target.id, document.getElementById("message_input").value)
+        // Closing
+        $("#card_overlay").slideToggle(500);
+        document.getElementById("pre_overlay").style.display = "none";
+      }
+    }
+  }
+  // If the cards are not shortened
+  else{
+    // If we click the "check" or the "x", the user will not be able to edit text only if the key differs
+    if (key == "done"){}
+    else if (key == "deleted") {}
+    else{
+      $("#card_overlay").slideToggle(500);
+      document.getElementById("pre_overlay").style.display = "block";
+      document.getElementById("card_overlay").style.display = "block";
+      // If a user clicks on a non short card, they can edit the content of the card
+      function MessageChange() {
+        return (
+          <div className="container" id="input_field" style={{ "display": "block" }}>
+            <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={save_message}></i></div>
+            <h3>Edit the content of your message</h3>
+            <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
+          </div>
+        )
+      };
+      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"))
+      // Set innerhtml (value), so user can edit more freely
+      document.getElementById("message_input").value = localStorage.getItem(e.target.id);
+      function save_message() {
+        console.log(document.getElementById("message_input").value);
+        // If the new message is less than 30 chars. then remove the short value || if not keep it short
+        var message = document.getElementById("message_input").value
+        if (message.length > 30) {
+          document.getElementById(e.target.id).innerHTML = message.substring(0, 27) + "...";
+          document.getElementById(e.target.id).value = "short";
+        }
+        else {
+          document.getElementById(e.target.id).innerHTML = message;
+          document.getElementById(e.target.id).value = "";
+        }
+        var card = document.getElementById(e.target.id);
+        //// Making buttons for "Done" state, and deleting
+        // Done (check)
+        var check = document.createElement("i");
+        check.setAttribute("class", "fa fa-check");
+        check.setAttribute("id", "check");
+        // Delete (x)
+        var x = document.createElement("i");
+        x.setAttribute("class", "fa fa-times");
+        x.setAttribute("id", "x");
+        // appending
+        card.appendChild(check);
+        card.appendChild(x);
+        localStorage.setItem(e.target.id, document.getElementById("message_input").value)
+        // Closing
+        $("#card_overlay").slideToggle(500);
+        document.getElementById("pre_overlay").style.display = "none";
+      }
+    }
+  }
 });
 
 // Function for closing the message pop-up
@@ -285,8 +390,9 @@ $("#info").click(
             <h2 id="secondary_title">Cards</h2>
             <ul>
               <li><p>You can click the "Add a card" button, to add new items to your list.</p></li>
-              <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. Note that
-              it will disappear, next time you open the app, or refresh.</p></li>
+              <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. By that the
+              card will become darker, and wil have a line through it, but it does not get deleted, until you wish to
+              do it so.</p></li>
               <li><p>You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p></li>
               <li><p>If the message in a card, has more than 30 characters, the app will chop the message. The whole message can be looked
                 at, by clicking on the given card. (Shortened messages have an ellipses at the end)</p></li>
