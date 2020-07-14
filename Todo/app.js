@@ -244,7 +244,6 @@ $(document).on('click', ".cards", function (e) {
       // Set innerhtml (value), so user can edit more freely
       document.getElementById("message_input").value = localStorage.getItem(e.target.id);
       function save_message() {
-        console.log(document.getElementById("message_input").value);
         // If the new message is less than 30 chars. then remove the short value || if not keep it short
         var message = document.getElementById("message_input").value
         if (message.length > 30) {
@@ -318,25 +317,31 @@ $("#settings").click(
             <h2 className="properties">Background colour:</h2>
             <select className="properties" id="bg_color">
               <option value="DeepSkyBlue" id="DeepSkyBlue">Deep Sky Blue (Default)</option>
+              <option value="teal" id="teal">Teal</option>
               <option value="blue" id="blue">Blue</option>
               <option value="red" id="red">Red</option>
               <option value="orange" id="orange">Orange</option>
               <option value="yellow" id="yellow">Yellow</option>
+              <option value="lime" id="lime">Lime</option>
               <option value="green" id="green">Green</option>
               <option value="purple" id="purple">Purple</option>
               <option value="pink" id="pink">Pink</option>
+              <option value="magenta" id="magenta">Magenta</option>
             </select>
             <h2 className="properties">Card colour:</h2>
             <select className="properties" id="card_color">
               <option value="whitesmoke" id="whitesmoke_c">Grey (Default)</option>
               <option value="cyan" id="cyan_c">Cyan</option>
+              <option value="teal" id="teal_c">Teal</option>
               <option value="blue" id="blue_c">Blue</option>
               <option value="red" id="red_c">Red</option>
               <option value="orange" id="orange_c">Orange</option>
               <option value="yellow" id="yellow_c">Yellow</option>
+              <option value="lime" id="lime_c">Lime</option>
               <option value="green" id="green_c">Green</option>
               <option value="purple" id="purple_c">Purple</option>
               <option value="pink" id="pink_c">Pink</option>
+              <option value="magenta" id="magenta_c">Magenta</option>
             </select>
           </div>
         </div>
