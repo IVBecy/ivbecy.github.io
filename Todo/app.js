@@ -39,7 +39,7 @@ $(document).ready(function (){
       card.setAttribute("class", "cards");
       document.getElementById("todo_cards").appendChild(card);
       var message = Object.values(localStorage)[i];
-      // Getting string length (ONLY display 30 chars, 37 + ellipses)
+      // Getting string length (ONLY display 30 chars, 27 + ellipses)
       if (message.length > 30) {
         card.textContent = message.substring(0, 27) + "...";
         card.value = "short";
@@ -76,8 +76,8 @@ $(document).ready(function (){
     for (var i = 0; i < individual_cards.length; i++) {
       if (document.getElementById(individual_cards[i])) {
         $("#".concat(individual_cards[i])).css({ "text-decoration": "line-through", "opacity": 0.6 });
-        done_cards.push(individual_cards[i])
-        localStorage.setItem("Done", done_cards)
+        done_cards.push(individual_cards[i]);
+        localStorage.setItem("Done", done_cards);
      }
     }
   } 
@@ -143,6 +143,7 @@ function render_cards() {
 $(document).on('click', "#x", function (e) {
   $("#".concat(e.target.parentNode.id)).fadeOut(500);
   localStorage.removeItem(e.target.parentNode.id);
+  // Set key for UI purposes
   key = "deleted"
 });
 
@@ -153,6 +154,7 @@ $(document).on('click', "#check", function (e) {
   document.getElementById(e.target.parentNode.id).value = "done";
   done_cards.push(e.target.parentNode.id);
   localStorage.setItem("Done", done_cards)
+  // Set key for UI purposes
   return(key = "done")
 });
 
@@ -214,7 +216,7 @@ $(document).on('click', ".cards", function (e) {
         // appending
         card.appendChild(check);
         card.appendChild(x);
-        localStorage.setItem(e.target.id, document.getElementById("message_input").value)
+        localStorage.setItem(e.target.id, document.getElementById("message_input").value);
         // Closing
         $("#card_overlay").slideToggle(500);
         document.getElementById("pre_overlay").style.display = "none";
@@ -240,12 +242,12 @@ $(document).on('click', ".cards", function (e) {
           </div>
         )
       };
-      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"))
+      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"));
       // Set innerhtml (value), so user can edit more freely
       document.getElementById("message_input").value = localStorage.getItem(e.target.id);
       function save_message() {
         // If the new message is less than 30 chars. then remove the short value || if not keep it short
-        var message = document.getElementById("message_input").value
+        var message = document.getElementById("message_input").value;
         if (message.length > 30) {
           document.getElementById(e.target.id).innerHTML = message.substring(0, 27) + "...";
           document.getElementById(e.target.id).value = "short";
@@ -292,7 +294,7 @@ $("#title").click(function(){
         </div>
       )
     }
-    ReactDOM.render(<TitleChange />, document.getElementById("titleChange"))
+    ReactDOM.render(<TitleChange />, document.getElementById("titleChange"));
 });
 function render_title(){
   document.getElementById("title").innerHTML = document.getElementById("title_input").value;
@@ -382,33 +384,31 @@ $("#info").click(
     function Info(){
       return(
         <div>
-          <div className="container">
+          <div className="container" id="info_menu">
             <i className="fa fa-times" id="cancel_settings" onClick={close_info} style={{ fontSize: "30px" }}></i>
             <h1>Info</h1>
             <hr/>
             <h2 id="secondary_title">Title</h2>
-            <p>By clicking on the title, you can re-name it, as you wish.</p>
+            <p id="info_brief">By clicking on the title, you can re-name it, as you wish.</p>
             <hr/>
             <h2 id="secondary_title">Settings</h2>
-            <p>By clicking the gear, on the main screen, you can edit the colour of the background, and the cards.</p>
+            <p id="info_brief">By clicking the gear, on the main screen, you can edit the colour of the background, and the cards.</p>
             <hr/>
             <h2 id="secondary_title">Cards</h2>
-            <ul>
-              <h3>Adding</h3>
-              <li><p>You can click the "Add a card" button, to add new items to your list.</p></li>
-              <br />
-              <h3>Done state and Deleting</h3>
-              <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. By that the
+            <h3>Adding</h3>
+            <p id="info_brief">You can click the "Add a card" button, to add new items to your list.</p>
+            <br />
+            <h3>Done state and Deleting</h3>
+            <p id="info_brief">You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. By that the
               card will become darker, and wil have a line through it, but it does not get deleted, until you wish to
-              do it so.</p></li>
-              <li><p>You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p></li>
-              <br />
-              <h3>Message</h3>
-              <li><p>If the message in a card, has more than 30 characters, the app will chop the message. The whole message can be looked
-                at, by clicking on the given card. (Shortened messages have an ellipses at the end)</p></li>
-              <li><p>You can edit a message, by clicking on the given card. Then edit the message then, click "Save message", and 
-                you are done.</p></li>
-            </ul>
+              do it so.</p>
+            <p id="info_brief">You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p>
+            <br />
+            <h3>Message</h3>
+            <p id="info_brief">If the message in a card, has more than 30 characters, the app will chop the message. The whole message can be looked
+                at, by clicking on the given card. (Shortened messages have an ellipses at the end)</p>
+            <p id="info_brief">You can edit a message, by clicking on the given card. Then edit the message then, click "Save message", and
+                you are done.</p>
           </div>
         </div>
       )

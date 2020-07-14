@@ -1,6 +1,7 @@
 /***************************** HTML ELEMENTS *************************************/
 body,html{
   height:100%;
+  width:100%;
 }
 
 body{
@@ -75,16 +76,6 @@ select{
 
 i{
   color: black;
-}
-
-ul li {
-  background-color: rgba(0,0,0,0.15);
-  margin: 5px;
-  border-radius: 15px;
-  text-align: center;
-  padding-left:5px;
-  padding-right:5px;
-  list-style-type: none;
 }
 
 /***************************** ID SELECTORS *************************************/
@@ -213,6 +204,7 @@ ul li {
 /*H2 on info*/
 #secondary_title{
   color: #010652;
+  text-decoration: underline;
 }
 
 /*text on card overlay*/
@@ -226,6 +218,21 @@ ul li {
 #head{
   background-color: rgba(0,0,0,0.2);
   margin-bottom:30px;
+}
+
+/*Ps at info*/
+#info_brief{
+  background-color: rgba(0,0,0,0.15);
+  margin: 20px;
+  border-radius: 15px;
+  text-align: center;
+  padding-left:5px;
+  padding-right:5px;
+  list-style-type: none;
+}
+
+#info_menu h3{
+  margin: 20px;
 }
 /***************************** CLASS SELECTORS *************************************/
 /*Center aligned text*/
