@@ -175,13 +175,13 @@ $(document).on('click', ".cards", function (e) {
           <div>
             <div className="container">
               <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={close_message}></i></div>
-              <h3>Your message</h3>
+              <h3 style={{ textDecoration: "underline" }}>Your message:</h3>
               <div id="message">{localStorage.getItem(e.target.id)}</div>
             </div>
             <br/>
             <hr/>
             <div className="container" id="input_field" style={{ "display": "block" }}>
-              <h3>Edit the content of your message</h3>
+              <h3 style={{textDecoration:"underline"}}>Edit the content of your message</h3>
               <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
             </div>
           </div>
@@ -235,7 +235,7 @@ $(document).on('click', ".cards", function (e) {
         return (
           <div className="container" id="input_field" style={{ "display": "block" }}>
             <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={save_message}></i></div>
-            <h3>Edit the content of your message</h3>
+            <h3 style={{ textDecoration: "underline" }}>Edit the content of your message</h3>
             <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
           </div>
         )
@@ -389,13 +389,20 @@ $("#info").click(
             <hr/>
             <h2 id="secondary_title">Cards</h2>
             <ul>
+              <h3>Adding</h3>
               <li><p>You can click the "Add a card" button, to add new items to your list.</p></li>
+              <br />
+              <h3>Done state and Deleting</h3>
               <li><p>You can mark a card as "Done" by clicking the <i className="fa fa-check"></i> icon. By that the
               card will become darker, and wil have a line through it, but it does not get deleted, until you wish to
               do it so.</p></li>
               <li><p>You can delete any card by clicking the <i className="fa fa-times"></i> icon. Note that this change is irreversible.</p></li>
+              <br />
+              <h3>Message</h3>
               <li><p>If the message in a card, has more than 30 characters, the app will chop the message. The whole message can be looked
                 at, by clicking on the given card. (Shortened messages have an ellipses at the end)</p></li>
+              <li><p>You can edit a message, by clicking on the given card. Then edit the message then, click "Save message", and 
+                you are done.</p></li>
             </ul>
           </div>
         </div>
