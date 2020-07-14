@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--  Metadata-->
   <meta charset="utf-8">
@@ -45,50 +46,61 @@
   </script>
   <title>Kristof Hracza</title>
 </head>
+
 <body>
   <!-- Navigation bar -->
   <div id="navigation_bar"></div>
-  <div class="para" id=""><h1 id="text_over_image">NERDS<br><p>by Kristof Hracza</p></h1></div>
+  <div class="para" id="">
+    <h1 id="text_over_image">NERDS<br>
+      <p>by Kristof Hracza</p>
+    </h1>
+  </div>
   <div class="container">
     <h1 id="big-text">Projects</h1>
-    <p>Click on / hover over the project cards, to reveal the story behind them.<br>(ON PHONE: Click on the card, then if you have read it,
+    <p>Click on / hover over the project cards, to reveal the story behind them.<br>(ON PHONE: Click on the card, then
+      if you have read it,
       click on the side of the screen to reset it.)</p>
-      <!-- Todo list -->
-      <div class="flip-card" id="todo">
-        <div class="flip-card-inner">
-          <div class="flip-card-front">
-            <h2>To-Do list</h2>
-            <img src="Pictures/todo.png" style="width:100%; margin-top: 5px" />
-            <p>Date:<br>21 June 2020</p>
-          </div>
-          <div class="flip-card-back">
-            <p>This time I wanted to do something, a bit more interactive and useful, with the help of Javascript.
-               I am using Trello board, for most of my projects, and for the website as well. Just to keep track of everything.
-               So because I wanted to write something harder than a website, but use JS as the main language, I have started to
-               make this todo app. It is not the best, specially not at the time when  I am writing this (21 June 2020), but
-               the fact that I like this, will help me to produce a better looking app. You can use the app, at the "Apps"
-               section of this site.
-            </p>
-          </div>
+    <!-- Todo list -->
+    <div class="flip-card" id="todo">
+      <div class="flip-card-inner" id="todo">
+        <div class="flip-card-front" id="todo">
+          <h2 id="todo">To-Do list</h2>
+          <img src="Pictures/todo.png" style="width:100%; margin-top: 5px" id="todo" />
+          <p id="todo">Date:<br>21 June 2020</p>
+        </div>
+        <div class="flip-card-back" id="todo">
+          <p>This time I wanted to do something, a bit more interactive and useful, with the help of Javascript.
+            I am using Trello board, for most of my projects, and for the website as well. Just to keep track of
+            everything.
+            So because I wanted to write something harder than a website, but use JS as the main language, I have
+            started to
+            make this todo app. It is not the best, specially not at the time when I am writing this (21 June 2020), but
+            the fact that I like this, will help me to produce a better looking app. You can use the app, at the "Apps"
+            section of this site.
+          </p>
         </div>
       </div>
+    </div>
     <!-- Hash cracker  -->
     <div class="flip-card" id="password_cracker">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Hash Cracker</h2>
-          <img src="Pictures/crack.png" style="width:100%; margin-top: 5px" />
+      <div class="flip-card-inner" id="password_cracker">
+        <div class="flip-card-front" id="password_cracker">
+          <h2 id="password_cracker">Hash Cracker</h2>
+          <img id="password_cracker" src="Pictures/crack.png" style="width:100%; margin-top: 5px" />
           <p>Date:<br>12 June 2020</p>
         </div>
-        <div class="flip-card-back">
-          <p>Since I have re-designed the whole website back in May 2020, I wanted to do something that was again related to
+        <div class="flip-card-back" id="password_cracker">
+          <p>Since I have re-designed the whole website back in May 2020, I wanted to do something that was again
+            related to
             python.
-            It is not hard, to figure out that I am really into hacking, and that I love making tools, that break already
+            It is not hard, to figure out that I am really into hacking, and that I love making tools, that break
+            already
             working stuff.
             In this case I wanted to build a Hash Cracker tool. The concept is, that you take a file full of hashes,
             then a
             password file, full of random words. Hash every word in the password file, then compare it to the hash file.
-            If there is any match, then the hash was successfully "broken". I know, it is not the most advanced stuff, that
+            If there is any match, then the hash was successfully "broken". I know, it is not the most advanced stuff,
+            that
             I could
             come up with, but it seemed like a great idea, and it only took about 4-5 hours.
           </p>
@@ -97,14 +109,14 @@
     </div>
     <!-- Old Website  -->
     <div class="flip-card" id="old_website">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
+      <div class="flip-card-inner" id="old_website">
+        <div class="flip-card-front" id="old_website">
           <h2>Old Website</h2>
-          <img src="Pictures/old_website.png" style="width:100%; margin-top: 5px" />
-          <p>Creation Date:<br> 2 February 2020</p><br />
-          <p>Retirement Date:<br> 2 June 2020</p>
+          <img id="old_website" src="Pictures/old_website.png" style="width:100%; margin-top: 5px" />
+          <p id="old_website">Creation Date:<br> 2 February 2020</p><br />
+          <p id="old_website">Retirement Date:<br> 2 June 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="old_website">
           <p> As of June 2 2020, I have completely re-designed my website. Before it had an "arcade" look.
             I was happy with it, but I felt like, giving the website a more "professional" look, would make it
             more appealing to someone, who would visit the website for the 1st time. So the old version was colorful,
@@ -116,13 +128,13 @@
     </div>
     <!-- Amazon Price Checker  -->
     <div class="flip-card" id="amazon">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Amazon Price Checker</h2>
-          <img src="Pictures/webscrape.png" style="width:70%; height:50%; margin-top: 5px" />
-          <p>Date:<br> 31 May 2020</p>
+      <div class="flip-card-inner" id="amazon">
+        <div class="flip-card-front" id="amazon">
+          <h2 id="amazon">Amazon Price Checker</h2>
+          <img id="amazon" src="Pictures/webscrape.png" style="width:70%; height:50%; margin-top: 5px" />
+          <p id="amazon">Date:<br> 31 May 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="amazon">
           <p> Since the Instagram attack, I wanted to use selenium, as I found it interesting.
             So, I've got an idea, I was sure that I wanted to make a GUI app.
             Then I realised that I could do something that checks the price of a product.
@@ -136,13 +148,13 @@
     </div>
     <!-- Space Invaders  -->
     <div class="flip-card" id="space">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Space Invaders</h2>
-          <img src="Pictures/space_invaders.png" style="width:70%; height:60%; margin-top: 5px" />
-          <p>Date:<br> 24 May 2020</p>
+      <div class="flip-card-inner" id="space">
+        <div class="flip-card-front" id="space">
+          <h2 id="space">Space Invaders</h2>
+          <img id="space"src="Pictures/space_invaders.png" style="width:70%; height:60%; margin-top: 5px" />
+          <p id="space">Date:<br> 24 May 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="space">
           <p> Back in 2019 I have made a Space Invaders "game", but it was a catastrophe.
             So now, that I have more experience in programming, I have remade it.
             I have used Python, and mostly the turtle module. The program itself was pretty easy to
@@ -155,13 +167,13 @@
     </div>
     <!-- Insta Bruter  -->
     <div class="flip-card" id="insta">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Instagram Attack</h2>
-          <img src="Pictures/insta.png" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 16 May 2020</p>
+      <div class="flip-card-inner" id="insta">
+        <div class="flip-card-front" id="insta">
+          <h2 id="insta">Instagram Attack</h2>
+          <img id="insta" src="Pictures/insta.png" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="insta">Date:<br> 16 May 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="insta">
           <p> After making Slow Loris, I felt like its the path I want to work more on.
             So I made an Instagram dictionary attack, which uses TOR.
             I implemented this in Python, using the selenium module for generating the webpage and handling the
@@ -173,13 +185,13 @@
     </div>
     <!-- Slow Loris  -->
     <div class="flip-card" id="slow_loris">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Slow Loris</h2>
-          <img src="Pictures/sl.png" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 2 May 2020</p>
+      <div class="flip-card-inner" id="slow_loris">
+        <div class="flip-card-front" id="slow_loris">
+          <h2 id="slow_loris">Slow Loris</h2>
+          <img id="slow_loris" src="Pictures/sl.png" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="slow_loris">Date:<br> 2 May 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="slow_loris">
           <p> Slow Loris is a DoS method, which anyone can use even with a low bandwidth.
             It is making numerous connections to a webserver, then sending data every 10 / 15 seconds,
             just when the webserver would close the connection, so that it would not close.
@@ -192,13 +204,13 @@
     </div>
     <!-- Flappy Bird  -->
     <div class="flip-card" id="flappy">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Flappy Bird</h2>
-          <img src="Pictures/flappy_prev.png" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 4 April 2020</p>
+      <div class="flip-card-inner" id="flappy">
+        <div class="flip-card-front" id="flappy">
+          <h2 id="flappy">Flappy Bird</h2>
+          <img id="flappy" src="Pictures/flappy_prev.png" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="flappy">Date:<br> 4 April 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="flappy">
           <p>I made this game both in Python and javascript, but I will only talk about the Javascript
             version, as I feel like the Python one, was a bit of a fail. I will probably remake it in the
             future, as I got much better since.
@@ -212,13 +224,13 @@
     </div>
     <!-- Password Manager  -->
     <div class="flip-card" id="pass">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Password Manager</h2>
-          <img src="Pictures/pass.png" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 25 February 2020</p>
+      <div class="flip-card-inner" id="pass">
+        <div class="flip-card-front" id="pass">
+          <h2 id="pass">Password Manager</h2>
+          <img id="pass" src="Pictures/pass.png" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="pass">Date:<br> 25 February 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="pass">
           <p> The inspiration to make this app came from one of my friends. He asked me if I use password managers.
             I said, no. But than something clicked.
             People pay for these services, so instead of paying for a password manager, why not make my own?!
@@ -231,13 +243,13 @@
     </div>
     <!-- Website  -->
     <div class="flip-card" id="website">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Website</h2>
-          <img src="Pictures/prev.png" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 2 February 2020</p>
+      <div class="flip-card-inner" id="website">
+        <div class="flip-card-front" id="website">
+          <h2 id="website">Website</h2>
+          <img id="website" src="Pictures/prev.png" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="website">Date:<br> 2 February 2020</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="website">
           <p>Obviously my biggest project is, this website.<br>
             I started making my website so that I will be able to write in HTML, CSS and JS.
             I also wanted a place where I would be able to, document my projects throughout my programming,
@@ -249,13 +261,13 @@
     </div>
     <!-- Snake  -->
     <div class="flip-card" id="snake">
-      <div class="flip-card-inner">
-        <div class="flip-card-front">
-          <h2>Snake</h2>
-          <img src="Pictures/snake.jpg" style="width:100%; height:40%; margin-top: 5px" />
-          <p>Date:<br> 16 September 2019</p>
+      <div class="flip-card-inner" id="snake">
+        <div class="flip-card-front" id="snake">
+          <h2 id="snake">Snake</h2>
+          <img id="snake" src="Pictures/snake.jpg" style="width:100%; height:40%; margin-top: 5px" />
+          <p id="snake">Date:<br> 16 September 2019</p>
         </div>
-        <div class="flip-card-back">
+        <div class="flip-card-back" id="snake">
           <p>Being a self described nerd, I was interested in programming, and I was desperate to make my own game
             This was my very first game, written in Python, by using the Turtle Module. Roughly it took 2 weeks
             to finish it. After that I knew all the basic syntaxes of Turtle and I was ready for a new challenge.</p>

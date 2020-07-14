@@ -91,172 +91,24 @@ else { document.getElementById(page).className = "active"}
 ////////////////////////////////////////////////////////////////////////////////
 ////////////////////  Fading cards on hover ////////////////////////////////////
 ////////////////////  PROJECTS SECTION      ////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
 
-            //////////////   Password cracker   //////////////
-if(document.getElementById('snake')){
-  document.getElementById('password_cracker').onmouseover = function() {password_cracker()};
-  document.getElementById('password_cracker').onmouseout = function() {notclick()};
-}
-
-function password_cracker(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-  cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('password_cracker').style.opacity = "1";
-}
-
-            //////////////   Old  website   //////////////
-if (document.getElementById('old_website')){
-  document.getElementById('old_website').onmouseover = function() {old_website()};
-  document.getElementById('old_website').onmouseout = function() {notclick()};
-}
-
-function old_website(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.3";
-  }
-  document.getElementById('old_website').style.opacity = "1";
-}
-
-            //////////////   Amazon   //////////////
-if(document.getElementById('amazon')){
-  document.getElementById('amazon').onmouseover = function() {amazon()};
-  document.getElementById('amazon').onmouseout = function() {notclick()};
-}
-
-function amazon(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('amazon').style.opacity = "1";
-}
-
-          //////////////   Space Invaders   //////////////
-if(document.getElementById('space')){
-  document.getElementById('space').onmouseover = function() {space()};
-  document.getElementById('space').onmouseout = function() {notclick()};
-}
-
-function space(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('space').style.opacity = "1";
-}
-
-
-          //////////////   Insta   //////////////
-if(document.getElementById('insta')){
-  document.getElementById('insta').onmouseover = function() {insta()};
-  document.getElementById('insta').onmouseout = function() {notclick()};
-}
-
-function insta(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('insta').style.opacity = "1";
-}
-
-          //////////////   Slow Loris   //////////////
-if(document.getElementById('slow_loris')){
-  document.getElementById('slow_loris').onmouseover = function() {slow_loris()};
-  document.getElementById('slow_loris').onmouseout = function() {notclick()};
-}
-
-function slow_loris(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('slow_loris').style.opacity = "1";
-}
-
-        //////////////   Flappy Bird  //////////////
-if(document.getElementById('flappy')){
-  document.getElementById('flappy').onmouseover = function() {flappy()};
-  document.getElementById('flappy').onmouseout = function() {notclick()};
-}
-
-function flappy(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('flappy').style.opacity = "1";
-}
-
-        //////////////   Password Manager  //////////////
-if(document.getElementById('pass')){
-  document.getElementById('pass').onmouseover = function() {pass()};
-  document.getElementById('pass').onmouseout = function() {notclick()};
-}
-
-function pass(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('pass').style.opacity = "1";
-}
-
-
-      //////////////   Website  //////////////
-if(document.getElementById('website')){
-  document.getElementById('website').onmouseover = function() {website()};
-  document.getElementById('website').onmouseout = function() {notclick()};
-}
-
-function website(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('website').style.opacity = "1";
-}
-
-
-        //////////////   Snake  //////////////
-if(document.getElementById('snake')){
-  document.getElementById('snake').onmouseover = function() {snake()};
-  document.getElementById('snake').onmouseout = function() {notclick()};
-}
-
-function snake(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "0.2";
-  }
-  document.getElementById('snake').style.opacity = "1";
-}
-
-      //////////////   Todo  //////////////
-if (document.getElementById('todo')) {
-  document.getElementById('todo').onmouseover = function () { todo() };
-  document.getElementById('todo').onmouseout = function () { notclick() };
-}
-
-function todo() {
+$(".flip-card").hover(function(e){
   var cards = document.getElementsByClassName('flip-card')
   for (var i = 0; i < cards.length; i++) {
-    cards[i].style.opacity = "0.2";
+    cards[i].style.opacity = 0.2;
+  };
+  // For catching errors 200IQ
+  if (document.getElementById(e.target.id)) {
+     document.getElementById(e.target.id).style.opacity = 1;
   }
-  document.getElementById('todo').style.opacity = "1";
-}
-
-////  Function called when we move the mouse out of the bounds of any box ////
-function notclick(){
-  var cards = document.getElementsByClassName('flip-card')
-  for(var i=0; i<cards.length; i++){
-    cards[i].style.opacity = "1";
-  }
-}
+  // For catching errors
+  else{}
+},function(e){
+    var cards = document.getElementsByClassName('flip-card')
+    for (var i = 0; i < cards.length; i++) {
+      cards[i].style.opacity = 1;
+    }
+});
 
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////   END OF PROJECTS   ////////////////////////////////////
