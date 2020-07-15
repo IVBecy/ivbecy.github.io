@@ -75,13 +75,14 @@ hr{
 
 /*Writing text over an image */
 #text_over_image{
-  position: absolute;
+  position: relative;
   color:white;
-  top:10%;
-  left: 40%;
   letter-spacing: 6px;
   font-size: 6rem;
   text-align: center;
+  padding-top:5%;
+  margin-right:auto ;
+  margin-left:auto;
 }
 
 /*ID for images to fit the screen*/
@@ -295,54 +296,13 @@ hr{
 /*End of navigation bar*/
 
 /***************Media Queries**********************/
-
-@media screen and (max-width: 1700px){
-  #text_over_image{
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-
-@media screen and (max-width: 1600px){
-  #text_over_image{
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-@media screen and (max-width: 1500px)
+@media screen and (max-width: 1700px)
 {
   #text_over_image{
     font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  p{
-    font-size: 1.8vw;
-  }
-
-  li{
-    font-size: 1.8vw;
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-}
-
-@media screen and (max-width: 1400px)
-{
-  #text_over_image{
-    font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:1%;
+    margin-right:auto ;
+    margin-left:auto;
   }
   p{
     font-size: 1.5vw;
@@ -363,25 +323,32 @@ hr{
 
 }
 
-@media screen and (max-width: 1300px)
+
+@media screen and (max-width: 1500px)
 {
   #text_over_image{
     font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:2%;
+    margin-right:auto ;
+    margin-left:auto;
   }
-}
-
-
-@media screen and (max-width: 1200px)
-{
-  #text_over_image{
-    font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  p{
+    font-size: 1.5vw;
   }
+
+  li{
+    font-size: 1.5vw;
+  }
+
+  .side-text{
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  #big-text{
+    font-size: 8vw;
+  }
+
 }
 
 
@@ -412,10 +379,10 @@ hr{
 
   #text_over_image{
     font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+    padding-top:5%;
+    margin-right:auto ;
+    margin-left:auto;
+  } 
 }
 
 @media screen and (max-width: 1024px)
@@ -444,9 +411,9 @@ hr{
 
   #text_over_image{
     font-size: 7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:5%;
+    margin-right:auto ;
+    margin-left:auto;
   }
 }
 
@@ -476,9 +443,9 @@ hr{
 
   #text_over_image{
     font-size: 7.7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:5%;
+    margin-right:auto ;
+    margin-left:auto;
   }
 }
 
@@ -508,9 +475,9 @@ hr{
 
   #text_over_image{
     font-size: 7.7vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:5%;
+    margin-right:auto ;
+    margin-left:auto;
   }
 }
 
@@ -540,9 +507,9 @@ hr{
 
   #text_over_image{
     font-size: 8vw;
-    top: 15%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-top:5%;
+    margin-right:auto ;
+    margin-left:auto;
   }
 }
 
