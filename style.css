@@ -25,6 +25,11 @@ h2{
   font-size:3rem;
 }
 
+h3{
+  font-family: "Squada One", sans-serif;
+  text-align: center;
+}
+
 p{
   font-size:1.1rem;
   text-align: center;
@@ -32,13 +37,16 @@ p{
   letter-spacing: 3px;
 }
 
-li{
+ul{
+   padding: 0;
+}
+
+ul li{
+  list-style-type: none;
   font-size:1.1rem;
   text-align: center;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 3px;
-  list-style-type:none;
-  margin-left: -30px;
 }
 
 footer {
@@ -52,7 +60,10 @@ i{
   padding: 15px;
 }
 
-
+hr{
+  border: 2px solid black;
+  border-radius: 10px;
+}
 /********************  ID Selectors  *****************************/
 
 /*Big section starters*/
@@ -84,6 +95,50 @@ i{
 #highlight_text{
   font-family: "Squada One", sans-serif;
   font-size:2rem;
+}
+
+
+/****** Experiences section *******/
+/*Every  xp itself (DIV)*/
+#sub_section{
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right:50px;
+}
+
+/*Ps in sub sections and xp*/
+#sub_section p{
+  background-color: rgba(0,0,0,0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding:10px;
+}
+
+/*lists in xp*/
+#sub_section li{
+  margin-bottom:10px;
+  background-color: rgba(0,0,0,0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding:10px;
+}
+
+/*H2 in xp*/
+#sub_heading{
+  border-radius: 15px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right:10px;
+  padding-left:10px;
+  margin-bottom:20px;
 }
 
 
@@ -494,7 +549,7 @@ i{
 @media screen and (max-width: 600px)
 {
   #big-text{
-    font-size: 10vw
+    font-size: 14vw
   }
 
   .side-text{
@@ -517,7 +572,7 @@ i{
   }
 
   h2{
-    font-size: 11vw;
+    font-size: 9vw;
   }
 
   p{
