@@ -14,8 +14,18 @@ function hamburger() {
   document.getElementById("icon").style.color = "white" 
   if (navbar.className === "topnav") {
     navbar.className += " responsive";
+    // Adding an "x" instead of the bars
+    var icon = document.getElementsByClassName("fa fa-bars")
+    for(var i = 0; i < icon.length; i++){
+      icon[i].className = "fa fa-times";
+    };
   } else {
     navbar.className = "topnav";
+    // Adding back the bars when the menu is closed
+    var icon = document.getElementsByClassName("fa fa-times")
+    for (var i = 0; i < icon.length; i++) {
+      icon[i].className = "fa fa-bars";
+    };
   }
 }
 
