@@ -191,7 +191,7 @@ hr{
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
 }
 
 .flip-card:hover .flip-card-inner {
@@ -220,8 +220,10 @@ hr{
   color: white;
   height: fit-content;
   transform: rotateY(180deg);
-  border-style: solid;
-  background-color: black;
+  background-color: var(--dark_grey);
+  border: 3px solid #077BFF;
+  padding:20px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
 }
 
 /*Parallax scrolling effect + background for starting page*/
