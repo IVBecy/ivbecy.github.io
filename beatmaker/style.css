@@ -1,0 +1,83 @@
+/********************************* HTML ELEMENTS  *************************************/
+:root{
+  --bg_color:#1f1e1e;
+}
+
+body,html{
+  height: 100%;
+  background-color: var(--bg_color);
+}
+
+h1,h2{
+  color:white;
+  font-family: "Francois One";
+}
+
+h1{
+  padding:20px;
+  margin-top:5%;
+  font-size: 4.5rem;
+}
+
+hr{
+  border: 30px solid white;
+  border-radius: 25px;
+  width:70%;
+  transition: 0.5s;
+  animation-name: hr;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes hr {
+  from {width:10px}
+  to {width: 70%;}
+}
+/*********************************  ID SELECTORS  *************************************/
+/********* BUTTONS ************/
+#button1{
+  background-color:#0DFFF0
+}
+
+#button2{
+  left:20%; 
+  background-color: #0DFF2D;
+}
+
+#button3{
+  left:40%; 
+  background-color: #0D3DFF;
+}
+
+#button4{
+  left:60%; 
+  background-color: #FF0D76;
+}
+
+#button5{
+  left:80%; 
+  background-color: #FFC70D;
+}
+/********* END OF BUTTONS *********/
+
+
+/********************************* CLASS SELECTORS  *************************************/
+/* center aligned container */
+.cont{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Class for all the buttons */
+.buttons{
+  display: inline-block;
+  color:white;
+  position: absolute;
+  bottom:0;
+  width:20%;
+  height:20%;
+}
+
+/********************************* MEDIA QUERIES  *************************************/
+
