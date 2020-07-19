@@ -23,6 +23,7 @@ h2{
   font-family: "Squada One", sans-serif;
   text-align: center;
   font-size:3rem;
+  transition: 0.5s;
 }
 
 h3{
@@ -181,15 +182,30 @@ hr{
 .xp_cards:hover{
   transform:scale(1.02);
   box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 8);
+  background-color: rgba(0, 0, 0, 1);
 }
 
 .xp_cards:hover i{
   color: #077BFF;
 }
 
+.xp_cards:hover li{
+  color: white;
+  background-color: var(--dark_grey);
+}
+
+.xp_cards:hover p{
+  color: white;
+  background-color: var(--dark_grey);
+}
+
 .xp_cards:hover hr{
   width:95%;
   border:2px solid #077BFF;
+}
+
+.xp_cards:hover h2{
+  color: #077BFF;
 }
 
 /* END OF  Experience Cards */
