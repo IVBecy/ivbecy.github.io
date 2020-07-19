@@ -6,6 +6,7 @@
   --dark_grey:#202020;
   --light_grey:#505050;
   --main_bg_color:#E0E0E0;
+  --light_blue:#077BFF;
 }
 
 body, html {
@@ -186,7 +187,7 @@ hr{
 }
 
 .xp_cards:hover i{
-  color: #077BFF;
+  color: var(--light_blue);
 }
 
 .xp_cards:hover li{
@@ -201,11 +202,11 @@ hr{
 
 .xp_cards:hover hr{
   width:95%;
-  border:2px solid #077BFF;
+  border:2px solid var(--light_blue);
 }
 
 .xp_cards:hover h2{
-  color: #077BFF;
+  color: var(--light_blue);
 }
 
 /* END OF  Experience Cards */
@@ -258,7 +259,7 @@ hr{
   height: fit-content;
   transform: rotateY(180deg);
   background-color: var(--dark_grey);
-  border: 3px solid #077BFF;
+  border: 3px solid var(--light_blue);
   padding:20px;
   font-weight: bold;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
