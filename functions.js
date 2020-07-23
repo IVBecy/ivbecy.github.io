@@ -4,29 +4,36 @@
 // Fading in the page, onload then the "NERDS" banner
 $("body").hide().fadeIn(900);
 $("#text_over_image").hide().delay(1000).fadeIn(1000);
-
 ////////////////////////////////////////////////////////////////////////////////
-
 //Navbar function
-function hamburger() {
-  var navbar = document.getElementById("topnav");
-  // Setting color for the hamburger icon
-  document.getElementById("icon").style.color = "white" 
-  if (navbar.className === "topnav") {
-    navbar.className += " responsive";
-    // Adding an "x" instead of the bars
-    var icon = document.getElementsByClassName("fa fa-bars")
-    for(var i = 0; i < icon.length; i++){
-      icon[i].className = "fa fa-times";
-    };
-  } else {
-    navbar.className = "topnav";
-    // Adding back the bars when the menu is closed
-    var icon = document.getElementsByClassName("fa fa-times")
-    for (var i = 0; i < icon.length; i++) {
-      icon[i].className = "fa fa-bars";
-    };
+// Getting count as a variable
+var count = 0;
+const hamburger = () => {
+  // Making both of the animations work
+  const toggling = () =>{
+    count++;
+    if (count % 2 == 0 ) {
+      document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
+      $("#navbar").toggle(500);
+    }else{
+      $("#navbar").toggle();
+      document.getElementById("navbar").style.animation = "toggle 0.5s ease";
+    }
   }
+  toggling()
+  // Changing the icons
+  var icon = document.getElementsByClassName("fa fa-bars");
+  for (var i = 0; i < icon.length; i++) {
+    icon[i].className = "fa fa-times";
+  };
+  setTimeout(function(){
+    if (document.getElementById("navbar").style.display == "none") {
+      var icon = document.getElementsByClassName("fa fa-times")
+      for (var i = 0; i < icon.length; i++) {
+        icon[i].className = "fa fa-bars";
+      };
+    }
+  }, 520)
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -76,14 +83,18 @@ ReactDOM.render(<Footer />, document.getElementById('footer'));
 // React Navigation Bar render
 function Navbar(){
   return(
-    <div className="topnav" id="topnav">
-      <a href="index.html" id="index.html"><b>Home</b></a>
-      <a href="about.html" id="about.html"><b>About me</b></a>
-      <a href="projects.html" id="projects.html"><b>Projects</b></a>
-      <a href="experience.html" id="experience.html"><b>Experience</b></a>
-      <a href="template.html" id="template.html"><b>Templates</b></a>
-      <a href="apps.html" id="apps.html"><b>Apps</b></a>
-      <a id="icon" className="icon" onClick={hamburger}><i className="fa fa-bars"></i></a>
+    <div>
+      <div>
+        <i id="navbar_icon"  onClick={hamburger} className="fa fa-bars"></i>
+      </div>
+      <div className="navbar" id="navbar">
+        <a href="index.html" id="index.html"><h2>Home</h2></a>
+        <a href="about.html" id="about.html"><h2>About me</h2></a>
+        <a href="projects.html" id="projects.html"><h2>Projects</h2></a>
+        <a href="experience.html" id="experience.html"><h2>Experience</h2></a>
+        <a href="template.html" id="template.html"><h2>Templates</h2></a>
+        <a href="apps.html" id="apps.html"><h2>Apps</h2></a>
+      </div>
     </div>
   )
 }

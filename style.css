@@ -14,6 +14,12 @@ body, html {
   background-color: var(--main_bg_color);
 }
 
+/*Hiding scrollbar*/
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
 h1{
   text-align: center;
   font-family: 'Kumar One', sans-serif;
@@ -87,7 +93,7 @@ hr{
   letter-spacing: 6px;
   font-size: 6rem;
   text-align: center;
-  padding-top:5%;
+  top:15%;
   margin-right:auto ;
   margin-left:auto;
 }
@@ -269,7 +275,7 @@ hr{
 .para {
   position: relative;
   background-image: url('Pictures/intro.jpg');
-  height: 70%;
+  height: 80%;
   display: block;
   background-attachment: fixed;
   background-position: center;
@@ -277,64 +283,94 @@ hr{
   background-size: cover;
 }
 
-/*Navigation Bar*/
-.topnav {
-  overflow: hidden;
+/****** Navigation Bar ********/
+.navbar{
+  z-index: 5;
   background-color: var(--dark_grey);
-}
-
-.topnav a {
-  float: left;
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-  transition: 0.5s;
-}
-
-.topnav .icon {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: none;
+  text-align: center;
+  animation: toggle 0.5s ease;
 }
 
-.topnav a:hover {
-  background-color: var(--light_grey);;
+/*When opening the navbar*/
+@keyframes toggle{
+  from{border-radius: 50%; width:50%;margin-left:25%;opacity: 0.5;}
+  to{border-radius: 0px; width:100%;margin-left:0%;opacity: 1;}
+}
+/*When closing the navbar*/
+@keyframes toggleout{
+  from{border-radius: 0; width:100%;margin-left:0%; display: block;opacity: 1;}
+  to{border-radius: 50%; width:50%;margin-left:25%;display: none;opacity: 0;}
 }
 
-.topnav a.active {
+/*All As in the navbar*/
+.navbar a{
+  text-align: center;
+  display: block;
+  border-radius: 10px;
+  color:white;
+  width:fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding:15px;
+  margin-bottom:10px;;
+  text-decoration: none;
+  transition: 0.5s;
+  user-select: none;
+}
+
+/*1st a in the navbar*/
+.navbar a:first-child{
+  margin-top:10%;
+}
+ /*When hovering on A*/
+.navbar a:hover{
+   color:var(--dark_grey);
+   background-color: whitesmoke;
+   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
+   animation: rotate 0.8s ease-in-out;
+   transform: scale(2);
+}
+ /*Rotate and scale animation*/
+@keyframes rotate{
+  from{transform:rotate(0deg) scale(1);box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);}
+  to{transform:rotate(360deg) scale(2);box-shadow: 0 10px 20px 0 rgba(0,0,0,0.7)}
+}
+
+ /*Rotate and scale animation (ICONS)*/
+@keyframes rotateIcons{
+  from{right:-10%;}
+  to{right:2%}
+}
+
+/*Set active status*/
+.navbar a.active{
   background-color: var(--light_grey);
 }
-
-/*Making a hamburger menu, when the pixels are <= 600px in width*/
-@media screen and (max-width: 600px) {
-  .topnav a:not(:first-child){
-    display:none;
-  }
-
-  .topnav a.icon {
-    float: right;
-    display: block;
-    background-color: var(--dark_grey);
-    border-bottom: 6px solid var(--dark_grey);
-    padding:0;
-  }
-
-  .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-
-  }
-  .topnav.responsive a {
-    position: relative;
-    float: none;
-    display: block;
-    text-align: left;
-    z-index: 2;
-  }
+/*Hamburger or x icon*/
+#navbar_icon{
+  color: white;
+  font-size: 30px;
+  position:absolute;
+  top:1%;
+  right:2%;
+  z-index: 6;
+  display: block;
 }
-/*End of navigation bar*/
+
+/*Hover on Icon*/
+#navbar_icon:hover{
+  color:var(--light_blue);
+}
+
+/****** END OF Navigation Bar ********/
 
 /***************Media Queries**********************/
 @media screen and (max-width: 1700px)
@@ -452,7 +488,7 @@ hr{
 
   #text_over_image{
     font-size: 7vw;
-    padding-top:5%;
+    top:0%;
     margin-right:auto ;
     margin-left:auto;
   }
@@ -484,7 +520,7 @@ hr{
 
   #text_over_image{
     font-size: 7.7vw;
-    padding-top:5%;
+    top:10%;
     margin-right:auto ;
     margin-left:auto;
   }
@@ -516,7 +552,7 @@ hr{
 
   #text_over_image{
     font-size: 7.7vw;
-    padding-top:5%;
+    top:12%;
     margin-right:auto ;
     margin-left:auto;
   }
@@ -566,7 +602,7 @@ hr{
   }
 
   #text_over_image{
-    top: 15%;
+    top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -595,5 +631,8 @@ hr{
   .para {
     background-attachment: scroll;
 
+  }
+  #navbar_icon{
+    font-size: 30px;
   }
 }
