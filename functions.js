@@ -21,11 +21,13 @@ const hamburger = () => {
     }
   }
   toggling()
-  // Changing the icons
-  var icon = document.getElementsByClassName("fa fa-bars");
-  for (var i = 0; i < icon.length; i++) {
-    icon[i].className = "fa fa-times";
-  };
+  if (document.getElementById("navbar").style.display == "block"){
+    // Changing the icons
+    var icon = document.getElementsByClassName("fa fa-bars");
+    for (var i = 0; i < icon.length; i++) {
+      icon[i].className = "fa fa-times";
+    };
+  }
   setTimeout(function(){
     if (document.getElementById("navbar").style.display == "none") {
       var icon = document.getElementsByClassName("fa fa-times")
