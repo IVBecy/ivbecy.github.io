@@ -15,20 +15,12 @@ const hamburger = () => {
     // Closing navbar
     if (count % 2 == 0 ) {
       document.body.style.overflow = "scroll";
-      var icon = document.getElementsByClassName("fa fa-times")
-      for (var i = 0; i < icon.length; i++) {
-        icon[i].className = "fa fa-bars";
-      };
       document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
       $("#navbar").toggle(500);
     }
      // opening navbar
     else{
       document.body.style.overflow = "hidden";
-      var icon = document.getElementsByClassName("fa fa-bars");
-      for (var i = 0; i < icon.length; i++) {
-        icon[i].className = "fa fa-times";
-      };
       $("#navbar").toggle();
       document.getElementById("navbar").style.animation = "toggle 0.5s ease";
     }
