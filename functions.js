@@ -12,30 +12,28 @@ const hamburger = () => {
   // Making both of the animations work
   const toggling = () =>{
     count++;
+    // Closing navbar
     if (count % 2 == 0 ) {
-      document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
-      $("#navbar").toggle(500);
-    }else{
-      $("#navbar").toggle();
-      document.getElementById("navbar").style.animation = "toggle 0.5s ease";
-    }
-  }
-  toggling()
-  if (document.getElementById("navbar").style.display == "block"){
-    // Changing the icons
-    var icon = document.getElementsByClassName("fa fa-bars");
-    for (var i = 0; i < icon.length; i++) {
-      icon[i].className = "fa fa-times";
-    };
-  }
-  setTimeout(function(){
-    if (document.getElementById("navbar").style.display == "none") {
+      document.body.style.overflow = "scroll";
       var icon = document.getElementsByClassName("fa fa-times")
       for (var i = 0; i < icon.length; i++) {
         icon[i].className = "fa fa-bars";
       };
+      document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
+      $("#navbar").toggle(500);
     }
-  }, 520)
+     // opening navbar
+    else{
+      document.body.style.overflow = "hidden";
+      var icon = document.getElementsByClassName("fa fa-bars");
+      for (var i = 0; i < icon.length; i++) {
+        icon[i].className = "fa fa-times";
+      };
+      $("#navbar").toggle();
+      document.getElementById("navbar").style.animation = "toggle 0.5s ease";
+    }
+  }
+  toggling() 
 }
 
 ////////////////////////////////////////////////////////////////////////////////
