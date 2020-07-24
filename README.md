@@ -16,7 +16,7 @@
 ## ***Apps***
 - 📆 Todo list
 - 🐤 Flappy Bird
--🎵 Beat maker
+- 🎵 Beat maker
 
 ## ***Templates***
 -  3 completed website templates
