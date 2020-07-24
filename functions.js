@@ -28,32 +28,6 @@ const hamburger = () => {
   toggling() 
 }
 
-////////////////////////////////////////////////////////////////////////////////
-
-// Media query for background size change, and number of brs
-function image_size(img) {
-  if (img.matches) {
-    var i = 0;
-    // Function for appending <br> elements between sections
-    for (i = 0; i < 4; i++) {
-      var br = document.createElement("BR");
-      document.getElementById("brs").appendChild(br);
-    }
-  } else {
-    var i = 0;
-    // Function for appending <br> elements between sections
-    for (i = 0; i < 9; i++) {
-      var br = document.createElement("BR");
-      document.getElementById("brs").appendChild(br);
-    }
-  }
-}
-var img = window.matchMedia("(max-width: 900px)")
-if (document.getElementById("brs")) {
-  image_size(img)
-  img.addListener(image_size)
-}
-
 
         ///////////////////////// REACT ////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
