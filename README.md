@@ -19,7 +19,8 @@
 -🎵 Beat maker
 
 ## ***Templates***
--  2 completed website templates
+-  3 completed website templates
+-  1 template with both back and front end
 -  1 Login and Signup form **(Back-end too [PHP, SQL])**
 
 # Preview
