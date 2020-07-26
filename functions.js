@@ -9,26 +9,25 @@ $("#text_over_image").hide().delay(1000).fadeIn(1000);
 // Getting count as a variable
 var count = 0;
 const hamburger = () => {
+  document.getElementById("navbar_icon").style.position = "absolute";
   // Making both of the animations work
   const toggling = () =>{
     count++;
     // Closing navbar
     if (count % 2 == 0 ) {
-      document.body.style.overflow = "scroll";
+      document.getElementById("navbar_icon").style.position = "absolute";
       document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
       $("#navbar").toggle(500);
     }
      // opening navbar
     else{
-      document.body.style.overflow = "hidden";
+      document.getElementById("navbar_icon").style.position = "fixed";
       $("#navbar").toggle();
       document.getElementById("navbar").style.animation = "toggle 0.5s ease";
     }
   }
   toggling() 
 }
-
-
         ///////////////////////// REACT ////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
 // React FOOTER render
@@ -45,7 +44,6 @@ function Footer(){
 ReactDOM.render(<Footer />, document.getElementById('footer'));
 
 /////////////////////////////////////////////////////////////////////////////////
-
 // React Navigation Bar render
 function Navbar(){
   return(
@@ -75,11 +73,7 @@ if (page === "") {
 // Any page
 else { document.getElementById(page).className = "active"}
 
-
-////////////////////////////////////////////////////////////////////////////////
-////////////////////  Fading cards on hover ////////////////////////////////////
-////////////////////  PROJECTS SECTION      ////////////////////////////////////
-
+////////////////////  Fading cards on hover (PROJECTS SECTION ) ////////////////////////////////////
 $(".flip-card").hover(function(e){
   var cards = document.getElementsByClassName('flip-card')
   for (var i = 0; i < cards.length; i++) {
@@ -97,7 +91,5 @@ $(".flip-card").hover(function(e){
       cards[i].style.opacity = 1;
     }
 });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-////////////////////////////////////////////////////////////////////////////////
-///////////////////////   END OF PROJECTS   ////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////
