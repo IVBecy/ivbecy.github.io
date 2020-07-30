@@ -345,23 +345,24 @@ hr{
 }
 /*Hamburger icon*/
 #navbar_icon{
-  color: white;
+  color: var(--light_blue);
   font-size: 30px;
-  position:absolute;
+  position:fixed;
   top:1%;
   right:2%;
   z-index: 6;
   display: block;
   box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 4);
-  border-radius: 10px;
+  border-radius: 30px;
+  background-color: black;
 }
 
 /*Hover on Icon*/
 #navbar_icon:hover{
   color:var(--light_blue);
   box-shadow: 0 5px 7px 2px rgba(0, 0, 0, 8);
-  border-radius: 10px;
   transform: scale(0.9);
+  color:cyan;
 }
 
 /****** END OF Navigation Bar ********/
