@@ -52,7 +52,7 @@ function Navbar(){
         <a href="index.html" id="index.html"><h2>Home</h2></a>
         <a href="about.html" id="about.html"><h2>About me</h2></a>
         <a href="projects.html" id="projects.html"><h2>Projects</h2></a>
-        <a href="experience.html" id="experience.html"><h2>Experience</h2></a>
+        <a href="experience.html" id="experience.html"><h2>Experiences</h2></a>
         <a href="template.html" id="template.html"><h2>Templates</h2></a>
         <a href="apps.html" id="apps.html"><h2>Apps</h2></a>
       </div>
