@@ -1,0 +1,451 @@
+
+
+/*All the canvases*/
+canvas {
+    /*background-image: url("bg.jpg");*/
+    z-index:0;
+    position: absolute;
+}
+
+/*Canvas for the game, (main screen)*/
+#canvas1 {
+    background-image: url("bg.jpg");
+    z-index:0;
+    position: absolute;
+}
+
+/*The Scores canvas*/
+#canvas2 {
+    background-image: url("score_board.png");
+    width: 300px;
+    height: 150px;
+    z-index:1;
+    font-size: 25px;
+    position: absolute;
+    left: 140px;
+    top:135px;
+    visibility: hidden;
+}
+
+#canvas_go{
+  background-image: url("gameover.png");
+  width: 550px;
+  height: 210px;
+  z-index:1;
+  position: absolute;
+  left: -5px;
+  top:-65px;
+  visibility: hidden;
+}
+
+
+
+/*Restart canvas*/
+#canvas3 {
+    background-image: url("restart_button.png");
+    width: 150px;
+    height: 90px;
+    z-index:1;
+    position: absolute;
+    left: 140px;
+    top:290px;
+    visibility: hidden;
+}
+
+#canvas3:hover {
+  background-color:#F71212;
+  transform: scale(1.2);
+}
+
+/*Start canvas*/
+#canvas4 {
+    background-image: url("start_button.png");
+    width: 150px;
+    height: 90px;
+    z-index:1;
+    position: absolute;
+    left: 200px;
+    top:215px;
+    visibility: hidden;
+}
+
+#canvas4:hover {
+  background-color:#F71213;
+  transform: scale(1.2);
+}
+
+/*Flappy Bird banner, at the beginning of the game*/
+#canvas5 {
+    background-image: url("start.png");
+    width: 600px;
+    height: 300px;
+    z-index:1;
+    position: absolute;
+    left: -20px;
+    top:-100px;
+
+}
+
+/*Rest of the screen, except the play screen*/
+body {
+  position: fixed;
+  background-color: #404040;
+}
+
+/*Suitability for phones (600px)*/
+@media screen and (max-width: 600px)
+{
+  canvas
+  {
+    width: 400px;
+    height: 650px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 60px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 10px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 80px;
+    top: 360px;
+    border: 3px solid black;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 110px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 20px;
+    top: 20px;
+  }
+}
+
+/*Suitability for phones (500px)*/
+@media screen and (max-width: 500px)
+{
+  canvas
+  {
+    width: 500px;
+    height: 590px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg_500.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 100px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 60px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 120px;
+    top: 360px;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 160px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 55px;
+    top: 20px;
+  }
+}
+
+/*Suitability for phones (440px)*/
+@media screen and (max-width: 440px)
+{
+  canvas
+  {
+    width: 400px;
+    height: 650px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 50px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 10px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 70px;
+    top: 360px;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 110px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: 5px;
+    top: 20px;
+  }
+}
+
+/*Suitability for phones (400px)*/
+@media screen and (max-width: 400px)
+{
+  canvas
+  {
+    width: 410px;
+    height: 670px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 30px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -10px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 80px;
+    top: 360px;
+    border: 3px solid black;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 110px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -5px;
+    top: 20px;
+  }
+}
+
+/*Suitability for phones (370px)*/
+@media screen and (max-width: 380px)
+{
+  canvas
+  {
+    width: 400px;
+    height: 650px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg_370.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 30px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -10px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 80px;
+    top: 360px;
+    border: 3px solid black;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 110px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -5px;
+    top: 20px;
+  }
+}
+
+/*Suitability for phones (320px)*/
+@media screen and (max-width: 320px)
+{
+  canvas
+  {
+    width: 320px;
+    height: 450px;
+  }
+
+  #canvas1{
+    background-image: url("phone_bg_370.png");
+  }
+
+  #canvas2
+  {
+    width: 300px;
+    height: 150px;
+    font: bold 15px Arial;
+    left: 7px;
+    top: 180px;
+  }
+
+  #canvas_go{
+    background-image: url("gameover_phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -30px;
+    top: 20px;
+  }
+
+  #canvas3
+  {
+    width: 150px;
+    height: 92px;
+    left: 80px;
+    top: 340px;
+    border: 3px solid black;
+  }
+
+  #canvas4
+  {
+    width: 150px;
+    height: 90px;
+    left: 80px;
+    top: 220px;
+    border: 3px solid black;
+  }
+
+  #canvas5
+  {
+    background-image: url("start-phone.png");
+    width: 400px;
+    height: 200px;
+    font:50px ;
+    left: -30px;
+    top: 20px;
+  }
+}
