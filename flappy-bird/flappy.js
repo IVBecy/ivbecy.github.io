@@ -34,11 +34,11 @@ function one(){
 
 // Game Start Function, this happends at the beginning of every game
 function startGame() {
-  player = new component(30, 30, "Flappy_Bird/flappy0.gif", 10, 100, "image");
-  bg = new component(600, 500, "Flappy_Bird/bg.jpg", 0, 0, "image");
-  bg2 = new component(600, 500, "Flappy_Bird/phone_bg.png", 0, 0, "image");
+  player = new component(30, 30, "flappy-bird/flappy0.gif", 10, 100, "image");
+  bg = new component(600, 500, "flappy-bird/bg.jpg", 0, 0, "image");
+  bg2 = new component(600, 500, "flappy-bird/phone_bg.png", 0, 0, "image");
   score = new component("40px", "Arial", "white", 270, 50, "text");
-  start = new component (30,30, "Flappy_Bird/start.png", 10, 100, "image")
+  start = new component (30,30, "flappy-bird/start.png", 10, 100, "image")
   pipes = [];
   s = 0;
   highscore = Number();
@@ -94,14 +94,14 @@ var  myGameArea = {
 document.addEventListener("touchend", endTouch);
 function endTouch(ev) {
   player.gravity = 0.2
-  player.image.src = "Flappy_Bird/f_down.gif";
+  player.image.src = "flappy-bird/f_down.gif";
 }
 
 // If we let go of the screen the player will fall as gravity acts upon it
 document.addEventListener("touchstart", startTouch);
 function startTouch(ev) {
   player.gravity = -0.2
-  player.image.src = "Flappy_Bird/f_tilt.gif";
+  player.image.src = "flappy-bird/f_tilt.gif";
 }
 
 //  Functions to keep the objects working
@@ -236,7 +236,7 @@ window.addEventListener("keyup", keyup, false);
 function keydown(e){
   if (e.keyCode == 32){
     player.gravity = -0.17
-    player.image.src = "Flappy_Bird/f_tilt.gif";
+    player.image.src = "flappy-bird/f_tilt.gif";
   }
 }
 
@@ -244,7 +244,7 @@ function keydown(e){
 function keyup(e){
   if (e.keyCode == 32){
     player.gravity = 0.25
-    player.image.src = "Flappy_Bird/f_down.gif";
+    player.image.src = "flappy-bird/f_down.gif";
   }
 }
 
@@ -330,8 +330,8 @@ function updateGameArea() {
       //Gap between pipes
       gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
       // New pipes generated
-      pipes.push(new component(h, height, "Flappy_Bird/p.png", x, 0,"image"));  // up
-      pipes.push(new component(h, x - height - gap, "Flappy_Bird/p.png", x, height + gap, "image")); //down
+      pipes.push(new component(h, height, "flappy-bird/p.png", x, 0,"image"));  // up
+      pipes.push(new component(h, x - height - gap, "flappy-bird/p.png", x, height + gap, "image")); //down
   }
     // Pipes are moving
     for (i = 0; i < pipes.length; i += 1) {
