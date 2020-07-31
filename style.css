@@ -274,7 +274,7 @@ hr{
 /*Parallax scrolling effect + background for starting page*/
 .para {
   position: relative;
-  background-image: url('Pictures/intro.jpg');
+  background-image: url('images/intro.jpg');
   height: 80%;
   display: block;
   background-attachment: fixed;
