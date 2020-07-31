@@ -24,4 +24,4 @@
 -  1 Login and Signup form **(Back-end too [PHP, SQL])**
 
 # Preview
-![website preview](https://kristofhracza.com/Pictures/prev.png)
+![website preview](https://kristofhracza.com/images/prev.png)
