@@ -191,6 +191,11 @@ i{
   background-color: #16df0f;
   padding: 10px;
   margin-left: 10px;
+  transition:1s;
+}
+
+#check:hover{
+  filter: brightness(70%);
 }
 
 /* X icon on cards*/
@@ -199,6 +204,11 @@ i{
   padding: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  transition: 1s;
+}
+
+#x:hover{
+  filter: brightness(70%);
 }
 
 /*H2 on info*/
@@ -268,6 +278,7 @@ i{
   border-radius: 5px;
   font-family: "Fredoka One";
   font-size: 2rem;
+  transition: 1s;
 }
 
 .cards:hover{
