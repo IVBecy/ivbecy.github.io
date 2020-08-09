@@ -138,6 +138,7 @@ hr{
   display:inline-block;
   transition: 0.5s;
   padding:10px;
+  border-radius: 15px;
 }
 
 .card:hover{
