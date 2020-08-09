@@ -30,7 +30,7 @@ h2{
   font-family: "Squada One", sans-serif;
   text-align: center;
   font-size:3rem;
-  transition: 0.5s;
+  transition: 0.2s;
 }
 
 h3{
@@ -44,6 +44,7 @@ p{
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 3px;
   font-weight: bold;
+  transition: 0.2s;
 }
 
 ul{
@@ -128,18 +129,38 @@ hr{
 
 /*Profile Cards*/
 .card {
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 1);
+  box-shadow: 0 15px 15px 2px rgba(0, 0, 0, 1);
   max-width: 300px;
   margin: 20px;
   text-align: center;
   font-family: arial;
   background-color: var(--main_bg_color);
   display:inline-block;
-  transition: transform .2s;
+  transition: 0.5s;
+  padding:10px;
 }
 
 .card:hover{
-  transform:scale(1.5);
+  transform:scale(1.2);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
+  color:var(--light_blue)
+}
+
+.card p{
+  margin: 15px;
+  margin-bottom: 0;
+  background-color: rgba(0,0,0,0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  font-weight: bold;
+  padding:10px;
+}
+
+.card:hover p{
+  background-color: var(--dark_grey);  
 }
 
 /* Experience Cards */

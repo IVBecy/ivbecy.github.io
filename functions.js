@@ -69,24 +69,5 @@ if (page === "") {
 }
 // Any page
 else { document.getElementById(page).className = "active"}
-
-////////////////////  Fading cards on hover (PROJECTS SECTION ) ////////////////////////////////////
-$(".flip-card").hover(function(e){
-  var cards = document.getElementsByClassName('flip-card')
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.opacity = 0.2;
-  };
-  // For catching errors 200IQ
-  if (document.getElementById(e.target.id)) {
-     document.getElementById(e.target.id).style.opacity = 1;
-  }
-  // For catching errors
-  else{}
-},function(e){
-    var cards = document.getElementsByClassName('flip-card')
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.opacity = 1;
-    }
-});
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
