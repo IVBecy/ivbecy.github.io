@@ -36,6 +36,7 @@ h2{
 h3{
   font-family: "Squada One", sans-serif;
   text-align: center;
+  letter-spacing: 1px;
 }
 
 p{
@@ -162,6 +163,32 @@ hr{
 
 .card:hover p{
   background-color: var(--dark_grey);  
+  color:white;
+}
+
+.card:hover i{
+  color: white;
+  background-color: var(--dark_grey);
+}
+
+.card i{
+  background-color: rgba(0,0,0,0.15);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding:10px;
+  transition: 0.5s;
+  margin:10px;
+}
+
+.card img{
+  border-radius: 10px;
+}
+
+.card h3{
+  margin-top:10px;
+  margin-bottom:0;
 }
 
 /* Experience Cards */
