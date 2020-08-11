@@ -142,13 +142,6 @@ hr{
   border-radius: 15px;
 }
 
-.card:hover{
-  transform:scale(1.1);
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
-  background-color: rgba(0, 0, 0, 1);
-  color:var(--light_blue)
-}
-
 .card p{
   margin: 15px;
   background-color: rgba(0,0,0,0.15);
@@ -158,16 +151,6 @@ hr{
   border-radius: 15px;
   font-weight: bold;
   padding:10px;
-}
-
-.card:hover p{
-  background-color: var(--dark_grey);  
-  color:white;
-}
-
-.card:hover i{
-  color: white;
-  background-color: var(--dark_grey);
 }
 
 .card i{
@@ -189,6 +172,28 @@ hr{
   margin-top:10px;
   margin-bottom:0;
 }
+
+.card:hover{
+  transform:scale(1.1);
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
+  color:var(--light_blue)
+}
+
+.card:hover p{
+  background-color: var(--dark_grey);  
+  color:white;
+}
+
+.card:hover i{
+  color: white;
+  background-color: var(--dark_grey);
+}
+
+.card:hover img{
+  border:2px solid white;
+}
+
 
 /* Experience Cards */
 .xp_cards {
