@@ -282,7 +282,7 @@ i{
 }
 
 .cards:hover{
-  background-color:#696969 ;
+  transform: scale(1.1);
 }
 /*for settings titles*/
 .properties{
