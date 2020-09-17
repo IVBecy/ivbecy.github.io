@@ -31,8 +31,9 @@ const hamburger = () => {
 function Footer(){
   return(
     <footer>
-        <a href="mailto:kristofhracza@gmail.com"><i className="fa fa-envelope" style={{fontSize:30}}></i></a>
+      <a href="mailto:kristofhracza@gmail.com"><i className="fa fa-envelope" style={{fontSize:30}}></i></a>
       <a href="https://github.com/IVBecy"><i className="fa fa-github" style={{ fontSize: 30 }} ></i></a>
+      <a href="https://www.reddit.com/user/IVBecy"><i class="fab fa-reddit" style={{ fontSize: 30 }}></i></a>
       <a href="https://www.youtube.com/channel/UCPdJpsymfMobXq6oncfvicA?view_as=subscriber"><i className="fa fa-youtube" style={{ fontSize: 30 }}></i></a>
       <p>© Kristof Hracza 2020 | All rights reserved</p>
     </footer>
