@@ -71,4 +71,170 @@ if (page === "") {
 // Any page
 else { document.getElementById(page).className = "active"}
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////// Making the projects card
+
+if (page == "projects.html"){
+  const languages = {
+    py:"fab fa-python",
+    html:"fab fa-html5",
+    js:"fab fa-js-square",
+    php:"fab fa-php",
+    css:"fab fa-css3",
+  }
+  
+  const projects = {
+    networkScan:{
+      title:"Network Scanner",
+      date:"16 September 2020",
+      lang:languages["py"],
+      image:"images/scanner.png",
+    },
+    reverseShell:{
+      title:"Reverse Shell",
+      date:"12 September",
+      lang:languages["py"],
+      image:"images/shell.png",
+    },
+    notepad:{
+      title:"Notepad",
+      date:"6 September 2020",
+      lang:languages["py"],
+      image:"images/notepad.png",
+    },
+    cardDesign:{
+      title:"Card Designs",
+      date:"24 August 2020",
+      lang:languages["css"],
+      image:"images/css_cards.png",
+    },
+    passManager:{
+      title:"Password Manager",
+      date:"20 August 2020",
+      lang:languages["php"],
+      image:"images/php_pass.png",
+    },
+    speech:{
+      title:"Speech recognition",
+      date:"12 August 2020",
+      lang:languages["js"],
+      image:"images/speech.png",
+    },
+    usernameLookup:{
+      title:"Spy.py",
+      date:"10 August 2020",
+      lang:languages["py"],
+      image:"images/uname.png",
+    },
+    template3:{
+      title:"Template (3)",
+      date:"24 July 2020",
+      lang:languages["php"],
+      image:"images/design_3.png",
+    },
+    beatMaker:{
+      title:"Beat Maker",
+      date:"19 July 2020",
+      lang:languages["html"],
+      image:"images/beat.png",
+    },
+    phpForms:{
+      title:"Forms",
+      date:"18 July 2020",
+      lang:languages["js"],
+      image:"images/php_form.png",
+    },
+    todo:{
+      title:"To-Do List",
+      date:"21 June 2020",
+      lang:languages["js"],
+      image:"images/todo.png",
+    },
+    template2:{
+      title:"Template (2)",
+      date:"19 June 2020",
+      lang:languages["html"],
+      image:"images/design_2.png",
+    },
+    hashCracker:{
+      title:"Hash Cracker",
+      date:"12 June 2020",
+      lang:languages["py"],
+      image:"images/crack.png",
+    },
+    template1:{
+      title:"Template (1)",
+      date:"8 June 2020",
+      lang:languages["html"],
+      image:"images/design_1.png",
+    },
+    oldWebsite:{
+      title:"Old Website",
+      date:"2 June 2020 (Retirement)",
+      lang:languages["html"],
+      image:"images/old_website.png",
+    },
+    spaceInvaders:{
+      title:"Space Invaders",
+      date:"24 May 2020",
+      lang:languages["py"],
+      image:"images/space_invaders.png",
+    },
+    flappyBird:{
+      title:"Flappy Bird",
+      date:"4 April 2020",
+      lang:languages["js"],
+      image:"images/flappy_prev.png",
+    },
+    website:{
+      title:"Website",
+      date:"2 February 2020 (Creation)",
+      lang:languages["html"],
+      image:"images/prev.png",
+    },
+    snake:{
+      title:"Snake",
+      date:"16 September 2019",
+      lang:languages["py"],
+      image:"images/snake.jpg",
+    }
+  }
+  var list = []
+  const renderProjectCards = () =>{
+    for (var i  in projects){
+      const RenderingProcess = () => {
+        list.push(
+        <div className="card" key={i}>
+          <h2>{projects[i].title}</h2>
+          <img id={i} src={projects[i].image} style={{width:"70%"}} />
+          <h3>Date:</h3>
+          <p>{projects[i].date}</p>
+          <h3>Main language:</h3>
+          <i className={projects[i].lang} style={{fontSize:"35px"}}></i>
+        </div>
+        )
+        return(
+          list
+        )
+      }
+      ReactDOM.render(<RenderingProcess />,document.getElementById("projects"))
+    }
+  }
+  renderProjectCards()
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
