@@ -472,12 +472,12 @@ hr{
 
 }
 
-@media screen and (max-width: 1500px)
+@media screen and (max-width: 1600px)
 {
   #text_over_image{
-    font-size: 7vw;
-    padding-top:1%;
-    margin-right:auto ;
+    font-size: 6vw;
+    padding-top:0.5%;
+    margin-right:auto;
     margin-left:auto;
   }
   p{
