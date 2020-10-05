@@ -84,7 +84,7 @@ if (page == "projects.html"){
   
   const projects = {
     networkScan:{
-      title:"Network Scanner",
+      title:"Scanner",
       date:"16 September 2020",
       lang:languages["py"],
       image:"images/scanner.png",
@@ -108,7 +108,7 @@ if (page == "projects.html"){
       image:"images/css_cards.png",
     },
     passManager:{
-      title:"Password Manager",
+      title:"Password manager",
       date:"20 August 2020",
       lang:languages["php"],
       image:"images/php_pass.png",
@@ -195,7 +195,7 @@ if (page == "projects.html"){
       title:"Snake",
       date:"16 September 2019",
       lang:languages["py"],
-      image:"images/snake.jpg",
+      image:"images/snake.png",
     }
   }
   var list = []
