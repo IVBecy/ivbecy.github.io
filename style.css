@@ -127,6 +127,27 @@ hr{
   text-align: left;
   padding-left: 150px;
 }
+/*Modal (pop-up) image*/
+.modal{
+  margin-left: auto;
+  margin-right: auto;
+  display:none;
+  width:100%;
+  height:100%;
+  background-color:rgba(0,0,0,0.9)
+}
+
+.modal i{
+  color:white;
+}
+
+.modal img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:3%;
+  width:70%
+}
 
 /*Profile Cards*/
 .card {
@@ -678,4 +699,9 @@ hr{
   .para {
     background-attachment: scroll;
   }
+
+  
+.modal img{
+  width:100%
+}
 }

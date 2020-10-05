@@ -203,38 +203,41 @@ if (page == "projects.html"){
     for (var i  in projects){
       const RenderingProcess = () => {
         list.push(
-        <div className="card" key={i}>
+        <div className="card" key={i} id={i}>
           <h2>{projects[i].title}</h2>
-          <img id={i} src={projects[i].image} style={{width:"70%"}} />
+          <img id={"img".concat(i)} src={projects[i].image} style={{width:"70%"}} />
           <h3>Date:</h3>
           <p>{projects[i].date}</p>
           <h3>Main language:</h3>
           <i className={projects[i].lang} style={{fontSize:"35px"}}></i>
         </div>
         )
-        return(
-          list
-        )
+        return(list)
       }
       ReactDOM.render(<RenderingProcess />,document.getElementById("projects"))
     }
   }
   renderProjectCards()
+
+  // Image pop-up (modal)
+  var imageDict = {}
+  for(var index in list){
+    var imageSource  = document.getElementById("img".concat(list[index].key)).src
+    imageDict["img".concat(list[index].key)] = imageSource
+  }
+  $("img").click((e) => {
+    document.getElementsByClassName("modal")[0].style.display = "block";
+    const Renderimage = () =>{
+      return(
+        <div className="container">
+          <i className="fas fa-times-circle" style={{fontSize:"35px"}} onClick={CloseModal}></i>
+          <img src={e.target.src}></img>
+        </div>
+      )
+    }
+    ReactDOM.render(<Renderimage/>, document.getElementsByClassName("modal")[0])
+  })
+  const CloseModal = () => {
+    document.getElementsByClassName("modal")[0].style.display = "none";
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
