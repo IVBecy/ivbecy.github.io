@@ -373,6 +373,10 @@ hr{
   animation: toggle 0.5s ease;
 }
 
+.navbar h2{
+  font-size:2rem;
+}
+
 /*When opening the navbar*/
 @keyframes toggle{
   from{border-radius: 50%; width:50%;margin-left:25%;opacity: 0.5;}
@@ -468,21 +472,20 @@ hr{
 
 }
 
-
 @media screen and (max-width: 1500px)
 {
   #text_over_image{
     font-size: 7vw;
-    padding-top:2%;
+    padding-top:1%;
     margin-right:auto ;
     margin-left:auto;
   }
   p{
-    font-size: 1.5vw;
+    font-size: 1.2vw;
   }
 
   li{
-    font-size: 1.5vw;
+    font-size: 1.1vw;
   }
 
   .side-text{
