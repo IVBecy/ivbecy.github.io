@@ -125,6 +125,7 @@ $(document).on('click', "#x", (e) => {
   localStorage.setItem("cards", JSON.stringify(dict));
   key = "deleted";
   setTimeout(() => {key = "None"},500);
+  location.reload()
 });
 
 // Stage a card as "Done" if the check icon id clickec
