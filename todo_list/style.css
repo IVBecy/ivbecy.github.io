@@ -43,7 +43,7 @@ hr{
 
 input{
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid rgb(0, 0, 0);
   border-radius: 4px;
   box-sizing: border-box;
   margin-top: 20px;
@@ -51,16 +51,18 @@ input{
   resize: vertical;
   font-family: "Barlow Semi Condensed";
   background-color: #f8f8f8;
+  transition:0.5s;
 }
 
 button{
-  background-color: #f1f1f1;
+  background-color: #c0c0c0;
   border-radius: 5px;
   width: fit-content;
   height:fit-content;
   padding:5px;
   margin:20px;
   font-family: "Barlow Semi Condensed";
+  transition:0.5s;
 }
 
 button:hover{

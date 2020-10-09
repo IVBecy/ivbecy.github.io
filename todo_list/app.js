@@ -1,293 +1,197 @@
-///// Variables needed
-var all_the_cards = [];
+// Variables 
+var key = "None";
+var textToShow;
+var ToBeRendered = [];
+var onLoadRender = [];
+var dictFromStorage = {};
+var settings = {};
 var card_count = Math.floor(Math.random() * 10000);
-var done_cards = [];
-var key;
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//////////// Reading from local storage and making the cards ///////////////////
-$(document).ready(function (){
-  // Declaring the bg color of the body element, so that the user can change it, with the help of JS
-  document.body.style.backgroundColor = "DeepSkyBlue";
-  //// Displaying info from the local storage into card form
-  for (var i = 0; i < localStorage.length; i++) {
-    // Hiding the flappy bird score so it does not get deleted 
-    if (Object.keys(localStorage)[i] == "High Score"){
-      continue
-    }
-    // Remembering the bg color of the app, on every log on (IF SET)
-    else if (Object.keys(localStorage)[i] == "bg_color") {
-      document.body.style.background = Object.values(localStorage)[i]
-    }
-    // Remembering the title of the app, on every log on  (IF SET)
-    else if (Object.keys(localStorage)[i] == "title") {
-      document.getElementById("title").innerHTML = Object.values(localStorage)[i]
-    }
-    // Passing if there are any "Done" cards
-    else if (Object.keys(localStorage)[i] == "Done") {
-      continue
-    }
-    // This prevents the code, from generating a card with the name of its color  (IF SET)
-    else if (Object.keys(localStorage)[i] == "card_color") {
-      continue
-    }
-    // Show everything else in the local storage except the Flappy Bird High score and the settings (IF SET)
-    else{
-      var card = document.createElement("div");
-      card.setAttribute("id", Object.keys(localStorage)[i]);
-      card.setAttribute("class", "cards");
-      document.getElementById("todo_cards").appendChild(card);
-      var message = Object.values(localStorage)[i];
-      // Getting string length (ONLY display 30 chars, 27 + ellipses)
-      if (message.length > 30) {
-        card.textContent = message.substring(0, 27) + "...";
-        card.value = "short";
-      }
-      else { card.textContent = message; }
-
-      //// Making buttons for "Done" state, and deleting
-      // Done (check)
-      var check = document.createElement("i");
-      check.setAttribute("class", "fa fa-check");
-      check.setAttribute("id", "check");
-      // Delete (x)
-      var x = document.createElement("i");
-      x.setAttribute("class", "fa fa-times");
-      x.setAttribute("id", "x");
-      // appending
-      card.appendChild(check);
-      card.appendChild(x);
-    }
+// Method for shortening messages later on
+const shorten = (text,dict) => {
+  dict.text = text;
+  dict.short_text = text.substring(0,26) + "...";
+  if (text.length > 30) {
+    textToShow = dict.short_text.substring(0,26) + "...";
+    dict.short = "yes";
   }
-  // Coloring in the cards, if the user have set their own color (IF SET)
-  if (localStorage.getItem("card_color")) {
-    var cards = document.getElementsByClassName("cards");
-    var color = localStorage.getItem("card_color");
-    for (var i = 0; i < cards.length; i++) {
-      cards[i].style.backgroundColor = color;
-    }
+  else{
+    textToShow = dict.text;
   }
-  // Set cards as "Done", if they were set before, and delete them from local storage if they are deleted
-  if (localStorage.getItem("Done")) {
-    done_cards.push(localStorage.getItem("Done").split(","));
-    var individual_cards = String(done_cards).split(",");
-    done_cards = []
-    for (var i = 0; i < individual_cards.length; i++) {
-      if (document.getElementById(individual_cards[i])) {
-        $("#".concat(individual_cards[i])).css({ "text-decoration": "line-through", "opacity": 0.6 });
-        done_cards.push(individual_cards[i]);
-        localStorage.setItem("Done", done_cards);
-     }
-    }
-  } 
-});
-
-// Assigning the card count to a random number, so it never gets overwritten   !!!! IMPORTANT
-card_count = Math.floor(Math.random() * 10000);
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//////////// Rendering cards //////////////
-function render_cards() {
-  // get input value, randomize card count once again
-  var card_value = document.getElementById("todo_input").value;
-  all_the_cards.push(card_value);
-  card_count = Math.floor(Math.random() * 10000);
-  if (localStorage.getItem("card".concat(card_count))) {
-    card_count = Math.floor(Math.random() * 10000);
-  }
-  // log the card name and value to the local storage
-  var storage_name = "card".concat(card_count);
-  localStorage.setItem(storage_name, all_the_cards[all_the_cards.length - 1]);
-  // making a single card, with the value of the input box
-  setTimeout(getting_value, 0);
-  function getting_value() {
-    var container = document.createElement("div");
-    container.setAttribute("id","cont");
-    document.getElementById("todo_cards").appendChild(container);
-    var card = document.createElement("div");
-    card.setAttribute("id", "card".concat(card_count));
-    card.setAttribute("class", "cards");
-    container.appendChild(card);
-    var message = all_the_cards[all_the_cards.length - 1];
-    // Getting string length (ONLY display 30 chars, 37 + ellipses)
-    if (message.length > 30) {
-      card.textContent = message.substring(0,27) + "...";
-      card.value = "short";
-    }
-    else { card.textContent = message;}
-    if (localStorage.getItem("card_color")) {
-      card.style.backgroundColor = localStorage.getItem("card_color");
-    }
-    //// Making buttons for "Done" state, and deleting
-    // Done (check)
-    var check = document.createElement("i");
-    check.setAttribute("class", "fa fa-check");
-    check.setAttribute("id", "check");
-    // Delete (x)
-    var x = document.createElement("i");
-    x.setAttribute("class", "fa fa-times");
-    x.setAttribute("id", "x");
-    // appending
-    card.appendChild(check);
-    card.appendChild(x);
-  }
-  // Making the input filed disappear
-  document.getElementById("input_field").style.display = "none";
+  return textToShow
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////// Operations ///////////////////////////////////////////////////////////////////
+// Getting settings and cards (ONLOAD)
+$(document).ready(() =>  {
+  if (localStorage.getItem("cards")){
+    // Render the cards
+    const RENDER_ONLOAD = () =>{
+      var dict = JSON.parse(localStorage.getItem("cards"));
+      for (var index in dict){
+        //shortening
+        shorten(dict[index].text, dict[index])
+        //appending to the list
+        onLoadRender.push(
+          <div className="cont" key={index}>
+            <div id={index} className="cards">
+              {textToShow}
+              <i className="fa fa-check" id="check" aria-hidden="true"></i>
+              <i className="fa fa-times" id="x" aria-hidden="true"></i>
+            </div>
+          </div>
+        ) 
+      }
+      //rendering
+      return(onLoadRender)
+    }
+    ReactDOM.render(<RENDER_ONLOAD/>, document.getElementById("todo_cards_onload"));
+  }
+  // If card has been marked as "Done", set it back
+  var dict = JSON.parse(localStorage.getItem("cards"));
+  for (var i in dict){
+    if (dict[i].done == "yes"){
+      $("#".concat(i)).css({"text-decoration" : "line-through", "opacity":0.6});
+    }
+  }
+  //Apply settings
+  if (localStorage.getItem("settings")) {
+    var set = JSON.parse(localStorage.getItem("settings"))
+    for (var index in set){
+      if (index == "bg_color"){
+        document.body.style.backgroundColor = set[index]
+      }
+      else if (index == "card_color"){
+        var cards = document.getElementsByClassName("cards")
+        for (var i = 0; i < cards.length; i++){
+          cards[i].style.backgroundColor = set[index]
+        }
+      }
+      else if (index == "title"){
+        document.getElementById("title").innerHTML = set[index]
+      }
+    }
+  }
+});
 
-// if we click on the x on any  card, the given card will disappear
-$(document).on('click', "#x", function (e) {
+// Render cards, when clicking on "Add a card" button
+const render_cards = () => {
+  // get input value, randomize card count, and assign to local storage
+  var card_value = document.getElementById("todo_input").value;
+  var storage_name = "card".concat(card_count);
+  card_count = Math.floor(Math.random() * 10000);
+  var props = {
+    "name":storage_name,
+    "text":card_value,
+    "short_text":card_value.substring(0,26) + "...",
+    "short":"no",
+    "done":"no",
+  };
+  //shortening
+  shorten(card_value, props)
+  //update cards dictionary and  set to local storage
+  if (localStorage.getItem("cards")) {}
+  else{localStorage.setItem("cards", JSON.stringify(dictFromStorage))}
+  dictFromStorage = JSON.parse(localStorage.getItem("cards"));
+  dictFromStorage[storage_name] = props;
+  localStorage.setItem("cards",JSON.stringify(dictFromStorage));
+  setTimeout(RENDER, 0);
+  const RENDER = () =>{
+    ToBeRendered.push(
+      <div className="cont" key={props.name}>
+        <div id={props.name} className="cards">
+          {textToShow}
+          <i className="fa fa-check" id="check" aria-hidden="true"></i>
+          <i className="fa fa-times" id="x" aria-hidden="true"></i>
+        </div>
+      </div>
+    )
+    return(ToBeRendered)
+  }
+  ReactDOM.render(<RENDER/>, document.getElementById("todo_cards_render"));
+  // Making the input field disappear
+  document.getElementById("input_field").style.display = "none";
+  //set color for new card
+  var set = JSON.parse(localStorage.getItem("settings"))
+  if (set["card_color"]){
+    document.getElementById(props.name).style.backgroundColor = set["card_color"];
+  }
+}
+
+// Delete a card, if the "X" is clicked
+$(document).on('click', "#x", (e) => {
+  var dict = JSON.parse(localStorage.getItem("cards"))
   $("#".concat(e.target.parentNode.id)).fadeOut(500);
-  localStorage.removeItem(e.target.parentNode.id);
-  // Set key for UI purposes
-  key = "deleted"
+  delete dict[e.target.parentNode.id];
+  localStorage.setItem("cards", JSON.stringify(dict));
+  key = "deleted";
+  setTimeout(() => {key = "None"},500);
 });
 
-// if we click on the check on any  card, the given card loose its original opacity and will have a line through it, as it will be marked "done"
-// The cards will, still be displayed on the screen, until the user does not delete it.
-$(document).on('click', "#check", function (e) {
+// Stage a card as "Done" if the check icon id clickec
+$(document).on('click', "#check", (e) => {
+  var dict = JSON.parse(localStorage.getItem("cards"));
   $("#".concat(e.target.parentNode.id)).css({"text-decoration" : "line-through", "opacity":0.6});
-  document.getElementById(e.target.parentNode.id).value = "done";
-  done_cards.push(e.target.parentNode.id);
-  localStorage.setItem("Done", done_cards)
-  // Set key for UI purposes
-  return(key = "done")
+  dict[e.target.parentNode.id].done = "yes";
+  localStorage.setItem("cards", JSON.stringify(dict));
+  key = "done";
+  setTimeout(() => {key = "None"},500);
 });
 
-//////////////////////////////////////////////////////////////////////////////////////////////
-// if we a click on a shortened card, all the message will get displayed
-$(document).on('click', ".cards", function (e) {
-  // If the cards are shortened
-  if (e.target.value == "short") {
-    key = "short"
-    // If we click the "check" or the "x", the user will not be able to edit text only if the key differs
-    if (key == "done") { }
-    else if (key == "deleted") { }
-    else{
-      $("#card_overlay").slideToggle(500);
-      document.getElementById("pre_overlay").style.display = "block";
-      document.getElementById("card_overlay").style.display = "block";
-      // If a user clicks on a non short card, they can edit the content of the card
-      function MessageChange() {
-        return (
-          <div>
+// If a card is clicked, the user can edit its content, and see the full message
+$(document).on('click', ".cards", (e) => {;
+  var collect = JSON.parse(localStorage.getItem("cards"));
+  var card = collect[e.target.id];
+  // pass if the check, or the x is clicked only proceed if the card itself has been clicked
+  if (key == "done") {}
+  else if (key == "deleted") {}
+  else{
+    key = "None";
+    $("#card_overlay").slideToggle(500);
+    document.getElementById("pre_overlay").style.display = "block";
+    document.getElementById("card_overlay").style.display = "block";
+    // Method to bring up the info overlay
+    const  MessageChange = () => {
+      return (
+        <div>
             <div className="container">
               <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={close_message}></i></div>
               <h3 style={{ textDecoration: "underline" }}>Your message:</h3>
-              <div id="message">{localStorage.getItem(e.target.id)}</div>
+              <div id="message">{card.text}</div>
             </div>
             <br/>
             <hr/>
             <div className="container" id="input_field" style={{ "display": "block" }}>
-              <h3 style={{textDecoration:"underline"}}>Edit the content of your message</h3>
-              <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
+              <h3 style={{textDecoration:"underline"}}>Edit your message:</h3>
+              <input id="message_input" type="text" ></input><button onClick={save_message}>Save message</button>
             </div>
           </div>
-        )
-      };
-      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"))
-      // Set innerhtml (value), so user can edit more freely
-      document.getElementById("message_input").value = localStorage.getItem(e.target.id);
-      function save_message() {
-        // If the new message is less than 30 chars. then remove the short value || if not keep it short
-        var message = document.getElementById("message_input").value
-        if (message.length > 30) {
-          document.getElementById(e.target.id).innerHTML = message.substring(0, 27) + "...";
-          document.getElementById(e.target.id).value = "short";
-        }
-        else {
-          document.getElementById(e.target.id).innerHTML = message;
-          document.getElementById(e.target.id).value = "";
-        }
-        var card = document.getElementById(e.target.id);
-        //// Making buttons for "Done" state, and deleting
-        // Done (check)
-        var check = document.createElement("i");
-        check.setAttribute("class", "fa fa-check");
-        check.setAttribute("id", "check");
-        // Delete (x)
-        var x = document.createElement("i");
-        x.setAttribute("class", "fa fa-times");
-        x.setAttribute("id", "x");
-        // appending
-        card.appendChild(check);
-        card.appendChild(x);
-        localStorage.setItem(e.target.id, document.getElementById("message_input").value);
-        // Closing
-        $("#card_overlay").slideToggle(500);
-        document.getElementById("pre_overlay").style.display = "none";
-      }
-    }
-  }
-  // If the cards are not shortened
-  else{
-    // If we click the "check" or the "x", the user will not be able to edit text only if the key differs
-    if (key == "done"){}
-    else if (key == "deleted") {}
-    else{
-      $("#card_overlay").slideToggle(500);
-      document.getElementById("pre_overlay").style.display = "block";
-      document.getElementById("card_overlay").style.display = "block";
-      // If a user clicks on a non short card, they can edit the content of the card
-      function MessageChange() {
-        return (
-          <div className="container" id="input_field" style={{ "display": "block" }}>
-            <div><i className="fa fa-times" id="cancel_settings" style={{ fontSize: "30px" }} onClick={save_message}></i></div>
-            <h3 style={{ textDecoration: "underline" }}>Edit the content of your message</h3>
-            <input id="message_input" type="text" /><button onClick={save_message}>Save message</button>
-          </div>
-        )
-      };
-      ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"));
-      // Set innerhtml (value), so user can edit more freely
-      document.getElementById("message_input").value = localStorage.getItem(e.target.id);
-      function save_message() {
-        // If the new message is less than 30 chars. then remove the short value || if not keep it short
-        var message = document.getElementById("message_input").value;
-        if (message.length > 30) {
-          document.getElementById(e.target.id).innerHTML = message.substring(0, 27) + "...";
-          document.getElementById(e.target.id).value = "short";
-        }
-        else {
-          document.getElementById(e.target.id).innerHTML = message;
-          document.getElementById(e.target.id).value = "";
-        }
-        var card = document.getElementById(e.target.id);
-        //// Making buttons for "Done" state, and deleting
-        // Done (check)
-        var check = document.createElement("i");
-        check.setAttribute("class", "fa fa-check");
-        check.setAttribute("id", "check");
-        // Delete (x)
-        var x = document.createElement("i");
-        x.setAttribute("class", "fa fa-times");
-        x.setAttribute("id", "x");
-        // appending
-        card.appendChild(check);
-        card.appendChild(x);
-        localStorage.setItem(e.target.id, document.getElementById("message_input").value)
-        // Closing
-        $("#card_overlay").slideToggle(500);
-        document.getElementById("pre_overlay").style.display = "none";
-      }
+      )
+    };
+    ReactDOM.render(<MessageChange />, document.getElementById("card_overlay"));
+    // Set value  for the input field
+    document.getElementById("message_input").value = card.text;
+    // Settings to be saved + reload
+    // arrow function does not work for some reason
+    function save_message() {
+      //shortening
+      var message = document.getElementById("message_input").value;
+      shorten(message, card)
+      //save and reload
+      localStorage.setItem("cards", JSON.stringify(collect));
+      location.reload();
     }
   }
 });
 
-// Function for closing the message pop-up
-function close_message(){
+// Function for closing the info pop-up
+const close_message = () => {
   $("#card_overlay").slideToggle(500);
   document.getElementById("pre_overlay").style.display = "none";
 }
 
-////////////////////////////////////////////////////////////////////////////////////
 // If you click on the title, you can change its name
-$("#title").click(function(){
-    function TitleChange() {
+$("#title").click(() =>{
+    const TitleChange = () => {
       return (
         <div className="container" id="input_field" style={{ "display": "block" }}>
           <input id="title_input" type="text" placeholder="Enter a new title" /><button onClick={render_title}>Save title</button>
@@ -296,19 +200,28 @@ $("#title").click(function(){
     }
     ReactDOM.render(<TitleChange />, document.getElementById("titleChange"));
 });
-function render_title(){
+const render_title = () =>{
   document.getElementById("title").innerHTML = document.getElementById("title_input").value;
-  localStorage.setItem("title", document.getElementById("title_input").value);
   document.getElementById("input_field").style.display = "none";
+  if (localStorage.getItem("settings")){
+   var dict = JSON.parse(localStorage.getItem("settings")) 
+   dict["title"] =  document.getElementById("title_input").value;
+  }
+  else{
+    localStorage.setItem("settings",JSON.stringify(settings))
+    var dict = JSON.parse(localStorage.getItem("settings")) 
+    dict["title"] =  document.getElementById("title_input").value; 
+  }
+  //apply settings
+  localStorage.setItem("settings",JSON.stringify(dict))
 }
 
-///////////////////////////////////////////////////////////////
-//////////// Settings menu render (REACT)
+// Settings menu 
 $("#settings").click(
   function render_settings(){
     $("#overlay").slideToggle(500);
     document.getElementById("overlay").style.display = "block";
-    function Settings(){
+    const Settings = () =>{
       return(
         <div>
           <div className="container">
@@ -345,43 +258,57 @@ $("#settings").click(
               <option value="pink" id="pink_c">Pink</option>
               <option value="magenta" id="magenta_c">Magenta</option>
             </select>
+            <br/>
+            <br/>
+            <button onClick={save_settings}>Save Settings</button>  
           </div>
         </div>
       )
     }
-    ReactDOM.render(<Settings />, document.getElementById("overlay"))
-    //// Set the selected colours as the 1st, so it does not get reset
-    if (localStorage.getItem("bg_color")) { document.getElementById(localStorage.getItem("bg_color")).selected = "true";}
-    if (localStorage.getItem("card_color")) { document.getElementById(localStorage.getItem("card_color").concat("_c")).selected = "true"; }
+    ReactDOM.render(<Settings />, document.getElementById("overlay"));
+    // Set the selected colours as the 1st
+    if (localStorage.getItem("settings")) {
+      var dict = JSON.parse(localStorage.getItem("settings"))
+      for (var i in dict){
+        if (i == "bg_color"){
+          document.getElementById(dict[i]).selected = "true";
+        }
+        else if (i == "card_color"){
+          document.getElementById(dict[i].concat("_c")).selected = "true";
+        }
+      }
+    }
   }
 );
 
-// Closing the settings menu, and applying settings
-function close_settings(){
-  /////////////////// Closing menu
+// Closing the settings menu
+const close_settings = () =>{
   $("#overlay").slideToggle(500);
-  ////////////////// Applying settings
-  //// bg colour
-  var value = document.getElementById("bg_color").value;
-  document.body.style.backgroundColor = value;
-  //  Store the bg color in local storage, so the users will not lose their settings
-  localStorage.setItem("bg_color",value);
-  //// card colour 
-  var cards = document.getElementsByClassName("cards");
-  for (var i = 0; i < cards.length; i++) {
-    cards[i].style.backgroundColor = document.getElementById("card_color").value;
-  }
-   //  Store the card color in local storage, so the users will not lose their settings
-  localStorage.setItem("card_color", document.getElementById("card_color").value);
 };
 
-///////////////////////////////////////////////////////////////
-//////////// Info menu render (REACT)
+// Closing the settings menu, and applying settings
+const save_settings = () =>{
+  $("#overlay").slideToggle(500);
+  // bg colour
+  var bg_value = document.getElementById("bg_color").value;
+  document.body.style.backgroundColor = bg_value;
+  settings["bg_color"] = bg_value 
+  // card colour 
+  var cards = document.getElementsByClassName("cards");
+  var card_value = document.getElementById("card_color").value
+  settings["card_color"] = card_value 
+  for (var i = 0; i < cards.length; i++) {
+    cards[i].style.backgroundColor = card_value;
+  }
+  localStorage.setItem("settings", JSON.stringify(settings))
+};
+
+// Info menu render
 $("#info").click(
   function render_info(){
     $("#overlay").slideToggle(500);
     document.getElementById("overlay").style.display = "block";
-    function Info(){
+    const Info = () =>{
       return(
         <div>
           <div className="container" id="info_menu">
@@ -413,23 +340,23 @@ $("#info").click(
         </div>
       )
     }
-    ReactDOM.render(<Info/>, document.getElementById("overlay"))
+    ReactDOM.render(<Info/>, document.getElementById("overlay"));
 });
 
 // Closing the info panel
-function close_info(){
+const close_info = () =>{
   $("#overlay").slideToggle(500);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//////// Rendering the input field, whenever the "add a card" button is clicked (REACT) ///////////
-function render_input() {
-  function Inputs() {
+// Render input field, for adding a new card
+const render_input = () => {
+  const Inputs = () => {
     return (
       <div className="container" id="input_field" style={{ "display": "block" }}>
         <input id="todo_input" type="text" placeholder="Enter a todo" /><button onClick={render_cards}>Save this card</button>
       </div>
     )
   }
-  ReactDOM.render(<Inputs />, document.getElementById("boxes"))
+  ReactDOM.render(<Inputs />, document.getElementById("boxes"));
 };
+//END
