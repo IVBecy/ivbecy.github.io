@@ -3,6 +3,7 @@ var key = "None";
 var textToShow;
 var ToBeRendered = [];
 var onLoadRender = [];
+var list = [];
 var dictFromStorage = {};
 var settings = {};
 var card_count = Math.floor(Math.random() * 10000);
@@ -110,11 +111,15 @@ const render_cards = () => {
   ReactDOM.render(<RENDER/>, document.getElementById("todo_cards_render"));
   // Making the input field disappear
   document.getElementById("input_field").style.display = "none";
-  //set color for new card
-  var set = JSON.parse(localStorage.getItem("settings"))
-  if (set["card_color"]){
-    document.getElementById(props.name).style.backgroundColor = set["card_color"];
-  }
+  setTimeout(() => { 
+    var set = JSON.parse(localStorage.getItem("settings"))
+    if (set["card_color"]) {
+      var cards = document.getElementsByClassName("cards")
+      for (var index = 0; index < cards.length; index++) {
+        cards[index].style.backgroundColor = set["card_color"];
+      }
+    }
+  },10)
 }
 
 // Delete a card, if the "X" is clicked
@@ -128,7 +133,7 @@ $(document).on('click', "#x", (e) => {
   location.reload()
 });
 
-// Stage a card as "Done" if the check icon id clickec
+// Stage a card as "Done" if the check icon is clicked
 $(document).on('click', "#check", (e) => {
   var dict = JSON.parse(localStorage.getItem("cards"));
   $("#".concat(e.target.parentNode.id)).css({"text-decoration" : "line-through", "opacity":0.6});
@@ -293,15 +298,24 @@ const save_settings = () =>{
   // bg colour
   var bg_value = document.getElementById("bg_color").value;
   document.body.style.backgroundColor = bg_value;
-  settings["bg_color"] = bg_value 
   // card colour 
   var cards = document.getElementsByClassName("cards");
-  var card_value = document.getElementById("card_color").value
-  settings["card_color"] = card_value 
+  var card_value = document.getElementById("card_color").value 
   for (var i = 0; i < cards.length; i++) {
     cards[i].style.backgroundColor = card_value;
   }
-  localStorage.setItem("settings", JSON.stringify(settings))
+  //Adding values to the settings dict
+  if (localStorage.getItem("settings")) {
+    var sett = JSON.parse(localStorage.getItem("settings"))
+    sett["bg_color"] = bg_value 
+    sett["card_color"] = card_value 
+    localStorage.setItem("settings", JSON.stringify(sett))
+  }
+  else{
+    settings["bg_color"] = bg_value 
+    settings["card_color"] = card_value 
+    localStorage.setItem("settings", JSON.stringify(settings))
+  }
 };
 
 // Info menu render
