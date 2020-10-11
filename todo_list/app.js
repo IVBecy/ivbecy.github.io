@@ -13,7 +13,7 @@ const shorten = (text,dict) => {
   dict.text = text;
   dict.short_text = text.substring(0,26) + "...";
   if (text.length > 30) {
-    textToShow = dict.short_text.substring(0,26) + "...";
+    textToShow = dict.short_text
     dict.short = "yes";
   }
   else{
@@ -166,7 +166,7 @@ $(document).on('click', ".cards", (e) => {;
             </div>
             <br/>
             <hr/>
-            <div className="container" id="input_field" style={{ "display": "block" }}>
+            <div className="container" style={{ "display": "block" }}>
               <h3 style={{textDecoration:"underline"}}>Edit your message:</h3>
               <input id="message_input" type="text" ></input><button onClick={save_message}>Save message</button>
             </div>
@@ -197,30 +197,20 @@ const close_message = () => {
 
 // If you click on the title, you can change its name
 $("#title").click(() =>{
-    const TitleChange = () => {
-      return (
-        <div className="container" id="input_field" style={{ "display": "block" }}>
-          <input id="title_input" type="text" placeholder="Enter a new title" /><button onClick={render_title}>Save title</button>
-        </div>
-      )
+  $(document).click(() => {
+    if (localStorage.getItem("settings")) {
+      var dict = JSON.parse(localStorage.getItem("settings"))
+      dict["title"] = document.getElementById("title").innerHTML;
     }
-    ReactDOM.render(<TitleChange />, document.getElementById("titleChange"));
+    else {
+      localStorage.setItem("settings", JSON.stringify(settings))
+      var dict = JSON.parse(localStorage.getItem("settings"))
+      dict["title"] = document.getElementById("title").innerHTML;
+    }
+    //apply settings
+    localStorage.setItem("settings", JSON.stringify(dict))
+  })
 });
-const render_title = () =>{
-  document.getElementById("title").innerHTML = document.getElementById("title_input").value;
-  document.getElementById("input_field").style.display = "none";
-  if (localStorage.getItem("settings")){
-   var dict = JSON.parse(localStorage.getItem("settings")) 
-   dict["title"] =  document.getElementById("title_input").value;
-  }
-  else{
-    localStorage.setItem("settings",JSON.stringify(settings))
-    var dict = JSON.parse(localStorage.getItem("settings")) 
-    dict["title"] =  document.getElementById("title_input").value; 
-  }
-  //apply settings
-  localStorage.setItem("settings",JSON.stringify(dict))
-}
 
 // Settings menu 
 $("#settings").click(
@@ -331,7 +321,7 @@ $("#info").click(
             <h1>Info</h1>
             <hr/>
             <h2 id="secondary_title">Title</h2>
-            <p id="info_brief">By clicking on the title, you can re-name it, as you wish.</p>
+            <p id="info_brief">By clicking on the title, you can re-name it, as you wish. Click outside of the editing box to make a change.</p>
             <hr/>
             <h2 id="secondary_title">Settings</h2>
             <p id="info_brief">By clicking the gear, on the main screen, you can edit the colour of the background, and the cards.</p>
@@ -368,7 +358,7 @@ const render_input = () => {
   const Inputs = () => {
     return (
       <div className="container" id="input_field" style={{ "display": "block" }}>
-        <input id="todo_input" type="text" placeholder="Enter a todo" /><button onClick={render_cards}>Save this card</button>
+        <input id="todo_input" type="text" placeholder="Enter something" /><br/><button onClick={render_cards}>Save this card</button>
       </div>
     )
   }

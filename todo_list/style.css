@@ -13,6 +13,10 @@ h1,h2,h3,h4{
   color: black;
 }
 
+div{
+  color: black;
+}
+
 h1{
   padding-top:30px;
   font-size: 5rem;
@@ -55,18 +59,22 @@ input{
 }
 
 button{
-  background-color: #c0c0c0;
-  border-radius: 5px;
+  background-color: #ffffff;
+  border-radius: 15px;
   width: fit-content;
   height:fit-content;
-  padding:5px;
+  padding:7px;
   margin:20px;
+  margin-top: 0;
   font-family: "Barlow Semi Condensed";
+  color:black;
   transition:0.5s;
+  border:0;
 }
 
 button:hover{
-  background-color: #8f8f8f;
+  background-color: #000000e3;
+  color: white;
 }
 
 select{
@@ -80,21 +88,29 @@ i{
   color: black;
 }
 
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus{
+  border:none;
+  outline:none;
+}
+
 /***************************** ID SELECTORS *************************************/
 /*Box for adding cards*/
 #adding_box{
   background-color: rgba(0,0,0,0.3);
-  padding:20px;
-  border-radius: 20px;
-  width:fit-content;
+  padding:10px;
+  border-radius: 50px;
+  width:50px;
   height:fit-content;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  transition: 0.5s;
 }
 
 #adding_box:hover{
   background-color: rgba(0,0,0,0.5);
+  width:150px;
 }
 
 
@@ -107,10 +123,11 @@ i{
   text-align: center;
   margin-right: auto;
   margin:20px;
+  transition: 0.5s;
 }
 
 #settings:hover{
-  color:rgba(77, 77, 77);
+  color:rgb(219, 219, 219);
 }
 
 /*Info icon*/
@@ -118,10 +135,11 @@ i{
   text-align: center;
   margin-right: auto;
   margin:20px;
+  transition: 0.5s;
 }
 
 #info:hover{
-  color:rgba(77, 77, 77);
+  color:rgb(219, 219, 219);
 }
 
 /*Overlay for settings and info*/
@@ -135,7 +153,7 @@ i{
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ededf0;
+  background-color: #cecece;
   z-index: 2;
 }
 
@@ -182,6 +200,7 @@ i{
 /* X icon*/
 #cancel_settings{
   margin:20px;
+  transition: 0.5s;
 }
 
 #cancel_settings:hover{
@@ -193,11 +212,12 @@ i{
   background-color: #16df0f;
   padding: 10px;
   margin-left: 10px;
-  transition:1s;
+  transition:0.7s;
 }
 
 #check:hover{
-  filter: brightness(70%);
+  background-color: #12970d;
+  color:white;
 }
 
 /* X icon on cards*/
@@ -206,11 +226,12 @@ i{
   padding: 10px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  transition: 1s;
+  transition: 0.7s;
 }
 
 #x:hover{
-  filter: brightness(70%);
+  background-color: #8b3006;
+  color:white;
 }
 
 /*H2 on info*/
@@ -245,6 +266,20 @@ i{
 
 #info_menu h3{
   margin: 20px;
+}
+
+/*Container for adding a new card*/
+#input_field{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  padding:20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: rgba(0,0,0,0.5);
 }
 /***************************** CLASS SELECTORS *************************************/
 /*Center aligned text*/
@@ -283,9 +318,6 @@ i{
   transition: 1s;
 }
 
-.cards:hover{
-  transform: scale(1.1);
-}
 /*for settings titles*/
 .properties{
   margin-left: auto;
