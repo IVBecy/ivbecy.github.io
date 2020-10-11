@@ -113,7 +113,12 @@ hr{
   font-size:2rem;
 }
 
-
+/*Profile image*/
+#profile_img {
+  width: 20%;
+  border-radius: 10%;
+  
+}
 /************************  Class Selectors  **********************/
 
 /*Every section (div)*/
