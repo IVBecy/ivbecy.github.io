@@ -96,7 +96,7 @@ const render_cards = () => {
   dictFromStorage[storage_name] = props;
   localStorage.setItem("cards",JSON.stringify(dictFromStorage));
   setTimeout(RENDER, 0);
-  const RENDER = () =>{
+  const RENDER = () => {
     ToBeRendered.push(
       <div className="cont" key={props.name}>
         <div id={props.name} className="cards">
@@ -130,7 +130,6 @@ $(document).on('click', "#x", (e) => {
   localStorage.setItem("cards", JSON.stringify(dict));
   key = "deleted";
   setTimeout(() => {key = "None"},500);
-  location.reload()
 });
 
 // Stage a card as "Done" if the check icon is clicked
