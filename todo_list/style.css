@@ -8,18 +8,26 @@ body{
   background-color: DeepSkyBlue;
 }
 
-h1,h2,h3,h4{
+h1,h2{
   font-family: "Fredoka One";
   color: black;
 }
 
+h4{
+  color: black;
+  font-weight: 700;
+  font-family: "Cairo";
+}
+
 div{
   color: black;
+  font-weight: 600;
+  font-family: "Cairo";
 }
 
 h1{
-  padding-top:30px;
-  font-size: 5rem;
+  margin-top:5px;
+  font-size: 4.5rem;
   color: black;
 }
 
@@ -27,23 +35,21 @@ h2{
   font-size: 3rem;
 }
 
-h4{
-  padding:0;
-  margin-bottom:20px;
+h3{
+  font-family: "Cairo";
+  margin-top:50px;
+  margin-bottom:10px;
 }
 
-p,a{
-  font-family: "Fredoka One";
+a{
+  font-family: "Arial";
 }
 
 p{
-  font-size: 1.5rem;
+  font-size: 1rem;
+  font-family: "Cairo";
 }
 
-hr{
-  border: 2px solid black;
-  border-radius: 10px;
-}
 
 input{
   padding: 10px;
@@ -58,30 +64,43 @@ input{
   transition:0.5s;
 }
 
+input[type="checkbox"]{
+  margin:0;
+  padding:0;
+  position: relative;
+  top: 1px;
+}
+
+input[type="date"]{
+  margin:0;
+  padding:10px;
+}
+
 button{
-  background-color: #ffffff;
-  border-radius: 15px;
+  background-color: black;
+  border-radius: 5px;
   width: fit-content;
   height:fit-content;
   padding:7px;
-  margin:20px;
-  margin-top: 0;
+  margin-top:10px;
   font-family: "Barlow Semi Condensed";
-  color:black;
+  color:white;
   transition:0.5s;
   border:0;
 }
 
 button:hover{
-  background-color: #000000e3;
-  color: white;
+  background-color: rgb(187, 187, 187);
+  color: black;
 }
 
 select{
-  background-color: #8f8d8d;
+  background-color: #b6b5b5;
   color: black;
   font-family: "Fredoka One";
   border:2px solid black;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 i{
@@ -90,8 +109,16 @@ i{
 
 [contenteditable="true"]:active,
 [contenteditable="true"]:focus{
-  border:none;
+  padding:5px;
+  border:2px solid rgb(5, 147, 241);
   outline:none;
+}
+
+textarea{
+  width:70%;
+  height:100px;
+  font-weight:400;
+  font-family: "Cairo";
 }
 
 /***************************** ID SELECTORS *************************************/
@@ -142,21 +169,6 @@ i{
   color:rgb(219, 219, 219);
 }
 
-/*Overlay for settings and info*/
-#overlay{
-  position: fixed; 
-  overflow-y: scroll;
-  display: none;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #cecece;
-  z-index: 2;
-}
-
 /*Overlay for message*/
 #pre_overlay{
   background-color: rgba(0,0,0,0.8);
@@ -173,46 +185,79 @@ i{
   z-index: 2;
   margin-right: auto;
   margin-left: auto;
-  border-radius: 5px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
-/*The message card overlay itself*/
-#card_overlay{
-  position: fixed; 
-  overflow-y: scroll;
+#pre_overlay::-webkit-scrollbar {
   display: none;
-  width: fit-content;
-  max-width: 80%;
+}
+
+/*overlay for cards, and settings*/
+#card_overlay{
+  position: absolute; 
+  overflow-y: scroll;
+  overflow-x: hidden;
+  display: none;
+  width: 40%;
   height: fit-content;
-  padding:10px;
+  padding:20px;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: #ededf0;
   z-index: 3;
+  text-align: left;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 10%;
+  margin-top: 3%;
   border-radius: 5px;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#card_overlay [contenteditable="true"]:active{
+  width: fit-content;
+}
+#card_overlay [contenteditable="true"]:focus{
+  width: fit-content;
+}
+
+#card_overlay::-webkit-scrollbar {
+  display: none;
+}
+
+#card_overlay h4{
+  margin-top:20px;
 }
 
 /* X icon*/
 #cancel_settings{
-  margin:20px;
+  font-size:25px;
+  float:right;
+  color:rgba(0,0,0,0.7);
+  top:0;
+  right:0;
+  padding:10px;
+  border-radius: 50%;
   transition: 0.5s;
 }
 
 #cancel_settings:hover{
-  color:#da4f0f;
+  color:black;
+  background-color: rgba(0,0,0,0.1);
 }
 
 /* Check icon on cards*/
 #check{
   background-color: #16df0f;
-  padding: 10px;
-  margin-left: 10px;
+  padding: 15px;
+  padding-right:25px;
+  padding-left:25px;
   transition:0.7s;
+  font-size: 25px;
+  color:black;
 }
 
 #check:hover{
@@ -222,22 +267,19 @@ i{
 
 /* X icon on cards*/
 #x{
+  color:black;
   background-color: #f05108;
-  padding: 10px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-  transition: 0.7s;
+  padding: 15px;
+  padding-right:25px;
+  padding-left:25px;
+  margin-left: 10px;
+  transition:0.7s;
+  font-size: 25px;
 }
 
 #x:hover{
   background-color: #8b3006;
   color:white;
-}
-
-/*H2 on info*/
-#secondary_title{
-  color: #010652;
-  text-decoration: underline;
 }
 
 /*text on card overlay*/
@@ -251,17 +293,6 @@ i{
 #head{
   background-color: rgba(0,0,0,0.2);
   margin-bottom:30px;
-}
-
-/*Ps at info*/
-#info_brief{
-  background-color: rgba(0,0,0,0.15);
-  margin: 20px;
-  border-radius: 15px;
-  text-align: center;
-  padding-left:5px;
-  padding-right:5px;
-  list-style-type: none;
 }
 
 #info_menu h3{
@@ -281,24 +312,25 @@ i{
   padding-right: 50px;
   background-color: rgba(0,0,0,0.5);
 }
+
+#due_date{
+  width: 100%;
+  padding:10px;
+}
+
+/*icons for card_overlay*/
+#icons_overlay{
+  font-size:20px;
+  padding-right:10px;
+}
 /***************************** CLASS SELECTORS *************************************/
 /*Center aligned text*/
 .container{
   text-align:center;
 }
 
-.card{
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #dfdfdf;
-  width:fit-content;
-  height:fit-content;
-  padding:10px;
-  padding-top: 0;
-  padding-bottom: 0;
-  border: 1px solid black;
-  border-radius: 5px;
+.left_container{
+  text-align:left;
 }
 
 /*Box of every card*/
@@ -307,25 +339,42 @@ i{
   height:fit-content;
   margin-top: 20px;
   margin-bottom: 20px;
-  text-align: left;
+  text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding-left:20px;
+  padding:10px;
   background-color: whitesmoke;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: "Fredoka One";
   font-size: 2rem;
-  transition: 1s;
+  transition: 0.5s;
+  box-shadow: 5px 4px 8px black;
 }
+
+.fas.fa-pencil-alt{
+  color:rgb(58, 58, 58);
+  display: none;
+  transition: 0.5s;
+  font-size: 12px;
+  float: right;
+}
+
+.cards:hover .fas.fa-pencil-alt{
+  display:block;
+}
+
 
 /*for settings titles*/
 .properties{
-  margin-left: auto;
-  margin-right: auto;
-  padding:20px;
+  margin-right:20px;
 }
 
 /***************************** MEDIA QUERIES *************************************/
+@media screen and (max-width:1200px){
+  #card_overlay{
+    width: 95%;
+  }
+}
 @media screen and (max-width:600px){
   h1{
     font-size: 3.5rem;
