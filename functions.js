@@ -1,12 +1,8 @@
-/////////////  JS For kristofhracza.com  /////////////////
-/////////////////////////////////////////////////////////
-
-// Fading in the page, onload then the "NERDS" banner
+// ONLOAD animation
 $("body").hide().fadeIn(900);
 $("#text_over_image").hide().delay(1000).fadeIn(1000);
-////////////////////////////////////////////////////////////////////////////////
+
 //Navbar function
-// Getting count as a variable
 var count = 0;
 const hamburger = () => {
   // Making both of the animations work
@@ -25,9 +21,7 @@ const hamburger = () => {
   }
   toggling() 
 }
-        ///////////////////////// REACT ////////////////////////////
-/////////////////////////////////////////////////////////////////////////////
-// React FOOTER render
+// Rendering footer
 function Footer(){
   return(
     <footer>
@@ -41,8 +35,7 @@ function Footer(){
 }
 ReactDOM.render(<Footer />, document.getElementById('footer'));
 
-/////////////////////////////////////////////////////////////////////////////////
-// React Navigation Bar render
+// Rendering navigation bar
 function Navbar(){
   return(
     <div>
@@ -70,9 +63,8 @@ if (page === "") {
 }
 // Any page
 else { document.getElementById(page).className = "active"}
-//////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////// Making the projects card
 
+// Making the projects card
 if (page == "projects.html"){
   const languages = {
     py:"fab fa-python",
@@ -81,7 +73,6 @@ if (page == "projects.html"){
     php:"fab fa-php",
     css:"fab fa-css3",
   }
-  
   const projects = {
     networkScan:{
       title:"Scanner",
