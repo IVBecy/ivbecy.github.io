@@ -192,6 +192,8 @@ hr{
 
 .card img{
   border-radius: 10px;
+  object-fit:cover;
+  object-position:50% 50%;
 }
 
 .card h3{
