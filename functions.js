@@ -74,6 +74,12 @@ if (page == "projects.html"){
     css:"fab fa-css3",
   }
   const projects = {
+    project_anon: {
+      title: "Project anon",
+      date: "10 December 2020",
+      lang: languages["php"],
+      image: "images/project_anon.png",
+    },
     networkScan:{
       title:"Scanner",
       date:"16 September 2020",
