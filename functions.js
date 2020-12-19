@@ -74,6 +74,12 @@ if (page == "projects.html"){
     css:"fab fa-css3",
   }
   const projects = {
+    reaper: {
+      title: "Reaper",
+      date: "19 December 2020",
+      lang: languages["py"],
+      image: "images/reaper.png",
+    },
     project_anon: {
       title: "Project anon",
       date: "10 December 2020",
