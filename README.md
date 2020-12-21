@@ -8,20 +8,5 @@
 - CSS
 - Javascript (Vanilla, JQuery, React)
 
-## ***Features***
-- Responsive Design
-- Stored data, in all of the apps **(Local Storage)**
-- Documentation, on all my projects
-
-## ***Apps***
-- 📆 Todo list
-- 🐤 Flappy Bird
-- 🎵 Beat maker
-
-## ***Templates***
--  3 completed website templates
--  1 template with both back and front end
--  1 Login and Signup form **(Back-end too [PHP, SQL])**
-
 # Preview
 ![website preview](https://kristofhracza.com/images/prev.png)
