@@ -3,36 +3,29 @@ $("body").hide().fadeIn(900);
 $("#text_over_image").hide().delay(1000).fadeIn(1000);
 
 //Navbar function
-var count = 0;
+var count = 1;
 const hamburger = () => {
   // Making both of the animations work
   const toggling = () =>{
     count++;
-    // Closing navbar
+    // opening navbar
     if (count % 2 == 0 ) {
-      document.getElementById("navbar").style.animation = "toggleout 0.5s ease";
-      $("#navbar").toggle(500);
+      document.getElementById("navbar_icon").className = "fas fa-times";
+      document.getElementById("navbar").style.display = "block";
+      document.getElementById("navbar_icon").style.backgroundColor = "transparent";
+      document.getElementById("navbar_icon").style.color = "white";
+      document.getElementById("navbar_icon").style.boxShadow = "none";
     }
-     // opening navbar
+     // closing navbar
     else{
-      $("#navbar").toggle();
-      document.getElementById("navbar").style.animation = "toggle 0.5s ease";
+      document.getElementById("navbar_icon").className = "fas fa-bars";
+      document.getElementById("navbar").style.display = "none";
+      document.getElementById("navbar_icon").style.backgroundColor = "black";
+      document.getElementById("navbar_icon").style.color = "#077BFF";
     }
   }
   toggling() 
 }
-// Rendering footer
-function Footer(){
-  return(
-    <footer>
-      <a href="mailto:kristofhracza@gmail.com"><i className="fa fa-envelope" style={{fontSize:30}}></i></a>
-      <a href="https://github.com/IVBecy"><i className="fa fa-github" style={{ fontSize: 30 }} ></i></a>
-      <a href="https://www.youtube.com/channel/UCPdJpsymfMobXq6oncfvicA?view_as=subscriber"><i className="fa fa-youtube" style={{ fontSize: 30 }}></i></a>
-      <p>© Kristof Hracza 2020 | All rights reserved</p>
-    </footer>
-  )
-}
-ReactDOM.render(<Footer />, document.getElementById('footer'));
 
 // Rendering navigation bar
 function Navbar(){
@@ -41,11 +34,18 @@ function Navbar(){
       <div>
         <i id="navbar_icon"  onClick={hamburger} className="fa fa-bars"></i>
       </div>
-      <div className="navbar" id="navbar">
+      <div className="navbar" id="navbar" style={{display:"none"}}>
         <a href="index.html" id="/index.html"><h2>Home</h2></a>
         <a href="about.html" id="/about.html"><h2>About me</h2></a>
         <a href="projects.html" id="/projects.html"><h2>Projects</h2></a>
         <a href="experience.html" id="/experience.html"><h2>Experiences</h2></a>
+        <footer>
+          <div id="contacts">
+            <a href="mailto:kristofhracza@gmail.com"><i className="fa fa-envelope" style={{ fontSize: "25px" }}></i></a>
+            <a href="https://github.com/IVBecy"><i className="fa fa-github" style={{ fontSize: "25px" }} ></i></a>
+            <a href="https://www.youtube.com/channel/UCPdJpsymfMobXq6oncfvicA?view_as=subscriber"><i className="fa fa-youtube" style={{ fontSize: "25px" }}></i></a>
+          </div>
+        </footer>
       </div>
     </div>
   )

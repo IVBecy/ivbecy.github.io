@@ -62,10 +62,8 @@ ul li{
 }
 
 footer {
-  text-align: center;
-  padding: 20px;
-  background-color: var(--dark_grey);
-  color:white;
+  padding: 10px;
+  color:var(--light_blue);
 }
 
 i{
@@ -353,48 +351,34 @@ hr{
 }
 
 /****** Navigation Bar ********/
-.navbar{
-  z-index: 5;
-  background-color: var(--dark_grey);
-  position: fixed;
-  overflow-y:scroll;
-  width: 100%;
+.navbar {
   height: 100%;
+  width: 300px;
+  position: fixed;
+  z-index: 1;
   top: 0;
-  left: 0;
   right: 0;
-  bottom: 0;
   display: none;
-  text-align: center;
-  animation: toggle 0.5s ease;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
 }
 
 .navbar h2{
-  font-size:2rem;
-}
-
-/*When opening the navbar*/
-@keyframes toggle{
-  from{border-radius: 50%; width:50%;margin-left:25%;opacity: 0.5;}
-  to{border-radius: 0px; width:100%;margin-left:0%;opacity: 1;}
-}
-/*When closing the navbar*/
-@keyframes toggleout{
-  from{border-radius: 0; width:100%;margin-left:0%; display: block;opacity: 1;}
-  to{border-radius: 50%; width:50%;margin-left:25%;display: none;opacity: 0;}
+  font-size:1.7rem;
 }
 
 /*All As in the navbar*/
 .navbar a{
-  text-align: center;
+  text-align: left;
   display: block;
   border-radius: 10px;
   color:white;
   width:fit-content;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding:15px;
-  margin-bottom:10px;;
+  margin-bottom:15px;;
   text-decoration: none;
   transition: 0.5s;
   user-select: none;
@@ -402,23 +386,49 @@ hr{
 
 /*1st a in the navbar*/
 .navbar a:first-child{
-  margin-top:10%;
+  margin-top:20%;
 }
+
  /*When hovering on A*/
 .navbar a:hover{
    color:var(--dark_grey);
    background-color: whitesmoke;
    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
    transition: 0.4s;
-   transform: scale(1.5);
+   transform: scale(1.15);
 }
 
 /*Set active status*/
 .navbar a.active{
   background-color: var(--light_grey);
 }
+
+.navbar footer{
+  position: fixed;
+  bottom: 0;
+}
+
+.navbar footer #contacts{
+  display: inline-block;
+}
+
+.navbar footer a {
+  margin: auto;
+  padding:10px;
+  display: inline-block;
+  color:var(--light_blue);
+}
+
+.navbar footer a:hover{
+  transform: scale(1.15);
+  background-color: transparent;
+  color:var(--light_blue);
+  box-shadow: none;
+}
+
 /*Hamburger icon*/
 #navbar_icon{
+  margin:10px;
   color: var(--light_blue);
   font-size: 30px;
   position:fixed;
@@ -426,16 +436,13 @@ hr{
   right:2%;
   z-index: 6;
   display: block;
-  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 4);
-  border-radius: 30px;
+  border-radius: 15px;
   background-color: black;
 }
 
 /*Hover on Icon*/
 #navbar_icon:hover{
-  color:var(--light_blue);
-  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 8);
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 /****** END OF Navigation Bar ********/
