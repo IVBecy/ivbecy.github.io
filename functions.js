@@ -56,7 +56,6 @@ function Navbar(){
 ReactDOM.render(<Navbar />, document.getElementById("navigation_bar"))
 // Giving an active class to the current page
 var path = window.location.pathname;
-console.log(path);
 if (path === "/") {
   // On starting page
   document.getElementById("/index.html").className = "active"
