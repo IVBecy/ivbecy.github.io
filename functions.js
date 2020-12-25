@@ -43,12 +43,12 @@ function Navbar(){
         <i id="navbar_icon"  onClick={hamburger} className="fa fa-bars"></i>
       </div>
       <div className="navbar" id="navbar">
-        <a href="index.html" id="index.html"><h2>Home</h2></a>
-        <a href="about.html" id="about.html"><h2>About me</h2></a>
-        <a href="projects.html" id="projects.html"><h2>Projects</h2></a>
-        <a href="experience.html" id="experience.html"><h2>Experiences</h2></a>
-        <a href="template.html" id="template.html"><h2>Templates</h2></a>
-        <a href="apps.html" id="apps.html"><h2>Apps</h2></a>
+        <a href="index.html" id="/index.html"><h2>Home</h2></a>
+        <a href="about.html" id="/about.html"><h2>About me</h2></a>
+        <a href="projects.html" id="/projects.html"><h2>Projects</h2></a>
+        <a href="experience.html" id="/experience.html"><h2>Experiences</h2></a>
+        <a href="template.html" id="/template.html"><h2>Templates</h2></a>
+        <a href="apps.html" id="/apps.html"><h2>Apps</h2></a>
       </div>
     </div>
   )
@@ -56,16 +56,15 @@ function Navbar(){
 ReactDOM.render(<Navbar />, document.getElementById("navigation_bar"))
 // Giving an active class to the current page
 var path = window.location.pathname;
-var page = path.split("/").pop();
-if (page === "") {
+console.log(path);
+if (path === "/") {
   // On starting page
-  document.getElementById("index.html").className = "active"
+  document.getElementById("/index.html").className = "active"
 }
 // Any page
-else { document.getElementById(page).className = "active"}
-
+else { document.getElementById(path).className = "active"}
 // Making the projects card
-if (page == "projects.html"){
+if (path == "/projects.html"){
   const languages = {
     py:"fab fa-python",
     html:"fab fa-html5",
