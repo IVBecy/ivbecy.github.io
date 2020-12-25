@@ -256,7 +256,7 @@ select{
 }
 
 .cards:hover{
-  transform: scale(1.1);
+  transform: scale(1.01);
   box-shadow: 12px 20px 18px black;
 }
 
@@ -273,12 +273,6 @@ select{
   border-radius: 20px;
   box-shadow: 4px 6px 10px black;
   margin-bottom: 30px;
-}
-
-.ratings:hover{
-  transform: scale(1.1);
-  box-shadow: 12px 20px 18px black;
-  margin-bottom: 60px;
 }
 
 .rating{
@@ -303,12 +297,13 @@ select{
     font-size: x-large;
   }
 
-  .sec-container{
-    padding-right:25px;
-    padding-left:25px;
-  }
   #wavy h1{
     font-size: 3em;
     margin-bottom: 50px;
+  }
+
+  .sec-container{
+    padding-right:25px;
+    padding-left:25px;
   }
 }
