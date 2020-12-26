@@ -436,7 +436,7 @@ hr{
   right:2%;
   z-index: 6;
   display: block;
-  border-radius: 15px;
+  border-radius: 100px;
   background-color: black;
 }
 
