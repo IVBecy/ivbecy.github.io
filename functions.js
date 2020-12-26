@@ -36,7 +36,6 @@ function Navbar(){
       </div>
       <div className="navbar" id="navbar" style={{display:"none"}}>
         <a href="index.html" id="/index.html"><h2>Home</h2></a>
-        <a href="about.html" id="/about.html"><h2>About me</h2></a>
         <a href="projects.html" id="/projects.html"><h2>Projects</h2></a>
         <a href="experience.html" id="/experience.html"><h2>Experiences</h2></a>
         <footer>

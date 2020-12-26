@@ -7,6 +7,7 @@
   --light_grey:#505050;
   --main_bg_color:#E0E0E0;
   --light_blue:#077BFF;
+  --small_shadow:-5px 4px 24px -4px #a8a8a8;
 }
 
 body, html {
@@ -21,27 +22,23 @@ body, html {
 }
 
 h1{
-  text-align: center;
   font-family: 'Kumar One', sans-serif;
   padding-top: 20px;
 }
 
 h2{
   font-family: "Squada One", sans-serif;
-  text-align: center;
   font-size:3rem;
   transition: 0.2s;
 }
 
 h3{
   font-family: "Squada One", sans-serif;
-  text-align: center;
   letter-spacing: 1px;
 }
 
 p{
   font-size:1.1rem;
-  text-align: center;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 3px;
   font-weight: bold;
@@ -55,7 +52,6 @@ ul{
 ul li{
   list-style-type: none;
   font-size:1.1rem;
-  text-align: center;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 3px;
   font-weight: bold;
@@ -81,7 +77,7 @@ hr{
 
 /*Big section starters*/
 #big-text{
-  font-size: 10rem;
+  font-size: 9rem;
   font-family: "Squada One", sans-serif;
   letter-spacing: 5px
 }
@@ -122,14 +118,26 @@ hr{
 /*Every section (div)*/
 .container{
   text-align: center;
-  position: relative;
+  margin-bottom: 50px;
 }
 
-/*Text on the left side*/
-.side-text{
-  text-align: left;
-  padding-left: 150px;
+.right-container{
+  text-align:right;
+  margin-left: auto;
+  margin-right: 50px;
+  margin-bottom:50px;
+  width: 70%;
+  margin-bottom: 30px;
 }
+
+.left-container{
+  text-align:left;
+  margin-right: auto;
+  margin-left: 50px;
+  margin-bottom:50px;
+  width: 70%;
+}
+
 /*Modal (pop-up) image*/
 .modal{
   margin-left: auto;
@@ -159,7 +167,7 @@ hr{
   width:400px;
   max-width:400px;
   margin-bottom:50px;
-  box-shadow: -5px 4px 24px -4px #a8a8a8;
+  box-shadow: var(--small_shadow);
   transition:0.5s;
   border-radius: 10px;
 }
@@ -444,8 +452,21 @@ hr{
 #navbar_icon:hover{
   transform: scale(0.95);
 }
-
 /****** END OF Navigation Bar ********/
+
+#profile_pic{
+  width:200px;
+  border-radius: 20px;
+  margin-bottom:40px;
+  box-shadow:var(--small_shadow);
+}
+
+#inbetween{
+  background-image: url('images/code_bg.png');
+  height:200px;
+  -webkit-filter: grayscale(60%); 
+  filter: grayscale(60%)
+}
 
 /***************Media Queries**********************/
 @media screen and (max-width: 1700px)
@@ -630,8 +651,14 @@ hr{
     margin-right:auto ;
     margin-left:auto;
   }
+
   .card{  
     width:90%;
+  }
+
+  .right-container,.left-container{
+    margin:20px;
+    width:fit-content;
   }
 }
 
