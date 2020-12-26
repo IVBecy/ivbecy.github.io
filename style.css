@@ -32,7 +32,7 @@ h2{
   transition: 0.2s;
 }
 
-h3{
+h3,h4{
   font-family: "Squada One", sans-serif;
   letter-spacing: 1px;
 }
@@ -75,14 +75,12 @@ hr{
 }
 /********************  ID Selectors  *****************************/
 
-/*Big section starters*/
 #big-text{
   font-size: 9rem;
   font-family: "Squada One", sans-serif;
   letter-spacing: 5px
 }
 
-/*Writing text over an image */
 #text_over_image{
   position: relative;
   color:white;
@@ -94,20 +92,17 @@ hr{
   margin-left:auto;
 }
 
-/*ID for images to fit the screen*/
 #responsive {
   width: 60%;
   max-width: 800px;
   height:20%;
 }
 
-/*Text that I want to make bigger, and highlighted*/
 #highlight_text{
   font-family: "Squada One", sans-serif;
   font-size:2rem;
 }
 
-/*Profile image*/
 #profile_img {
   width: 20%;
   border-radius: 10%;
@@ -115,10 +110,32 @@ hr{
 }
 /************************  Class Selectors  **********************/
 
-/*Every section (div)*/
 .container{
   text-align: center;
   margin-bottom: 50px;
+}
+
+.overlay_container{
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius:20px;
+  margin: auto;
+  margin-top: 100px;
+  width: fit-content;
+  padding:20px;
+}
+
+.overlay_container li{
+  text-align: left;
+  margin-left: 50px;
+  font-size: 0.8em;
+  list-style: outside;
+}
+
+.overlay_container .fas.fa-times{
+  color: black;
+  display: block;
+  font-size: 30px;
 }
 
 .right-container{
@@ -138,7 +155,6 @@ hr{
   width: 70%;
 }
 
-/*Modal (pop-up) image*/
 .modal{
   margin-left: auto;
   margin-right: auto;
@@ -172,7 +188,7 @@ hr{
   border-radius: 10px;
 }
 
-.card h2{
+.card h2,h3{
   color:black;
   text-align: left;
   padding: 10px;
@@ -191,13 +207,19 @@ hr{
   width:fit-content;
 }
 
-.card h5{
+.card h5,button{
   float:right;
   margin-top:10px;
   padding: 10px;
   margin:10px;
   font-weight: bold;
   width:fit-content;
+}
+
+.card button{
+  border: 1px solid black;
+  border-radius: 50px;
+  outline:none;
 }
 
 .card img{
@@ -217,136 +239,6 @@ hr{
   background-color: black;
 }
 
-/* Experience Cards */
-.xp_cards {
-  box-shadow: 0 10px 15px 5px rgba(0, 0, 0, 8);
-  max-width: 1000px;
-  margin: 20px;
-  text-align: center;
-  font-family: arial;
-  background-color: rgba(0,0,0,0.12);
-  display:inline-block;
-  transition: transform .2s;
-  border-radius: 20px;
-  margin-bottom:50px;
-  padding-left: 3%;
-  padding-right:3%;
-  transition: 0.5s;
-}
-
-.xp_cards p{
-  margin:20px;
-  padding:10px;
-  background-color: rgba(0,0,0,0.15);
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-  font-weight: bold;
-}
-
-.xp_cards h2{
-  padding:20px;
-}
-
-.xp_cards li{
-  margin-bottom:10px;
-  background-color: rgba(0,0,0,0.15);
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 15px;
-  padding:10px;
-  font-weight: bold;
-  display: inline-block;
-}
-
-.xp_cards:hover{
-  transform:scale(1.02);
-  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 8);
-  background-color: rgba(0, 0, 0, 1);
-}
-
-.xp_cards:hover i{
-  color: var(--light_blue);
-}
-
-.xp_cards:hover li{
-  color: white;
-  background-color: var(--dark_grey);
-}
-
-.xp_cards:hover p{
-  color: white;
-  background-color: var(--dark_grey);
-}
-
-.xp_cards:hover hr{
-  width:95%;
-  border:2px solid var(--light_blue);
-}
-
-.xp_cards:hover h2{
-  color: var(--light_blue);
-}
-
-/* END OF  Experience Cards */
-
-/* Flip Card for projects */
-
-.flip-card {
-  width: 300px;
-  height: 400px;
-  perspective: 1000px;
-  display:inline-block;
-  margin:10px;
-  background-color: transparent;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card:hover {
-  z-index: 10;
-  position: relative;
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  color: black;
-  border-style: solid;
-}
-
-.flip-card-back {
-  color: white;
-  height: fit-content;
-  transform: rotateY(180deg);
-  background-color: var(--dark_grey);
-  border: 3px solid var(--light_blue);
-  padding:20px;
-  font-weight: bold;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.7);
-}
-
-/*Parallax scrolling effect + background for starting page*/
 .para {
   position: relative;
   background-image: url('images/intro.jpg');
@@ -358,7 +250,6 @@ hr{
   background-size: cover;
 }
 
-/****** Navigation Bar ********/
 .navbar {
   height: 100%;
   width: 300px;
@@ -377,7 +268,6 @@ hr{
   font-size:1.7rem;
 }
 
-/*All As in the navbar*/
 .navbar a{
   text-align: left;
   display: block;
@@ -392,12 +282,10 @@ hr{
   user-select: none;
 }
 
-/*1st a in the navbar*/
 .navbar a:first-child{
   margin-top:20%;
 }
 
- /*When hovering on A*/
 .navbar a:hover{
    color:var(--dark_grey);
    background-color: whitesmoke;
@@ -406,7 +294,6 @@ hr{
    transform: scale(1.15);
 }
 
-/*Set active status*/
 .navbar a.active{
   background-color: var(--light_grey);
 }
@@ -421,20 +308,20 @@ hr{
 }
 
 .navbar footer a {
+  transition: none;
   margin: auto;
-  padding:10px;
   display: inline-block;
   color:var(--light_blue);
 }
 
 .navbar footer a:hover{
   transform: scale(1.15);
+  transition: none;
   background-color: transparent;
-  color:var(--light_blue);
+  color:lightskyblue;
   box-shadow: none;
 }
 
-/*Hamburger icon*/
 #navbar_icon{
   margin:10px;
   color: var(--light_blue);
@@ -448,11 +335,9 @@ hr{
   background-color: black;
 }
 
-/*Hover on Icon*/
 #navbar_icon:hover{
   transform: scale(0.95);
 }
-/****** END OF Navigation Bar ********/
 
 #profile_pic{
   width:200px;
@@ -660,6 +545,11 @@ hr{
     margin:20px;
     width:fit-content;
   }
+
+  .overlay_container{
+    width:95%;
+  }
+
 }
 
 @media screen and (max-width: 700px)
