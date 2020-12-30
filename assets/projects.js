@@ -34,7 +34,7 @@ const projects = {
     lang: languages["py"]["name"],
     colour: languages["py"]["colour"],
     image: "./assets/images/scanner.png",
-    desc: "Simple network / IP scanner, inspired by NMAP.",
+    desc: "An NMAP like scanner",
     url: "https://github.com/IVBecy/network_scanner",
   },
   reverseShell: {
@@ -74,12 +74,12 @@ const projects = {
     url: "https://github.com/IVBecy/php_password_manager",
   },
   usernameLookup: {
-    title: "Spy.py",
+    title: "Username lookup",
     date: "10 August 2020",
     lang: languages["py"]["name"],
     colour: languages["py"]["colour"],
     image: "./assets/images/uname.png",
-    desc: "Username lookup script, inspired by the Sherlock project",
+    desc: "Username lookup tool",
     url: "https://github.com/IVBecy/username_lookup",
   },
   template3: {
@@ -97,7 +97,7 @@ const projects = {
     lang: languages["html"]["name"],
     colour: languages["html"]["colour"],
     image: "./assets/images/beat.png",
-    desc: "Music maker app, inspired by Dev Ed's version.",
+    desc: "Music maker app",
     url: "https://github.com/IVBecy/beatmaker",
   },
   todo: {
@@ -169,7 +169,7 @@ const projects = {
     lang: languages["py"]["name"],
     colour: languages["py"]["colour"],
     image: "./assets/images/snake.png",
-    desc: "Game inspired by the old snake game on phones.",
+    desc: "A basic snake game",
     url: "https://github.com/IVBecy/snakegame",
   }
 }
