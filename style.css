@@ -207,6 +207,18 @@ hr{
   width:fit-content;
 }
 
+.card p{
+  float: left;
+  margin:10px;
+  color: black;
+}
+
+.card h5#project-desc{
+  float: left;
+  text-align: left;
+  font-family: "Orbitron";
+}
+
 .card h5,button{
   float:right;
   margin-top:10px;

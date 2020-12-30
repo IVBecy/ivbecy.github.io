@@ -74,6 +74,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image: "images/reaper.png",
+      desc:"A simple ransomware.",
     },
     project_anon: {
       title: "Project anon",
@@ -81,6 +82,7 @@ if (path == "/projects.html"){
       lang: languages["php"]["name"],
       colour: languages["php"]["colour"],
       image: "images/project_anon.png",
+      desc: "A social media platform.",
     },
     networkScan:{
       title:"Scanner",
@@ -88,6 +90,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/scanner.png",
+      desc: "Simple network / IP scanner, inspired by NMAP.",
     },
     reverseShell:{
       title:"Reverse Shell",
@@ -95,6 +98,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/shell.png",
+      desc: "Basic reverse shell.",
     },
     notepad:{
       title:"Notepad",
@@ -102,6 +106,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/notepad.png",
+      desc: "A copy of windows notepad",
     },
     cardDesign:{
       title:"Card Designs",
@@ -109,6 +114,7 @@ if (path == "/projects.html"){
       lang: languages["css"]["name"],
       colour: languages["css"]["colour"],
       image:"images/css_cards.png",
+      desc: "Some css card designs.",
     },
     passManager:{
       title:"Password manager",
@@ -116,13 +122,7 @@ if (path == "/projects.html"){
       lang: languages["php"]["name"],
       colour: languages["php"]["colour"],
       image:"images/php_pass.png",
-    },
-    speech:{
-      title:"Speech recognition",
-      date:"12 August 2020",
-      lang: languages["js"]["name"],
-      colour: languages["js"]["colour"],
-      image:"images/speech.png",
+      desc: "A generic password manager.",
     },
     usernameLookup:{
       title:"Spy.py",
@@ -130,6 +130,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/uname.png",
+      desc: "Username lookup script, inspired by the Sherlock project",
     },
     template3:{
       title:"Template (3)",
@@ -137,6 +138,7 @@ if (path == "/projects.html"){
       lang: languages["php"]["name"],
       colour: languages["php"]["colour"],
       image:"images/design_3.png",
+      desc: "Website template",
     },
     beatMaker:{
       title:"Beat Maker",
@@ -144,13 +146,7 @@ if (path == "/projects.html"){
       lang: languages["html"]["name"],
       colour: languages["html"]["colour"],
       image:"images/beat.png",
-    },
-    phpForms:{
-      title:"Forms",
-      date:"18 July 2020",
-      lang: languages["php"]["name"],
-      colour: languages["php"]["colour"],
-      image:"images/php_form.png",
+      desc: "Music maker app, inspired by Dev Ed's version.",
     },
     todo:{
       title:"To-Do List",
@@ -158,6 +154,7 @@ if (path == "/projects.html"){
       lang: languages["js"]["name"],
       colour: languages["js"]["colour"],
       image:"images/todo.png",
+      desc: "To do list app.",
     },
     template2:{
       title:"Template (2)",
@@ -165,6 +162,7 @@ if (path == "/projects.html"){
       lang: languages["html"]["name"],
       colour: languages["html"]["colour"],
       image:"images/design_2.png",
+      desc: "Website template",
     },
     hashCracker:{
       title:"Hash Cracker",
@@ -172,6 +170,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/crack.png",
+      desc: "Simple hash cracker script",
     },
     template1:{
       title:"Template (1)",
@@ -179,6 +178,7 @@ if (path == "/projects.html"){
       lang: languages["html"]["name"],
       colour: languages["html"]["colour"],
       image:"images/design_1.png",
+      desc: "Website template",
     },
     oldWebsite:{
       title:"Old Website",
@@ -186,6 +186,7 @@ if (path == "/projects.html"){
       lang: languages["html"]["name"],
       colour: languages["html"]["colour"],
       image:"images/old_website.png",
+      desc: "The old design of my website",
     },
     spaceInvaders:{
       title:"Space Invaders",
@@ -193,13 +194,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/space_invaders.png",
-    },
-    flappyBird:{
-      title:"Flappy Bird",
-      date:"4 April 2020",
-      lang: languages["js"]["name"],
-      colour: languages["js"]["colour"],
-      image:"images/flappy_prev.png",
+      desc: "A space invaders-like game.",
     },
     website:{
       title:"Website",
@@ -207,6 +202,7 @@ if (path == "/projects.html"){
       lang: languages["html"]["name"],
       colour: languages["html"]["colour"],
       image:"images/prev.png",
+      desc: "My own website.",
     },
     snake:{
       title:"Snake",
@@ -214,6 +210,7 @@ if (path == "/projects.html"){
       lang: languages["py"]["name"],
       colour: languages["py"]["colour"],
       image:"images/snake.png",
+      desc: "Game inspired by the old snake game on phones.",
     }
   }
   var list = []
@@ -226,6 +223,7 @@ if (path == "/projects.html"){
             <div><h6 style={{ backgroundColor: projects[i].colour}}>{projects[i].lang}</h6><h5>{projects[i].date}</h5></div>
             <div style={{ clear: "both"}}></div>
             <h2>{projects[i].title}</h2>
+            <h5 id="project-desc">{projects[i].desc}</h5>
           </div>
         )
         return(list)
