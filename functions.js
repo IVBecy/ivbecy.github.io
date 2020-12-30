@@ -75,6 +75,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image: "images/reaper.png",
       desc:"A simple ransomware.",
+      url:"https://github.com/IVBecy/reaper",
     },
     project_anon: {
       title: "Project anon",
@@ -83,6 +84,7 @@ if (path == "/projects.html"){
       colour: languages["php"]["colour"],
       image: "images/project_anon.png",
       desc: "A social media platform.",
+      url: "https://github.com/IVBecy/project_anon",
     },
     networkScan:{
       title:"Scanner",
@@ -91,6 +93,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/scanner.png",
       desc: "Simple network / IP scanner, inspired by NMAP.",
+      url: "https://github.com/IVBecy/network_scanner",
     },
     reverseShell:{
       title:"Reverse Shell",
@@ -99,6 +102,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/shell.png",
       desc: "Basic reverse shell.",
+      url:"https://github.com/IVBecy/reverse_shell",
     },
     notepad:{
       title:"Notepad",
@@ -107,6 +111,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/notepad.png",
       desc: "A copy of windows notepad",
+      url: "https://github.com/IVBecy/notepad",
     },
     cardDesign:{
       title:"Card Designs",
@@ -115,6 +120,7 @@ if (path == "/projects.html"){
       colour: languages["css"]["colour"],
       image:"images/css_cards.png",
       desc: "Some css card designs.",
+      url: "https://github.com/IVBecy/css_cards",
     },
     passManager:{
       title:"Password manager",
@@ -123,6 +129,7 @@ if (path == "/projects.html"){
       colour: languages["php"]["colour"],
       image:"images/php_pass.png",
       desc: "A generic password manager.",
+      url: "https://github.com/IVBecy/php_password_manager",
     },
     usernameLookup:{
       title:"Spy.py",
@@ -131,6 +138,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/uname.png",
       desc: "Username lookup script, inspired by the Sherlock project",
+      url: "https://github.com/IVBecy/username_lookup",
     },
     template3:{
       title:"Template (3)",
@@ -139,6 +147,7 @@ if (path == "/projects.html"){
       colour: languages["php"]["colour"],
       image:"images/design_3.png",
       desc: "Website template",
+      url: "https://github.com/IVBecy/website_template_3",
     },
     beatMaker:{
       title:"Beat Maker",
@@ -147,6 +156,7 @@ if (path == "/projects.html"){
       colour: languages["html"]["colour"],
       image:"images/beat.png",
       desc: "Music maker app, inspired by Dev Ed's version.",
+      url: "https://github.com/IVBecy/beatmaker",
     },
     todo:{
       title:"To-Do List",
@@ -155,6 +165,7 @@ if (path == "/projects.html"){
       colour: languages["js"]["colour"],
       image:"images/todo.png",
       desc: "To do list app.",
+      url: "https://github.com/IVBecy/todo_list", 
     },
     template2:{
       title:"Template (2)",
@@ -163,6 +174,7 @@ if (path == "/projects.html"){
       colour: languages["html"]["colour"],
       image:"images/design_2.png",
       desc: "Website template",
+      url: "https://github.com/IVBecy/website_template_2",
     },
     hashCracker:{
       title:"Hash Cracker",
@@ -171,6 +183,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/crack.png",
       desc: "Simple hash cracker script",
+      url: "https://github.com/IVBecy/hash_cracker",
     },
     template1:{
       title:"Template (1)",
@@ -179,6 +192,7 @@ if (path == "/projects.html"){
       colour: languages["html"]["colour"],
       image:"images/design_1.png",
       desc: "Website template",
+      url: "https://github.com/IVBecy/website_template_1",
     },
     oldWebsite:{
       title:"Old Website",
@@ -187,6 +201,7 @@ if (path == "/projects.html"){
       colour: languages["html"]["colour"],
       image:"images/old_website.png",
       desc: "The old design of my website",
+      url: "https://github.com/IVBecy/old_website",
     },
     spaceInvaders:{
       title:"Space Invaders",
@@ -195,6 +210,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/space_invaders.png",
       desc: "A space invaders-like game.",
+      url: "https://github.com/IVBecy/spaceinvaders",
     },
     website:{
       title:"Website",
@@ -203,6 +219,7 @@ if (path == "/projects.html"){
       colour: languages["html"]["colour"],
       image:"images/prev.png",
       desc: "My own website.",
+      url: "https://github.com/IVBecy/ivbecy.github.io",
     },
     snake:{
       title:"Snake",
@@ -211,6 +228,7 @@ if (path == "/projects.html"){
       colour: languages["py"]["colour"],
       image:"images/snake.png",
       desc: "Game inspired by the old snake game on phones.",
+      url: "https://github.com/IVBecy/snakegame",
     }
   }
   var list = []
@@ -222,7 +240,7 @@ if (path == "/projects.html"){
             <img id={i} src={projects[i].image}/>
             <div><h6 style={{ backgroundColor: projects[i].colour}}>{projects[i].lang}</h6><h5>{projects[i].date}</h5></div>
             <div style={{ clear: "both"}}></div>
-            <h2>{projects[i].title}</h2>
+            <h2><a href={projects[i].url}>{projects[i].title}</a></h2>
             <h5 id="project-desc">{projects[i].desc}</h5>
           </div>
         )

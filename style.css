@@ -1,7 +1,8 @@
-/***********  CSS For kristofhracza.com  *****************
-**********************************************************/
-
 /*************************  HTML Elements  ************************/
+@import url(//fonts.googleapis.com/css?family=Orbitron);
+@import url(//fonts.googleapis.com/css?family=Squada+One);
+@import url(//fonts.googleapis.com/css?family=Kumar+One);
+
 :root{
   --dark_grey:#202020;
   --light_grey:#505050;
@@ -219,6 +220,10 @@ hr{
   font-family: "Orbitron";
 }
 
+.card a{
+  color:black;
+}
+
 .card h5,button{
   float:right;
   margin-top:10px;
@@ -242,6 +247,10 @@ hr{
 }
 
 .card:hover h2,h6{
+  color:var(--light_blue);
+}
+
+.card:hover a{
   color:var(--light_blue);
 }
 
