@@ -8,20 +8,17 @@ const hamburger = () => {
   // Making both of the animations work
   const toggling = () =>{
     count++;
+    const icon = document.getElementById("navbar_icon");
+    const navbar = document.getElementById("navbar");
     // opening navbar
     if (count % 2 == 0 ) {
-      document.getElementById("navbar_icon").className = "fas fa-times";
-      document.getElementById("navbar").style.display = "block";
-      document.getElementById("navbar_icon").style.backgroundColor = "transparent";
-      document.getElementById("navbar_icon").style.color = "white";
-      document.getElementById("navbar_icon").style.boxShadow = "none";
+      navbar.style.display = "block";
+      icon.className = "fas fa-times"
     }
      // closing navbar
     else{
-      document.getElementById("navbar_icon").className = "fas fa-bars";
-      document.getElementById("navbar").style.display = "none";
-      document.getElementById("navbar_icon").style.backgroundColor = "black";
-      document.getElementById("navbar_icon").style.color = "#077BFF";
+      navbar.style.display = "none";
+      icon.className = "fas fa-hamburger";
     }
   }
   toggling() 
@@ -30,11 +27,9 @@ const hamburger = () => {
 // Rendering navigation bar
 function Navbar(){
   return(
-    <div>
-      <div>
-        <i id="navbar_icon"  onClick={hamburger} className="fa fa-bars"></i>
-      </div>
-      <div className="navbar" id="navbar" style={{display:"none"}}>
+    <div id="navigation-bar">
+      <i id="navbar_icon" onClick={hamburger} className="fas fa-hamburger"></i>
+      <div className="navbar" id="navbar">
         <a href="index.html" id="/index.html"><h2>Home</h2></a>
         <a href="projects.html" id="/projects.html"><h2>Projects</h2></a>
         <a href="services.html" id="/services.html"><h2>Services</h2></a>

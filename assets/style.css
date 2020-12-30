@@ -275,14 +275,13 @@ hr{
 .navbar {
   height: 100%;
   width: 300px;
+  right:0;
+  transition: 0.5s;
   position: fixed;
   z-index: 1;
-  top: 0;
-  right: 0;
   display: none;
   background-color: #111;
   overflow-x: hidden;
-  transition: 0.5s;
   padding-top: 60px;
 }
 
@@ -387,20 +386,30 @@ hr{
 
 
 #navbar_icon{
+  font-size: 40px;
   margin:10px;
-  color: var(--light_blue);
-  font-size: 30px;
+  padding:10px;
   position:fixed;
   top:1%;
   right:2%;
   z-index: 6;
-  display: block;
-  border-radius: 100px;
-  background-color: black;
 }
 
-#navbar_icon:hover{
-  transform: scale(0.95);
+#navigation-bar .fas.fa-hamburger{
+  transition: 0.2s;
+  color: white;
+  font-size: 40px;
+  background-color: black;
+  border-radius: 10px;
+}
+
+#navigation-bar .fas.fa-hamburger:hover{
+  color:#f3a27c;
+}
+
+#navigation-bar .fas.fa-times{
+  color: white;
+  background-color: transparent;
 }
 
 #profile_pic{
@@ -408,13 +417,6 @@ hr{
   border-radius: 20px;
   margin-bottom:40px;
   box-shadow:var(--small_shadow);
-}
-
-#inbetween{
-  background-image: url('images/code_bg.png');
-  height:200px;
-  -webkit-filter: grayscale(60%); 
-  filter: grayscale(60%)
 }
 
 /***************Media Queries**********************/
