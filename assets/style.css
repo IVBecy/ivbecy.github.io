@@ -25,6 +25,7 @@ body, html {
 h1{
   font-family: "Squada One", sans-serif;
   padding-top: 20px;
+  font-size: 4em;
 }
 
 h2{
@@ -82,33 +83,29 @@ hr{
   letter-spacing: 5px
 }
 
-#text_over_image{
-  position: relative;
-  color:white;
-  letter-spacing: 6px;
-  font-size: 6rem;
-  text-align: center;
-  top:15%;
-  margin-right:auto ;
-  margin-left:auto;
-}
-
-#responsive {
-  width: 60%;
-  max-width: 800px;
-  height:20%;
-}
 
 #highlight_text{
   font-family: "Squada One", sans-serif;
   font-size:2rem;
 }
 
-#profile_img {
-  width: 20%;
-  border-radius: 10%;
-  
+#navigation-bar .fas.fa-hamburger{
+  transition: 0.2s;
+  color: white;
+  font-size: 40px;
+  background-color: black;
+  border-radius: 10px;
 }
+
+#navigation-bar .fas.fa-hamburger:hover{
+  color:#f3a27c;
+}
+
+#navigation-bar .fas.fa-times{
+  color: white;
+  background-color: transparent;
+}
+
 /************************  Class Selectors  **********************/
 
 .container{
@@ -395,110 +392,16 @@ hr{
   z-index: 6;
 }
 
-#navigation-bar .fas.fa-hamburger{
-  transition: 0.2s;
-  color: white;
-  font-size: 40px;
-  background-color: black;
-  border-radius: 10px;
-}
-
-#navigation-bar .fas.fa-hamburger:hover{
-  color:#f3a27c;
-}
-
-#navigation-bar .fas.fa-times{
-  color: white;
-  background-color: transparent;
-}
-
 /***************Media Queries**********************/
-@media screen and (max-width: 1700px)
-{
-  #text_over_image{
-    font-size: 7vw;
-    padding-top:1%;
-    margin-right:auto ;
-    margin-left:auto;
-  }
+@media screen and (max-width: 1700px){
   p{
     font-size: 1.5vw;
-  }
-
-  li{
-    font-size: 1.5vw;
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
   }
 
   #big-text{
     font-size: 8vw;
   }
 
-}
-
-@media screen and (max-width: 1600px)
-{
-  #text_over_image{
-    font-size: 6vw;
-    padding-top:0.5%;
-    margin-right:auto;
-    margin-left:auto;
-  }
-  p{
-    font-size: 1.2vw;
-  }
-
-  li{
-    font-size: 1.1vw;
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  #big-text{
-    font-size: 8vw;
-  }
-
-}
-
-
-@media screen and (max-width: 1100px)
-{
-  #big-text{
-    font-size: 7vw;
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-
-  h1{
-    font-size: 4vw;
-  }
-
-  p{
-    font-size: 1.5vw;
-  }
-
-  li{
-    font-size: 1.5vw;
-  }
-
-
-  #text_over_image{
-    font-size: 7vw;
-    padding-top:5%;
-    margin-right:auto ;
-    margin-left:auto;
-  } 
 }
 
 @media screen and (max-width: 1024px)
@@ -507,61 +410,12 @@ hr{
     font-size: 10vw
   }
 
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
   .para {
     background-attachment: scroll;
-
-  }
-
-  h1{
-    font-size: 5vw;
   }
 
   p{
-    font-size: 2vw;
-  }
-
-  #text_over_image{
-    font-size: 7vw;
-    top:0%;
-    margin-right:auto ;
-    margin-left:auto;
-  }
-}
-
-@media screen and (max-width: 900px)
-{
-  #big-text{
-    font-size: 11vw
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  .para {
-    background-attachment: scroll;
-
-  }
-
-  h1{
-    font-size: 5vw;
-  }
-
-  p{
-    font-size: 2.4vw;
-  }
-
-  #text_over_image{
-    font-size: 7.7vw;
-    top:10%;
-    margin-right:auto ;
-    margin-left:auto;
+    font-size: 1.8vw;
   }
 }
 
@@ -571,29 +425,12 @@ hr{
     font-size: 11vw
   }
 
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  .para {
-    background-attachment: scroll;
-
-  }
-
-  h1{
-    font-size: 5vw;
-  }
-
   p{
-    font-size: 2.4vw;
+    font-size: 3.5vw;
   }
 
-  #text_over_image{
-    font-size: 7.7vw;
-    top:12%;
-    margin-right:auto ;
-    margin-left:auto;
+   h1{
+    font-size: 2em;
   }
 
   .card{  
@@ -617,84 +454,7 @@ hr{
     font-size: 1.2em;
   }
 
-}
-
-@media screen and (max-width: 700px)
-{
-  #big-text{
-    font-size: 11vw
-  }
-
-  .para {
-    background-attachment: scroll;
-
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  h1{
-    font-size: 5vw;
-  }
-
-  p{
-    font-size: 3.2vw;
-  }
-
-  #text_over_image{
-    font-size: 8vw;
-    padding-top:5%;
-    margin-right:auto ;
-    margin-left:auto;
-  }
-}
-
-@media screen and (max-width: 600px)
-{
-  #big-text{
-    font-size: 14vw
-  }
-
-  .side-text{
-    text-align: left;
-    padding-left: 20px;
-  }
-
-  #text_over_image{
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  footer p{
-    font-size: 3vw;;
-  }
-
-  h1{
-    font-size: 5vw;
-  }
-
-  h2{
-    font-size: 9vw;
-  }
-
-  p{
-    font-size: 4vw;
-  }
-
-
-  li{
-    font-size: 4vw;
-  }
-
-  .para {
-    background-attachment: scroll;
-  }
-
-  
-.modal img{
+   .modal img{
     width:100%
   }
 }

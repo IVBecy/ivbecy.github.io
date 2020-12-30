@@ -1,6 +1,5 @@
 // ONLOAD animation
 $("body").hide().fadeIn(900);
-$("#text_over_image").hide().delay(1000).fadeIn(1000);
 
 //Navbar function
 var count = 1;
