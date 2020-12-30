@@ -344,6 +344,48 @@ hr{
   box-shadow: none;
 }
 
+.techs{
+  padding:25px;
+  text-align: center;
+  height:fit-content;
+  background-color: #5e5e5e;
+  background-blend-mode: multiply;
+}
+
+.text{
+  color:white;
+  transition: 0.5s;
+  padding:20px;
+}
+
+.text li{
+  color:black;
+  display: inline-block;
+  padding:5px;
+  margin:10px;
+  background-color: white;
+  border-radius:100%;
+  transition: 0.2s;
+}
+
+.text li i{
+  font-size: 40px;
+}
+
+.text div{
+  margin: 10px;
+  transition: 0.5s;
+  display: inline-block;
+  width:fit-content;
+}
+
+.text h1{
+  font-family: 'Squada one';
+  padding-bottom:50px;
+  font-size: 3em;
+}
+
+
 #navbar_icon{
   margin:10px;
   color: var(--light_blue);
@@ -570,6 +612,14 @@ hr{
 
   .overlay_container{
     width:95%;
+  }
+
+  .text li i{
+    font-size: 30px;
+  }
+
+  .text h4{
+    font-size: 1.2em;
   }
 
 }
