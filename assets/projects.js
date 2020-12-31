@@ -39,7 +39,7 @@ const projects = {
   },
   reverseShell: {
     title: "Reverse Shell",
-    date: "12 September",
+    date: "12 September 2020",
     lang: languages["py"]["name"],
     colour: languages["py"]["colour"],
     image: "./assets/images/shell.png",
