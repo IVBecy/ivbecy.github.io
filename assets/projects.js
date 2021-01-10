@@ -8,6 +8,15 @@ const languages = {
   php: { name: "PHP", colour: "#787CB5" },
 }
 const projects = {
+  fire: {
+    title: "Fire",
+    date: "19 December 2020",
+    lang: languages["js"]["name"],
+    colour: languages["js"]["colour"],
+    image: "./assets/images/fire.png",
+    desc: "A trello copy",
+    url: "https://github.com/IVBecy/fire",
+  },
   reaper: {
     title: "Reaper",
     date: "19 December 2020",
