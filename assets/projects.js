@@ -4,7 +4,7 @@
  */
 const languages = {
   py: { name: "Python", colour: "#306998" },
-  js: { name: "Javascript", colour: "#F0DB4F" },
+  js: { name: "JS", colour: "#F0DB4F" },
   php: { name: "PHP", colour: "#787CB5" },
 }
 const projects = {
