@@ -10,7 +10,7 @@ const languages = {
 const projects = {
   fire: {
     title: "Fire",
-    date: "19 December 2020",
+    date: "10 January 2021",
     lang: languages["js"]["name"],
     colour: languages["js"]["colour"],
     image: "./assets/images/fire.png",
