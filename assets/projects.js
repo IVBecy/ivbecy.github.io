@@ -8,6 +8,15 @@ const languages = {
   php: { name: "PHP", colour: "#787CB5" },
 }
 const projects = {
+  keylogger: {
+    title: "Key logger",
+    date: "10 January 2021",
+    lang: languages["py"]["name"],
+    colour: languages["py"]["colour"],
+    image: "./assets/images/keylog.png",
+    desc: "Simple keylogger in python",
+    url: "https://github.com/IVBecy/keylogger",
+  },
   fire: {
     title: "Fire",
     date: "10 January 2021",
