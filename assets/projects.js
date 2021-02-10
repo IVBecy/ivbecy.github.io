@@ -8,9 +8,18 @@ const languages = {
   php: { name: "PHP", colour: "#787CB5" },
 }
 const projects = {
+  cyber_share: {
+    title: "Cyber Share",
+    date: "10 February 2021",
+    lang: languages["py"]["name"],
+    colour: languages["py"]["colour"],
+    image: "./assets/images/cyber_share.png",
+    desc: "A web server for movie sharing.",
+    url: "https://github.com/IVBecy/cyber_share",
+  },
   keylogger: {
     title: "Key logger",
-    date: "10 January 2021",
+    date: "20 January 2021",
     lang: languages["py"]["name"],
     colour: languages["py"]["colour"],
     image: "./assets/images/keylog.png",
